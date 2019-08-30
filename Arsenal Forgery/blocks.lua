@@ -1639,15 +1639,15 @@
       color=0x7f00b7e9, range=825.000}, sort=80024, chargeMin=1, chargeMaxTime=0.5},
 
   {17071, shape=205, name="Proximity Launcher", features=LAUNCHER, group=12, aihint_range=1000,
-    durability=0.5, blurb="Launches powerful proximity mines that uses it's attractor beams to home nearby enemies", density=0.15,
+    durability=0.5, blurb="Launches powerful proximity mines equipped with a turreted thruster and an attractor beam", density=0.15,
     fillColor=0x6f5250, fillColor1=0x794937, lineColor=0xbda09a, replicateBlock=
-    {shape=OCTAGON, name="Proximity Mines", features=COMMAND|GENERATOR|TURRET|LASER|AUTOFIRE|EXPLODE|CHARGING, deathFeatures=CANNON, group=12, lifetime=5,
-      durability=5.0, density=0.10, fillColor=0x514644, fillColor1=0x3a2b26, lineColor=0xee5245, generatorCapacityPerSec=100.000, powerCapacity=300.000,
-      explodeDamage=300, explodeRadius=35, turretSpeed=12000.000, cannon={damage=1, range=0, muzzleVel=1, explosive=FRAG_FINAL, roundsPerSec=1,
+    {shape=OCTAGON, name="Proximity Mines", features=COMMAND|GENERATOR|TURRET|LASER|EXPLODE|THRUSTER|ROTATOR, deathFeatures=CANNON, group=12, lifetime=5,
+      durability=5.0, density=0.10, fillColor=0x514644, fillColor1=0x3a2b26, lineColor=0xee5245, generatorCapacityPerSec=200.000, powerCapacity=600.000,
+      explodeDamage=300, explodeRadius=35, turretSpeed=12000, command={flags=FIRE_AT_WILL}, cannon={damage=1, range=0, muzzleVel=1, explosive=FRAG_PROXIMITY, roundsPerSec=1,
 	  fragment={damage=1, roundsPerBurst=12, range=1, muzzleVel=1, pattern=SPIRAL, spread=3.124,
 	  explosive=FRAG_PROXIMITY, fragment={damage=15, roundsPerBurst=1, range=10, muzzleVel=1, explosive=FINAL, color=0xee5245, explodeRadius=25}}}
-	  laser={width=4, damage=25.000, color=0x7fbda09a,
-        range=1600, linearForce=-8400}, chargeMin=1, chargeMaxTime=1}, replicateTime=6.5, launcherSpeed=1000, launcherAngVel=12},
+	  laser={width=4, damage=25.000, color=0x7fbda09a, range=1800, linearForce=-42000}, barrelSize={7.5, 5}, barrelOffset={-1.5, 0}, barrelTaper=0.4,
+	  shroud={{shape=251, size={7.5, 4.5}, offset={5, 0, 0.2}}}, thrusterForce=7000}, replicateTime=6.5, launcherSpeed=1000, launcherAngVel=12},
 
   {17072, name="Terror Drone", features=LAUNCHER, group=15, shape=205,
     durability=2.000, blurb="Effective on detonating large explosive objects and sabotage ships from inside", density=0.150,
