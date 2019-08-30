@@ -7,3 +7,5 @@ Warning: ONLY DO THIS WHEN YOU ARE USING THE BETA BRANCH VERSION RATHER THAN THE
 To find out how to use the Beta version of the game: https://www.youtube.com/watch?v=YlrH2QpESTI or https://www.wikihow.com/Enable-Steam-Beta
 
 Ignore these two files called ".gitattributes" and "_config.yml". They have nothing to do with the mod.
+
+You can use this mod outside steam folder but, the blocks ID won't be relocated.
