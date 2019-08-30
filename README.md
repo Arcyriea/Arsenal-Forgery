@@ -4,6 +4,6 @@ Please rename the whole "Arsenal Forgery" folder to "433982918" then put the fol
 
 Warning: ONLY DO THIS WHEN YOU ARE USING THE BETA BRANCH VERSION RATHER THAN THE LIVE VERSION AS IT COULD CAUSE ERRORS AND MISSING BLOCKS
 
-To find out how to use the Beta version of the game: https://www.wikihow.com/Enable-Steam-Beta
+To find out how to use the Beta version of the game: https://www.youtube.com/watch?v=YlrH2QpESTI or https://www.wikihow.com/Enable-Steam-Beta
 
 Ignore the two files called ".gitattributes" and "_config.yml". They have nothing to do with the mod.
