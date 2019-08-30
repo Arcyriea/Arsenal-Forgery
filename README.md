@@ -1,1 +1,1 @@
-Please place the folder at Drive:\Program Files (x86)\Steam\steamapps\workshop\content\329130\ on your steam workshop folder where you got the directory installed, in order to manually patch the mod if you opt into the beta version of Reassembly
+Please rename the whole "Arsenal Forgery" folder to "433982918" then place the folder at Drive:\Program Files (x86)\Steam\steamapps\workshop\content\329130\ on your steam workshop folder where you got the directory installed, in order to manually patch the mod if you opt into the beta version of Reassembly
