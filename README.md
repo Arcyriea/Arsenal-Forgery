@@ -8,4 +8,4 @@ To find out how to use the Beta version of the game: https://www.youtube.com/wat
 
 Ignore these two files called ".gitattributes" and "_config.yml". They have nothing to do with the mod.
 
-You can use this mod outside steam folder but, the blocks ID won't be relocated if use with other non-steam mods.
+You can use this mod outside steam folder but, the blocks ID won't be relocated if use with other non-steam mods which could make it more open to mod conflicts.
