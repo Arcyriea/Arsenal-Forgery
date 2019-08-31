@@ -10,4 +10,4 @@ Ignore these two files called ".gitattributes" and "_config.yml". They have noth
 
 You can use this mod outside steam folder but, the blocks ID won't be relocated if use with other non-steam mods which could make it more open to mod conflicts. Sometimes the Beta Version is current with the Live Version (basically there is no beta at all currently for testing), which would mean that you are free to not do any manual patching at the time.
 
-The mod will not automatically update after doing the manual patch, it only does when I upload a new version of the mod directly to Steam.
+The mod will not automatically update (like reverting itself) after doing the manual patch, it only does when I upload a new version of the mod directly to Steam.
