@@ -2,7 +2,7 @@ INSTALLATION NOTE FOR MANUALLY PATCHING THE MOD
 
 Please rename the whole "Arsenal Forgery" folder to "433982918" then put the folder at ..\Steam\steamapps\workshop\content\329130\ if you are using the Steam version of the game. Place it on your steam workshop folder where you got the directory installed (locate exactly where the folder 329130 is by using the search function), overwrite the original steam folder & manually patch the mod if you opt into the beta version of Reassembly, remember to back up the original steam folder of the mod before this.
 
-Warning: ONLY DO THIS WHEN YOU ARE USING THE BETA BRANCH VERSION RATHER THAN THE LIVE VERSION OF THE GAME AS IT COULD CAUSE ERRORS AND MISSING BLOCKS. TO AVOID ISSUES, YOU MIGHT NEED TO SUBSCRIBE ARSENAL FORGERY FIRST.
+Warning: ONLY DO THIS WHEN YOU ARE USING THE BETA BRANCH VERSION RATHER THAN THE LIVE VERSION OF THE GAME AS IT COULD CAUSE ERRORS AND MISSING BLOCKS. TO AVOID OTHER ISSUES, YOU MIGHT NEED TO SUBSCRIBE ARSENAL FORGERY FIRST.
 
 To find out how to use the Beta version of the game: https://www.youtube.com/watch?v=YlrH2QpESTI or https://www.wikihow.com/Enable-Steam-Beta
 
