@@ -2391,13 +2391,16 @@
   {17199, shape=259, name="Foundation Expander", group=8, durability=2.5, blurb="Armor block, 1? units",
     fillColor=0xaaaaaa, fillColor1=0x777777, lineColor=0xaab0c0, growRate=30},
 
-  {17200, shape=264, name="Billard Mines", features=LAUNCHER_BARRAGE, group=12, aihint_range=800,
-    durability=0.5, blurb="Mines designed to be a cheap anti fast-craft weaponry", density=0.15,
+  {17200, shape=264, name="Cluster Mine", features=LAUNCHER_BARRAGE, group=12, aihint_range=800,
+    durability=0.5, blurb="Mines designed to be a reliable pressurizing inhibition weapon while providing support, uses its built in thruster to propel close to the enemy. Burst out multiple plasma mines when detonated or destroyed, utterly shatter probes and ships with no reliable protections", density=0.15,
     fillColor=0x6f5250, fillColor1=0x794937, lineColor=0xbda09a, replicateBlock=
-    {shape=263, name="Vesicle Mine", features=COMMAND|GENERATOR|TURRET|LASER|AUTOFIRE|EXPLODE, group=12, lifetime=5,
-      durability=5.0, density=0.01, fillColor=0x514644, fillColor1=0x3a2b26, lineColor=0xee5245, generatorCapacityPerSec=12.500, powerCapacity=100.000,
-      explodeDamage=50, explodeRadius=17.5, turretSpeed=1200.000, laser={width=1.5, power=12.75, damage=15.250, color=0x7fbda09a,
-        range=900, linearForce=-26000}}, replicateTime=2.5, launcherSpeed=1100, launcherAngVel=1},
+    {shape=263, name="Vesicle Mine", features=COMMAND|GENERATOR|AUTOFIRE|EXPLODE|CANNON|ONEUSE|THRUSTER|ROTATOR, deathFeatures=CANNON, group=12, lifetime=5, aihint_range=50,
+      durability=5.0, density=0.1, fillColor=0x514644, fillColor1=0x3a2b26, lineColor=0xee5245, generatorCapacityPerSec=12.500, powerCapacity=100.000,
+      explodeDamage=10, explodeRadius=100, turretSpeed=1200.000, cannon={roundsPerSec=7, spread=3.142, roundsPerBurst=5, burstyness=1,
+      muzzleVel=250, damage=1, range=10, rangeStdDev=10, explosive=FRAG_PROXIMITY, color=0xee5245,
+      fragment={damage=1, roundsPerBurst=12, range=1, muzzleVel=10, pattern=SPIRAL, spread=3.124, explosive=FRAG_PROXIMITY, 
+	  fragment={damage=2, roundsPerBurst=1, range=8, pattern=ABSOLUTE, muzzleVel=1, explosive=FINAL, color=0xee5245, explodeRadius=17.5}}},
+	  thrusterForce=1000}, replicateTime=2.5, launcherSpeed=1100, launcherAngVel=1},
 
   {17201, name="Calestir AST-11" features=TURRET|CANNON|AUTOFIRE, group=2, aihint_range=1885,
     health=100.000, durability=0.500, blurb="Auto firing mini long range mortar support weapon", density=0.150, fillColor=0x99a80d,
@@ -3580,7 +3583,7 @@
     {command={}, features=COMMAND|THRUSTER|TORQUER|EXPLODE|FIN, lifetime=8, capacity=100,
       fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb, thrusterColor=0x90808080,
       thrusterColor1=0x904060a0, group=8, shape=290, scale=4, durability=0.5, finForce=45000,
-      thrusterForce=75000, torquerTorque=40000, explodeDamage=45, explodeRadius=35},
+      thrusterForce=75000, torquerTorque=40000, explodeDamage=60, explodeRadius=35},
       group=8, durability=0.5, density=0.15, blurb="Medium advanced missiles (Derivative of Sentient mod missile shape)",
 	  replicateTime=2.25, launcherPower=100, launcherOutSpeed=50, sort=110060},
 	  
@@ -3589,7 +3592,7 @@
     {command={}, features=COMMAND|THRUSTER|TORQUER|EXPLODE|FIN, lifetime=8, capacity=100,
       fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb, thrusterColor=0x90808080,
       thrusterColor1=0x904060a0, group=8, shape=290, scale=4, durability=0.5, finForce=45000,
-      thrusterForce=75000, torquerTorque=40000, explodeDamage=45, explodeRadius=35},
+      thrusterForce=75000, torquerTorque=40000, explodeDamage=60, explodeRadius=35},
       group=8, durability=0.5, density=0.15, blurb="Medium advanced missiles (Derivative of Sentient mod missile shape)",
 	  replicateTime=2.25, launcherPower=100, launcherOutSpeed=50, sort=110060},
 	  
@@ -6004,7 +6007,7 @@
 	        {size={2, 7.5}, offset={12.5, 0, 0.175}, count=1}, {size={2, 7.5}, offset={15, 0, 0.2}, count=1}}},
 	
   {17969, features=TURRET|CANNON|AUTOFIRE, fillColor=0x6f5250, fillColor1=0x4a3b38, aihint_range=5000, barrelSize={0.001, 0.001},
-    lineColor=0xbda09a,  cannon={roundsPerSec=7, pattern=ABSOLUTE, spread=3.142, roundsPerBurst=5, burstyness=1,
+    lineColor=0xbda09a, cannon={roundsPerSec=7, pattern=ABSOLUTE, spread=3.142, roundsPerBurst=5, burstyness=1,
       muzzleVel=25000, damage=1, range=100, rangeStdDev=100, explosive=FRAG_FINAL, color=0xee5245, power=25,
       fragment={damage=1, roundsPerBurst=6, range=1, muzzleVel=10, pattern=SPIRAL|ABSOLUTE, spread=3.124,
 	  explosive=FRAG_PROXIMITY, fragment={damage=15, roundsPerBurst=1, range=10, muzzleVel=1, explosive=FINAL, pattern=ABSOLUTE, color=0xee5245, explodeRadius=125}}},
