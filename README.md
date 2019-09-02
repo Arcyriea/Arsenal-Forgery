@@ -10,7 +10,7 @@ Ignore these two files called ".gitattributes" and "_config.yml". They have noth
 
 You can use this mod outside steam folder but the blocks ID won't be relocated if use with other non-steam mods which could make it more open to mod conflicts, be noted however that you are creating a separate copy of the mod itself which won't be in sync with the ones on the Steam workshop folders, if this is your choice you can choose to place the folder locally at: Drive:\Users\yourname\Saved Games\Reassembly\mods\
 
-^Please do not accidetally upload / "publish" my mod to the workshop.
+^Please do not accidentally upload / "publish" my mod to the workshop.
 
 Sometimes the Beta Version is current with the Live Version (basically there is no beta at all currently for testing), which would mean that you are free to not do any manual patching at the time.
 
