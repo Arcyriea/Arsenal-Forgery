@@ -14,4 +14,4 @@ You can use this mod outside steam folder but the blocks ID won't be relocated i
 
 Sometimes the Beta Version is current with the Live Version (basically there is no beta at all currently for testing), which would mean that you are free to not do any manual patching at the time.
 
-The mod will not automatically update (like reverting itself) after doing the manual patch, it only does when I upload a new version of the mod directly to Steam. If such a case happens, feel free to unzip the github zip archive again.
+The mod will not automatically update (like reverting itself, or just simply pruned some features only from beta) after doing the manual patch, it only does when I upload a new version of the mod directly to Steam. If such a case happens, feel free to unzip the github zip archive again.
