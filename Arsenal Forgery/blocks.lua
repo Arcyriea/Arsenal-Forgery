@@ -288,9 +288,10 @@
      replicateTime=1.25, launcherPower=150.000, launcherOutSpeed=500.000, launcherAngVel=24.000, sort=110025},
 
   {31, name="[L]Reactive Laser", features=LASER|TURRET|AUTOFIRE|CHARGING, group=8,
-    health=25.000, durability=1.000, blurb="Light standard short range reactive defense laser that counter fast missiles threats", density=0.150,
+    health=25.000, durability=1.000, blurb="Light standard short range reactive defense laser that counter swarm missiles threats", density=0.150,
     fillColor=0x414077, fillColor1=0x417078, lineColor=0x3390eb, turretSpeed=30.000, laser={width=1.000, damage=2.000,
-      color=0x7f00b7e9, range=950.000}, sort=80023, chargeMin=1, chargeMaxTime=0.025},
+      color=0x7f00b7e9, range=950.000, power=1}, sort=80023, chargeMin=1, chargeMaxTime=0.025, barrelSize={0.001, 0.001},
+	  shroud={{size={2, 2}, offset={0, 0, 0.1}, shape=338}, {size={4, 4}, offset={0, 0, 0.05}, shape=338}}},
 
   {32, name="Fauss Cannon", features=TURRET|CANNON|CHARGING, group=8, barrelTaper=0.8,
     health=25.000, durability=1.000, blurb="Long range point defence charged rifle, can be overrides manually to an anti-fighter assault weapon",
@@ -602,8 +603,8 @@
     durability=0.500, blurb="Create more spaceships", density=0.150, fillColor=0x476676,
     fillColor1=0x207089, lineColor=0xaab0c0, sort=310092},
 
-  {84, name="[S]Suppression Laser", features=TURRET|LASER|AUTOFIRE, group=8, blockshape=RIGHT_TRI,
-    durability=0.500, blurb="Standard issue state of the art secondary line of alpha lasers defenses",
+  {84, name="[B]Suppression Laser", features=TURRET|LASER|AUTOFIRE, group=8, blockshape=RIGHT_TRI,
+    durability=0.500, blurb="Standard issue Phoehn technology of laser PD",
     density=0.150, fillColor=0x414077, fillColor1=0x417078, lineColor=0x3390eb, turretSpeed=25.000, 
     laser={width=1.220, damage=125.000, color=0x7f54ff9f, range=550.000}, sort=80027},
 
@@ -1625,18 +1626,21 @@
 
   {17068, name="[R]Reactive Laser", features=LASER|TURRET|AUTOFIRE|CHARGING, group=8,
     health=25.000, durability=1.000, blurb="A variant of the Reactive Laser with most of it improvement focused in range", density=0.150,
-    fillColor=0x414077, fillColor1=0x417078, lineColor=0x3390eb, turretSpeed=10.000, laser={width=2.000, damage=25.000,
-      color=0x7f00b7e9, range=1300.000}, sort=80026, chargeMin=1, chargeMaxTime=0.25},
+    fillColor=0x414077, fillColor1=0x417078, lineColor=0x3390eb, turretSpeed=10.000, laser={width=2.000, damage=40.000,
+      color=0x7f00b7e9, range=1300.000}, sort=80026, chargeMin=1, chargeMaxTime=0.5, barrelSize={0.001, 0.001},
+	  shroud={{size={3, 3}, offset={0, 0, 0.1}, shape=338}, {size={8, 8}, offset={0, 0, 0.05}, shape=338}}},
 
   {17069, name="[H]Reactive Laser", features=LASER|TURRET|AUTOFIRE|CHARGING, group=8,
-    health=25.000, durability=1.000, blurb="A heavy variant of the Reactive Laser which increases most of it's damage", density=0.150,
-    fillColor=0x414077, fillColor1=0x417078, lineColor=0x3390eb, turretSpeed=5.000, laser={width=3.000, damage=100.000,
-      color=0x7f00b7e9, range=700.000}, sort=80025, chargeMin=1, chargeMaxTime=1},
+    health=25.000, durability=1.000, blurb="A heavy variant of the Reactive Laser which increases most of it's damage, designed to take down heavy missiles, not good against swarms", density=0.150,
+    fillColor=0x414077, fillColor1=0x417078, lineColor=0x3390eb, turretSpeed=5.000, laser={width=3.000, damage=110.000,
+      color=0x7f00b7e9, range=700.000}, sort=80025, chargeMin=1, chargeMaxTime=2, barrelSize={0.001, 0.001},
+	  shroud={{size={6, 6}, offset={0, 0, 0.1}, shape=338}, {size={8, 8}, offset={0, 0, 0.05}, shape=338}}},
 
   {17070, name="[M]Reactive Laser", features=LASER|TURRET|AUTOFIRE|CHARGING, group=8,
-    health=25.000, durability=1.000, blurb="A medium class variant of the Reactive Laser which increases twice of it's damage", density=0.150,
+    health=25.000, durability=1.000, blurb="A medium class variant of the Reactive Laser which enable it to take down some drones in one shot", density=0.150,
     fillColor=0x414077, fillColor1=0x417078, lineColor=0x3390eb, turretSpeed=15.000, laser={width=2.000, damage=50.000,
-      color=0x7f00b7e9, range=825.000}, sort=80024, chargeMin=1, chargeMaxTime=0.5},
+      color=0x7f00b7e9, range=825.000}, sort=80024, chargeMin=1, chargeMaxTime=1, barrelSize={0.001, 0.001},
+	  shroud={{size={4, 4}, offset={0, 0, 0.1}, shape=338}, {size={6, 6}, offset={0, 0, 0.05}, shape=338}}},
 
   {17071, shape=205, name="Proximity Launcher", features=LAUNCHER, group=12, aihint_range=1000,
     durability=0.5, blurb="Launches powerful proximity mines equipped with a turreted thruster and an attractor beam", density=0.15,
@@ -1659,7 +1663,7 @@
       explodeDamage=1.000, explodeRadius=1.000}, replicateTime=2.00, launcherPower=10.000},
 
   {17073, name="[A]Suppression Laser", features=TURRET|LASER|AUTOFIRE, group=8, blockshape=RIGHT_TRI,
-    durability=0.500, blurb="Advanced variant of secondary line of alpha lasers defenses",
+    durability=0.500, blurb="Advanced variant of Phoehn lasers defenses",
     density=0.150, fillColor=0x414077, fillColor1=0x417078, lineColor=0x3390eb, turretSpeed=12.500, 
     laser={width=2.440, damage=250.000, color=0x7f54ff9f, range=650.000}, sort=80028},
 
@@ -2396,7 +2400,7 @@
     fillColor=0x6f5250, fillColor1=0x794937, lineColor=0xbda09a, replicateBlock=
     {shape=263, name="Vesicle Mine", features=COMMAND|GENERATOR|AUTOFIRE|EXPLODE|CANNON|ONEUSE|THRUSTER|ROTATOR, deathFeatures=CANNON, group=12, lifetime=5, aihint_range=50,
       durability=5.0, density=0.1, fillColor=0x514644, fillColor1=0x3a2b26, lineColor=0xee5245, generatorCapacityPerSec=12.500, powerCapacity=100.000,
-      explodeDamage=10, explodeRadius=100, turretSpeed=1200.000, cannon={roundsPerSec=7, spread=3.142, roundsPerBurst=5, burstyness=1,
+      explodeDamage=10, explodeRadius=100, turretSpeed=1200.000, cannon={roundsPerSec=7, spread=3.142, roundsPerBurst=7, burstyness=1,
       muzzleVel=250, damage=1, range=10, rangeStdDev=10, explosive=FRAG_PROXIMITY, color=0xee5245,
       fragment={damage=1, roundsPerBurst=12, range=1, muzzleVel=10, pattern=SPIRAL, spread=3.124, explosive=FRAG_PROXIMITY, 
 	  fragment={damage=2, roundsPerBurst=1, range=8, pattern=ABSOLUTE, muzzleVel=1, explosive=FINAL, color=0xee5245, explodeRadius=17.5}}},
@@ -5166,56 +5170,60 @@
 	
   {17815, features=LAUNCHER, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb,
     replicateBlock=
-    {17816, command={blueprint="8_Light-Drone-R"}, features=COMMAND|THRUSTER|GENERATOR|LAUNCHER|TORQUER|FREERES|NOCLIP_ALLY|REGROWER|FIN,
-      lifetime=30, capacity=100, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb, points=500,
-      thrusterColor=0x90808080, thrusterColor1=0x904060a0, group=8, shape=320, scale=1, durability=1.5,
-      density=0.15, powerCapacity=120, thrusterForce=3000, torquerTorque=2000, generatorCapacityPerSec=120,
-      sort=-99996, finForce=30000, replicateBlock=
+    {command={}, features=COMMAND|THRUSTER|GENERATOR|LAUNCHER|TORQUER|FREERES|NOCLIP_ALLY|FIN|LASER|CHARGING,
+      lifetime=30, capacity=100, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb, aihint_range=1200,
+      thrusterColor=0x90808080, thrusterColor1=0x904060a0, group=8, shape=320, scale=1, durability=0.5,
+      density=0.15, powerCapacity=120, thrusterForce=8400, torquerTorque=20000, generatorCapacityPerSec=120,
+      sort=-99996, finForce=30000, laser={width=1, damage=40, color=0x7f00b7e9, range=1200}, chargeMin=0.5, chargeMaxTime=2, replicateBlock=
     {command={}, features=COMMAND|THRUSTER|TORQUER|EXPLODE, lifetime=5, capacity=100,
       fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb, thrusterColor=0x90808080,
       thrusterColor1=0x904060a0, group=8, shape=320, scale=2, durability=0.4,
       density=0.15, thrusterForce=2400, torquerTorque=3000, explodeDamage=20, explodeRadius=10,
-      sort=-99998}, replicateTime=2.5, launcherPower=20}, group=8, shape=320, name="Peltast Drone", scale=3,
-    durability=0.5, density=0.15, blurb="Launches a small missile drone armed with a miniaturized Proton Beam",
+      sort=-99998}, replicateTime=4.5, launcherPower=20}, group=8, shape=320, name="Peltast Drone", scale=3,
+    durability=0.5, density=0.15, blurb="Launches a small missile drone armed with a miniaturized Burst Laser",
     replicateTime=3, launcherPower=150, sort=110023},
+	
+	--17816
 	
   {17817, features=LAUNCHER, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb,
     replicateBlock=
-    {17818, command={blueprint="8_Light-Drone-L"}, features=COMMAND|THRUSTER|GENERATOR|LAUNCHER|TORQUER|FREERES|NOCLIP_ALLY|REGROWER|FIN,
-      lifetime=30, capacity=100, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb, points=500,
-      thrusterColor=0x90808080, thrusterColor1=0x904060a0, group=8, shape=321, scale=1, durability=1.5,
-      density=0.15, powerCapacity=120, thrusterForce=3000, torquerTorque=2000, generatorCapacityPerSec=120,
-      sort=-99996, finForce=30000, replicateBlock=
+    {command={}, features=COMMAND|THRUSTER|GENERATOR|LAUNCHER|TORQUER|FREERES|NOCLIP_ALLY|FIN|LASER|CHARGING,
+      lifetime=30, capacity=100, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb, aihint_range=1200,
+      thrusterColor=0x90808080, thrusterColor1=0x904060a0, group=8, shape=321, scale=1, durability=0.5,
+      density=0.15, powerCapacity=120, thrusterForce=8400, torquerTorque=20000, generatorCapacityPerSec=120,
+      sort=-99996, finForce=30000, laser={width=1, damage=40, color=0x7f00b7e9, range=1200}, chargeMin=0.5, chargeMaxTime=2, replicateBlock=
     {command={}, features=COMMAND|THRUSTER|TORQUER|EXPLODE|NOCLIP_ALLY, lifetime=5, capacity=100,
       fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb, thrusterColor=0x90808080,
       thrusterColor1=0x904060a0, group=8, shape=321, scale=2, durability=0.4,
       density=0.15, thrusterForce=2400, torquerTorque=3000, explodeDamage=20, explodeRadius=10,
-      sort=-99998}, replicateTime=2.5, launcherPower=20}, group=8, shape=321, name="Peltast Drone", scale=3,
-    durability=0.5, density=0.15, blurb="Launches a small missile drone armed with a miniaturized Proton Beam",
+      sort=-99998}, replicateTime=4.5, launcherPower=20}, group=8, shape=321, name="Peltast Drone", scale=3,
+    durability=0.5, density=0.15, blurb="Launches a small missile drone armed with a miniaturized Burst Laser",
     replicateTime=3, launcherPower=150, sort=110023},
 	
-  {17819, features=LASER|NOPALETTE|THRUSTER|TORQUER|NOCLIP_ALLY, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb,
-    lifetime=30, growRate=100, thrusterForce=1200, torquerTorque=1000,
-	laser={width=1, damage=40, color=0x7f00b7e9, range=1800},
-     group=8, shape=320, scale=4, name="Proton Beam", durability=0.25,
-    density=0.15, blurb="Long range high damage spinal beam weapon", sort=70041, barrelTaper=0},
+	--17818
 	
-  {17820, features=THRUSTER|TORQUER|NOPALETTE|NOCLIP_ALLY, growRate=100,
-      lifetime=30, capacity=100, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
-      thrusterColor=0x90808080, thrusterColor1=0x904060a0, group=8, shape=320, scale=5, durability=1.5,
-      density=0.15, thrusterForce=1200, torquerTorque=1000,
-      sort=-99996},
+  --{17819, features=LASER|NOPALETTE|THRUSTER|TORQUER|NOCLIP_ALLY, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb,
+    --lifetime=30, growRate=100, thrusterForce=1200, torquerTorque=1000,
+	--laser={width=1, damage=40, color=0x7f00b7e9, range=1800},
+     --group=8, shape=320, scale=4, name="Proton Beam", durability=0.25,
+    --density=0.15, blurb="Long range high damage spinal beam weapon", sort=70041, barrelTaper=0},
+	
+  --{17820, features=THRUSTER|TORQUER|NOPALETTE|NOCLIP_ALLY, growRate=100,
+      --lifetime=30, capacity=100, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
+      --thrusterColor=0x90808080, thrusterColor1=0x904060a0, group=8, shape=320, scale=5, durability=1.5,
+      --density=0.15, thrusterForce=1200, torquerTorque=1000,
+      --sort=-99996},
 	  
-  {17821, features=THRUSTER|TORQUER|NOPALETTE|NOCLIP_ALLY, growRate=100,
-      lifetime=30, capacity=100, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
-      thrusterColor=0x90808080, thrusterColor1=0x904060a0, group=8, shape=321, scale=5, durability=1.5,
-      density=0.15, thrusterForce=1200, torquerTorque=1000,
-      sort=-99996},
+  --{17821, features=THRUSTER|TORQUER|NOPALETTE|NOCLIP_ALLY, growRate=100,
+      --lifetime=30, capacity=100, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
+      --thrusterColor=0x90808080, thrusterColor1=0x904060a0, group=8, shape=321, scale=5, durability=1.5,
+      --density=0.15, thrusterForce=1200, torquerTorque=1000,
+      --sort=-99996},
 	  
-  {17822, features=LASER|NOPALETTE|ALWAYSFIRE|NOCLIP_ALLY, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb,
-    lifetime=30, growRate=100, laser={damage=1, width=1, color=0xffff0000, range=500},
-     group=8, shape=320, scale=6, name="Infared Laser", durability=0.25,
-    density=0.15, blurb="Long range high damage spinal beam weapon", sort=70041, barrelTaper=0},
+  --{17822, features=LASER|NOPALETTE|ALWAYSFIRE|NOCLIP_ALLY, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb,
+    --lifetime=30, growRate=100, laser={damage=1, width=1, color=0xffff0000, range=500},
+     --group=8, shape=320, scale=6, name="Infared Laser", durability=0.25,
+    --density=0.15, blurb="Long range high damage spinal beam weapon", sort=70041, barrelTaper=0},
 	
   {17823, name="Ablative Charge", features=CANNON|ONEUSE|AUTOFIRE, deathFeatures=EXPLODE|CANNON, group=8, shape=322, durability=1.000, density=0.10, 
     blurb="Contains one-use defensive explosive charge that detects incoming missiles, but can still be tricked by flying close to hostile ships",
