@@ -28,14 +28,14 @@
     health=38.000, durability=0.500, blurb="Launch Special operatives drone equipped with incendiary assault weapon and a grenade launcher",
     density=0.150, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb, replicateBlock=
     {command={}, name="SpecOp Drone", features=COMMAND|THRUSTER|GENERATOR|TURRET|CANNON|TORQUER|FREERES|TELEPORTER|SHIELD|NOCLIP_ALLY|LAUNCHER,
-      group=8, shape=301, scale=6, lifetime=30.000, durability=0.250, barrelOffset={-1, 0},
+      group=8, shape=301, scale=6, lifetime=30.000, durability=0.250, barrelOffset={-1, 0}, teleporterPower=4, teleporterRadius=500,
       density=0.150, turretSpeed=3.200, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
       powerCapacity=120.000, capacity=100.000, thrusterForce=14000.00, thrusterColor=0x90808080,
       thrusterColor1=0x904060a0, torquerTorque=24000.000, aihint_range=1000, cannon={roundsPerSec=10.000,
       roundsPerBurst=16, burstyness=0.750, muzzleVel=600.000, power=6.000, damage=10,
       color=47081, range=1000.000, explosive=PROXIMITY, explodeRadius=8}, shield={strength=60.000, regen=60.000,
       delay=6.000, radius=10.000, color=0x190e1418, lineColor=0xc1c292f, damagedColor=0x33324753},
-	  replicateBlock={lifetime=60, features=EXPLODE, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
+	  replicateBlock={lifetime=10, features=EXPLODE, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
       group=8, shape=263, durability=0.5, density=0.15, explodeDamage=25,
       explodeRadius=30, sort=120016}, launcherOutSpeed=320, replicateTime=10, generatorCapacityPerSec=60.000,
 	  shroud={{shape=COMMAND, size={-6, -6}, offset={1.2, 0, 0.002}}, {shape=GEM_1, size={-1.85, 4}, offset={5.1, 0, 0.002}},
@@ -473,15 +473,15 @@
         damage=10.000, color=0xecfe00, range=950.000, spread=0.035, explosive=ENABLED, explodeRadius=25}, generatorCapacityPerSec=40.000},
      replicateTime=12.500, launcherPower=45.000},
 
-  {61, name="T-2A RPK Assault", features=LAUNCHER, group=2, blockshape=RECT_LAUNCHER,
+  {61, name="T-2A Rifler", features=LAUNCHER, group=2, blockshape=RECT_LAUNCHER,
     health=38.000, durability=0.500, blurb="Releasing combat utility drones",
     density=0.150, fillColor=0x5b5b5b, fillColor1=0x7c9837, lineColor=0xaef300, replicateBlock=
     {command={}, name="T-2 Assault RPK" features=COMMAND|THRUSTER|GENERATOR|TORQUER|TURRET|CANNON|TRACTOR|FREERES|NOCLIP_ALLY, group=2,
       shape=210, lifetime=20.000, durability=1.100, generatorCapacityPerSec=30.000,
       density=0.250, fillColor=0x5b5b5b, fillColor1=0x7c9837, lineColor=0xaef300, powerCapacity=120.000,
       capacity=300.000, thrusterForce=14800.000, thrusterColor=0x90ece1c6, thrusterColor1=0x90ececec,
-      torquerTorque=9800.000, cannon={roundsPerSec=10.550, roundsPerBurst=10, burstyness=0.660, muzzleVel=2125.000, power=2.000,
-        damage=8.000, color=0xecfe00, range=780.000, spread=0.010}} 
+      torquerTorque=9800.000, cannon={roundsPerSec=3.550, muzzleVel=2125.000, power=2.000,
+        damage=16.000, color=0xecfe00, range=780.000, spread=0.010}} 
     replicateTime=7.800, launcherPower=30.000},
 
   {62, name="Autogun", features=TURRET|CANNON|AUTOFIRE, group=3, shape=PENTAGON, 
@@ -780,9 +780,9 @@
     blurb="Collect nearby resource substances and condenses little amount of dark energy matter overtime to produce resource",
     photosynthPerSec=0.100, tractorRange=700.000},
 
-  {113, name="Warp Reactor", features=TELEPORTER|GENERATOR, group=3, shape=RHOMBUS_72_108,
+  {113, name="Warp Reactor", features=TELEPORTER|GENERATOR|NOICON, group=3, shape=RHOMBUS_72_108,
     durability=0.400, density=0.150, fillColor=0xff1493, fillColor1=0xba55d3, lineColor=0xe0fa08,
-    generatorCapacityPerSec=600.000, powerCapacity=1200.000, teleporterRadius=2250},
+    generatorCapacityPerSec=600.000, powerCapacity=1200.000, teleporterRadius=2250, teleporterPower=2},
 
   {114, name="Hardpoint Uziă", features=CANNON, group=12, shape=CANNON, points=14, aihint_range=1500,
     durability=1.300, density=0.150, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xee5245,
@@ -2594,11 +2594,13 @@
     durability=0.4, density=0.15, fillColor=0xc7d645, fillColor1=0xb49e2d, lineColor=0xfb00ff,
     laser={damage=10, immobilizeForce=175000, width=4, color=0x47fb00ff, range=850.000}},
 	
-  {17240, shape=RHOMBUS_36_144, scale=2, name="Power Cell", group=3, features=GENERATOR, durability=3.500, density=0.15,
-    fillColor=0xdeb887, fillColor1=0xa0522d, lineColor=0x1c1605, powerCapacity=5000, growRate=25.000},
+  {17240, shape=RHOMBUS_36_144, scale=2, name="Solara Cell", group=3, features=GENERATOR|INTLINES|FIN|THRUSTER|ROTATOR|ACTIVATE, durability=0.500, density=0.02, armor=450,
+    fillColor=0x22ffa500, fillColor1=0x22d2691e, lineColor=0x22000000, powerCapacity=500, growRate=25.000, finForce=50000, thrusterForce=50000, activatePower=500,
+	blurb="Protective Reservior plating that deflects projectiles but are really vulnerable to other weapons, store excessive power generation for use with the Warp Conduit on bigger ships"},
 	
-  {17241, shape=RHOMBUS_36_144, name="Power Cell", group=3, features=GENERATOR, durability=3.500, density=0.15,
-    fillColor=0xdeb887, fillColor1=0xa0522d, lineColor=0x1c1605, powerCapacity=1000, growRate=25.000},
+  {17241, shape=RHOMBUS_36_144, name="Solara Cell", group=3, features=GENERATOR|INTLINES|FIN|THRUSTER|ROTATOR|ACTIVATE, durability=0.500, density=0.02, armor=450,
+    fillColor=0x22ffa500, fillColor1=0x22d2691e, lineColor=0x22000000, powerCapacity=100, growRate=25.000, finForce=10000, thrusterForce=10000, activatePower=100,
+	blurb="Protective Reservior plating that deflects projectiles but are really vulnerable to other weapons, store excessive power generation for use with the Warp Conduit on bigger ships"},
 	
   {17242, name="Photon Projector", features=LASER, group=8, durability=0.500, shape=CANNON2,
     blurb="Spinal projecting white beam weapon, adjusted to deals collateral damage to enemy hulls",
@@ -2660,7 +2662,7 @@
   {17252, name="[M]Interceptor Launchpad", features=LAUNCHER|AUTOFIRE, group=8, shape=RECT_LAUNCHER1,
     health=38.000, durability=0.500, blurb="A bit stronger and durable than the light variants, it can now takes down more durable targets",
     density=0.150, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb, replicateBlock=
-    {command={flags=POINT_DEFENSE|FIRE_AT_WILL}, name="Interception Drone", features=COMMAND|THRUSTER|GENERATOR|TURRET|LASER|TORQUER|FREERES|TELEPORTER|SHIELD|AUTOFIRE|NOCLIP_ALLY,
+    {command={flags=POINT_DEFENSE|FIRE_AT_WILL}, name="Interception Drone", features=COMMAND|THRUSTER|GENERATOR|TURRET|LASER|TORQUER|FREERES|SHIELD|AUTOFIRE|NOCLIP_ALLY,
       group=8, shape=ISOTRI_72, lifetime=40.000, durability=0.500, density=0.150, turretSpeed=360.000, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
       powerCapacity=120.000, capacity=100.000, thrusterColor=0x90808080,
       thrusterColor1=0x904060a0, torquerTorque=6000.000, thrusterForce=10500.000, laser={pulsesPerSec=6.000,
@@ -2672,7 +2674,7 @@
   {17253, name="[H]Interceptor Launchpad", features=LAUNCHER|AUTOFIRE, group=8, shape=RECT_LAUNCHER1,
     health=38.000, durability=0.500, blurb="Buffed up to withstands many hits on its own as well as annihilating the most heaviest kind of drones and missiles",
     density=0.150, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb, replicateBlock=
-    {command={flags=POINT_DEFENSE|FIRE_AT_WILL}, name="Interception Drone", features=COMMAND|THRUSTER|GENERATOR|TURRET|LASER|TORQUER|FREERES|TELEPORTER|SHIELD|AUTOFIRE|NOCLIP_ALLY,
+    {command={flags=POINT_DEFENSE|FIRE_AT_WILL}, name="Interception Drone", features=COMMAND|THRUSTER|GENERATOR|TURRET|LASER|TORQUER|FREERES|SHIELD|AUTOFIRE|NOCLIP_ALLY,
       group=8, shape=267, lifetime=40.000, durability=0.500, density=0.150, turretSpeed=360.000, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
       powerCapacity=120.000, capacity=100.000, thrusterColor=0x90808080,
       thrusterColor1=0x904060a0, torquerTorque=6000.000, thrusterForce=10500.000, laser={pulsesPerSec=6.000,
@@ -3538,7 +3540,7 @@
   {17437, name="Eye Seer", shape=OCTAGON, fillColor=0xff5000, fillColor1=0x303030, lineColor=0x802020, scale=2, barrelSize={0.001, 0.001},
     group=9, durability=2, features=COMMAND|LASER|TURRET|GENERATOR|SHIELD|TRACTOR|ASSEMBLER|TELEPORTER, laser={damage=500, explosive=ENABLED, explodeRadius=80, range=10000, color=0x4fff5000, immobilizeForce=50000, width=15},
 	turretSpeed=360, powerCapacity=10000, generatorCapacityPerSec=2500, shield={radius=100, strength=2500, regen=1500, armor=250, color=0x2f402500, lineColor=0xffffffff, damagedColor=0x2fff5000},
-	capacity=1100, tractorRange=5000, teleporterRadius=10000},
+	capacity=1100, tractorRange=5000, teleporterRadius=10000, teleporterPower=4},
 	
   {17438, features=COMMAND|GENERATOR|ASSEMBLER|FREERES|TRACTOR, capacity=100, fillColor=0xcf1010,
     fillColor1=0x202020, lineColor=0x450000, group=9, name="Command Hub",
@@ -3857,7 +3859,7 @@
   {17501, name="Eye Seer", shape=OCTAGON, fillColor=0xff5000, fillColor1=0x303030, lineColor=0x802020, scale=1, barrelSize={0.001, 0.001},
     group=9, durability=2, features=COMMAND|LASER|TURRET|GENERATOR|SHIELD|TRACTOR|ASSEMBLER|TELEPORTER, laser={damage=100, explosive=ENABLED, explodeRadius=20, range=3000, color=0x4fff5000, immobilizeForce=5000, width=5},
 	turretSpeed=360, powerCapacity=2000, generatorCapacityPerSec=1250, shield={radius=50, strength=1250, regen=750, armor=250, color=0x2f402500, lineColor=0xffffffff, damagedColor=0x2fff5000},
-	capacity=110, tractorRange=2000, teleporterRadius=4000},
+	capacity=110, tractorRange=2000, teleporterRadius=4000, teleporterPower=5},
 	
   {17502, group=2, features=NOPALETTE, name="Ancient Vine Tendril", shape=GEM_1, scale=1,
 	fillColor=0x006c0e, fillColor1=0x149613, lineColor=0x70ba4c, durability=3, growRate=16.5},
@@ -5190,9 +5192,9 @@
     durability=0.5, density=0.15, blurb="Launches a small missile drone armed with a miniaturized Burst Laser",
     replicateTime=3, launcherPower=150, sort=110023},
 	
-  {17816, features=TURRET|CANNON|LASER|CHARGING, fillColor=0x104a99, fillColor1=0x4f8e5c, lineColor=0xaef300, barrelSize={50, 10},
+  {17816, features=TURRET|CANNON|LASER|CHARGING|NOICON, fillColor=0x104a99, fillColor1=0x4f8e5c, lineColor=0xaef300, barrelSize={50, 10},
     barrelTaper=0.999, aihint_range=3000, points=346, laser={range=300, width=15, damage=500, color=0xff00feec},
-	cannon={roundsPerSec=0.8, muzzleVel=15000, power=415, damage=200, explosive=FRAG_PROXIMITY, range=3200, color=0x00feec, projectileSize=4,
+	cannon={roundsPerSec=0.8, muzzleVel=15000, power=415, damage=200, explosive=FRAG_PROXIMITY, range=3200, color=0x00feec, projectileSize=3, pattern=NOFLASH,
 	  fragment={explodeRadius=1, roundsPerBurst=10, spread=2.8278, pattern=SPIRAL|ABSOLUTE, range=100, muzzleVel=2000, damage=1, color=0x00feec, explosive=FRAG_PROXIMITY|PROXIMITY,
 	  fragment={explodeRadius=1, roundsPerBurst=1, spread=2.8278, pattern=CONSTANT|ABSOLUTE, range=100, muzzleVel=2000, damage=20, color=0x00feec, explosive=FRAG_PROXIMITY|PROXIMITY,
 	  fragment={explodeRadius=1, roundsPerBurst=10, spread=2.8278, pattern=CONSTANT|ABSOLUTE, range=100, muzzleVel=1000, damage=2, color=0x00feec, explosive=FRAG_PROXIMITY|PROXIMITY,
@@ -5200,7 +5202,7 @@
 	  fragment={explodeRadius=1, roundsPerBurst=1, spread=2.8278, pattern=CONSTANT|ABSOLUTE, range=100, muzzleVel=1000, damage=1, color=0x00feec, explosive=PROXIMITY}}}}}}, 
 	  group=2, shape=OCTAGON, scale=3, chargeMin=0.8, chargeMaxTime=12,
     name="LRT-145 Mastaron Shockrail", durability=0.5, density=0.15, turretSpeed=1,
-	blurb="Originally doesn't belong to the Cultivator's culture, however an mysterious derelict tech module was somehow drifted into their space, and what they uncover was something far superior from their own long range weaponry",
+	blurb="Originally doesn't belong to the Cultivator's culture, however a mysterious derelict tech module was found adrifted into their space, and what they uncover was something far superior from their own long range weaponry",
     sort=60386, barrelOffset={-12.5, 0}, shroud={{size={12, 20}, offset={-6, 0, 0.25}, taper=-0.75},
       {size={14, 20}, offset={6, 0, 0.25}, taper=0.75}, {size={30, 2.20}, offset={22.5, 12.2, 0.25}},
       {size={8, 8}, offset={4, 0, 0.275}, taper=-0.65}, {size={30, 2.20}, offset={22.5, -12.2, 0.25}},
@@ -5216,7 +5218,7 @@
       thrusterColor=0x90808080, thrusterColor1=0x904060a0, group=8, shape=321, scale=1, durability=0.5,
       density=0.15, powerCapacity=120, thrusterForce=8400, torquerTorque=20000, generatorCapacityPerSec=120,
       sort=-99996, finForce=30000, laser={width=1, damage=40, color=0x7f00b7e9, range=1200}, chargeMin=0.5, chargeMaxTime=2, replicateBlock=
-    {command={}, features=COMMAND|THRUSTER|TORQUER|EXPLODE|NOCLIP_ALLY, lifetime=5, capacity=100,
+    {command={}, features=COMMAND|THRUSTER|TORQUER|EXPLODE|NOCLIP_ALLY|NOICON, lifetime=5, capacity=100,
       fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb, thrusterColor=0x90808080,
       thrusterColor1=0x904060a0, group=8, shape=321, scale=2, durability=0.4,
       density=0.15, thrusterForce=2400, torquerTorque=3000, explodeDamage=20, explodeRadius=10,
@@ -5224,19 +5226,50 @@
     durability=0.5, density=0.15, blurb="Launches a small missile drone armed with a miniaturized Burst Laser",
     replicateTime=3, launcherPower=150, sort=110023},
 	
-	--17818
+  {17818, shape=OCTAGON, scale=2, group=15, features=LAUNCHER|TURRET, name="Vardictor Orb Launcher", points=789,
+    blurb="A mysterious artifact tech weapon, found and improvised by the Vardisian, launches powerful calibrating plasma orbs.",
+    fillColor=0x2a2a2a, fillColor1=0x2f8b2f, lineColor=0xc4f4c4, durability=0.5, density=0.15, replicateBlock=
+	{features=COMMAND|THRUSTER|TORQUER|EXPLODE, command={}, group=15, shape=OCTAGON, fillColor=0x2abc2a, fillColor1=0x2f8b2f, lineColor=0xc4f4c4, durability=5, density=0.15,
+	  deathFeatures=CANNON, lifetime=1, cannon={damage=100, roundsPerSec=10, roundsPerBurst=10, burstyness=1, range=100, muzzleVel=1000, spread=2.828, color=0x20fa20, pattern=ABSOLUTE|SPIRAL,
+	  explosive=FRAG_PROXIMITY, fragment={roundsPerBurst=3, damage=1, muzzleVel=1500, range=100, color=0x1020fa20, pattern=WAVE|ABSOLUTE, spread=0.3,
+	explosive=FRAG_PROXIMITY, fragment={damage=1, roundsPerBurst=5, muzzleVel=-1500, range=-100, color=0x2020fa20, pattern=WAVE|ABSOLUTE, spread=0.01,
+	explosive=FRAG_PROXIMITY, fragment={damage=1, roundsPerBurst=5, muzzleVel=1500, range=100, color=0x3020fa20, pattern=CONSTANT|ABSOLUTE, spread=0.1,
+	explosive=FRAG_PROXIMITY, fragment={damage=15, roundsPerBurst=1, muzzleVel=-1250, range=-100, color=0x4020fa20, pattern=CONSTANT|ABSOLUTE, spread=0.1,
+	explosive=FRAG_FINAL, fragment={damage=15, roundsPerBurst=1, muzzleVel=1120, range=100, color=0x5020fa20, pattern=CONSTANT|ABSOLUTE, spread=0.1,
+	explosive=FRAG_FINAL, fragment={damage=15, roundsPerBurst=1, muzzleVel=-560, range=-100, color=0x6020fa20, pattern=CONSTANT|ABSOLUTE, spread=0.1}}}}}},
+	  }, explodeDamage=100, explodeRadius=1, thrusterForce=100000, torquerTorque=10000}, replicateTime=2, launcherPower=1680, launcherOutSpeed=100000},
 	
-  --{17819, features=LASER|NOPALETTE|THRUSTER|TORQUER|NOCLIP_ALLY, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb,
-    --lifetime=30, growRate=100, thrusterForce=1200, torquerTorque=1000,
-	--laser={width=1, damage=40, color=0x7f00b7e9, range=1800},
-     --group=8, shape=320, scale=4, name="Proton Beam", durability=0.25,
-    --density=0.15, blurb="Long range high damage spinal beam weapon", sort=70041, barrelTaper=0},
+  {17819, scale=6, group=15, features=LAUNCHER|TURRET|CANNON|CHARGING, name="The Molten Heart", aihint_range=2000, barrelSize={70, 10}, turretSpeed=0.8,
+    blurb="This is an attempt of reverse engineer on mysterious artifact tech and deviate to their own, made by the Thermilian. A bullet hell nuclear fusion launcher fused with an antares ''Iron Caster''",
+    fillColor=0x2a2a2a, fillColor1=0x8b2f2f, lineColor=0xf4c4c4, durability=0.5, density=0.15, replicateBlock=
+	{features=COMMAND|CANNON|NOCLIP|NOICON|GENERATOR|ALWAYSFIRE|EXPLODE|LAUNCHER_BARRAGE|THRUSTER, command={flags=FIRE_AT_WILL}, group=15, shape=253, fillColor=0xbc2a2a, fillColor1=0x8b2f2f, lineColor=0xf4c4c4, durability=0.5, density=0.02, scale=2,
+	  lifetime=10, cannon={recoil=0, damage=25, roundsPerSec=50, roundsPerBurst=5, burstyness=1, range=1000, rangeStdDev=300, muzzleVel=100, spread=3.142, color=0xff5100, pattern=RANDOM,
+	  explosive=FINAL|FRAG_FINAL, explodeRadius=125, fragment={spread=2.828, range=50, roundsPerBurst=10, burstyness=1, muzzleVel=20, damage=15, explosive=FINAL, explodeRadius=40, color=0xff5100,
+	  pattern=SPIRAL}}, explodeDamage=100, explodeRadius=90, powerCapacity=1000, generatorCapacityPerSec=1000, thrusterForce=2000, replicateBlock=
+	  {features=COMMAND|THRUSTER|ROTATOR|ONEUSE|LASER|TURRET|FREERES|CHARGING|GENERATOR|NOCLIP_ALLY, group=15, shape=COMMAND_MISSILE, command={flags=FIRE_AT_WILL}, thrusterForce=3000, laser={damage=50, width=3, range=200, color=0x50fa2020},
+	  chargeMin=1, chargeMaxTime=1, powerCapacity=1000, generatorCapacityPerSec=100, fillColor=0x20bc2a2a, fillColor1=0x208b2f2f, lineColor=0x000000, durability=0.5, density=0.02, turretSpeed=10,
+	  deathFeatures=CANNON, cannon={spread=3.142, range=100, rangeStdDev=100, roundsPerBurst=100, burstyness=1, muzzleVel=10, damage=2, explosive=FINAL, explodeRadius=10, roundsPerSec=100, color=0xff5100,
+	  pattern=ABSOLUTE}}, replicateTime=0.5, launcherOutSpeed=0}, replicateTime=450, launcherOutSpeed=100000, launcherPower=4000, 
+	  cannon={recoil=0, damage=150, roundsPerSec=1, range=2000, muzzleVel=2000, color=0xfa2020, explosive=FINAL|FRAG_PROXIMITY, explodeRadius=250, power=135,
+	  fragment={spread=2.619, roundsPerBurst=6, pattern=SPIRAL|ABSOLUTE, color=0xfa2020, damage=25, range=400, explosive=FINAL, explodeRadius=200, muzzleVel=4000},
+	  }, chargeMin=1, chargeMaxTime=5, shroud={{size={10, 15}, offset={0, 0, 0.25}, taper=0.8}, {size={24, 12.5}, offset={-21, 0, 0.20}, taper=-0.1},
+	  {size={36, 25}, offset={-45, 0, 0.10}, taper=-0.1}, {size={20, 30}, offset={-12.5, 0, 0.18}}, {size={50, 5}, offset={5, -20, 0.15}, taper=0.5},
+	  {size={50, 5}, offset={5, 20, 0.15}, taper=0.5}, {size={30, 4}, offset={55, -20, 0.125}}, {size={30, 4}, offset={55, 20, 0.125}}}},
 	
-  --{17820, features=THRUSTER|TORQUER|NOPALETTE|NOCLIP_ALLY, growRate=100,
-      --lifetime=30, capacity=100, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
-      --thrusterColor=0x90808080, thrusterColor1=0x904060a0, group=8, shape=320, scale=5, durability=1.5,
-      --density=0.15, thrusterForce=1200, torquerTorque=1000,
-      --sort=-99996},
+  {17820, shape=OCTAGON, scale=2, group=8, features=LAUNCHER|TURRET, name="Nanofiber Thread Launcher",
+    blurb="First appeared near the Terran border. And later was developed into an advanced nanothread launcher of sort.", points=115,
+    fillColor=0x2a2a2a, fillColor1=0x2f8b8b, lineColor=0xc4f4f4, durability=0.5, density=0.15, replicateBlock=
+	{features=COMMAND|LAUNCHER_BARRAGE|ONEUSE|NOCLIP|NOICON|THRUSTER|TORQUER|EXPLODE, command={}, group=8, shape=253, fillColor=0x2abcbc, fillColor1=0x2f8b8b, lineColor=0xc4f4f4, durability=0.5, density=0.15,
+	  deathFeatures=CANNON, lifetime=10, cannon={damage=1, roundsPerSec=100, roundsPerBurst=100, burstyness=1, rangeStdDev=100, muzzleVel=1000, spread=3.142, color=0x20fafa, pattern=ABSOLUTE,
+	  explosive=FRAG_FINAL, fragment={damage=1, muzzleVel=150, rangeStdDev=100, color=0x1020fafa, pattern=RANDOM|ABSOLUTE,
+	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=5, muzzleVel=-100, rangeStdDev=-100, color=0x2020fafa, pattern=WAVE|ABSOLUTE, spread=0.01,
+	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=5, muzzleVel=50, rangeStdDev=100, color=0x3020fafa, pattern=CONSTANT|ABSOLUTE, spread=0.1,
+	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-25, rangeStdDev=-100, color=0x4020fafa, pattern=CONSTANT|ABSOLUTE, spread=0.1,
+	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=12, rangeStdDev=100, color=0x5020fafa, pattern=CONSTANT|ABSOLUTE, spread=0.1,
+	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-6, rangeStdDev=-100, color=0x6020fafa, pattern=CONSTANT|ABSOLUTE, spread=0.1}}}}}},
+	  }, explodeDamage=1, explodeRadius=1, thrusterForce=10000, torquerTorque=1000, replicateBlock={command={}, group=8, fillColor=0x2abcbc, fillColor1=0x2f8b8b, lineColor=0xc4f4f4, durability=1.5, density=0.15,
+	  shape=250, lifetime=5, features=COMMAND|CANNON|ALWAYSFIRE|NOCLIP|EXPLODE|THRUSTER|TORQUER|GENERATOR, torquerTorque=2000, thrusterForce=2000, explodeRadius=1, explodeDamage=1,
+	  cannon={damage=30, roundsPerSec=100, range=25, muzzleVel=1, color=0x8020fafa, pattern=ABSOLUTE|NOFLASH}, generatorCapacityPerSec=500, powerCapacity=500}, replicateTime=0.001}, replicateTime=45, launcherOutSpeed=100000}
 	  
   --{17821, features=THRUSTER|TORQUER|NOPALETTE|NOCLIP_ALLY, growRate=100,
       --lifetime=30, capacity=100, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
@@ -5455,11 +5488,12 @@
 	shield={strength=2500, regen=2000, radius=500, color=0x197f98f5,
       lineColor=0xc254dfb, damagedColor=0x337f98f5, power=0.001}, activatePower=15000, sort=570105},
 	  
-  {17874, shape=329, name="Icicle Sub Defense", features=TURRET|CANNON|AUTOFIRE|CANNON_BOOST, scale=2, turretLimit=3.142,
+  {17874, shape=329, name="Icicle Sub Defense", features=TURRET|CANNON|AUTOFIRE|CANNON_BOOST|NOICON, scale=2, turretLimit=3.142,
     group=11, durability=2, density=0.15, fillColor=0x836fff, fillColor1=0x4876ff, 
     lineColor=0x254dfb, blurb="A limited arc quad icicle defense cannon, it must be plugged in an approriate block which can be able to support it (except for the front muzzle of a cannon)",
 	cannon={roundsPerSec=15.5, muzzleVel=800, damage=5, spread=0.142, color=0x7f98f5, range=1200, fragment={damage=5, muzzleVel=1200, rangeStdDev=300, roundsPerBurst=15, color=0x7f98f5, spread=3.142, pattern=ABSOLUTE},
-	        explosive=FRAG_IMPACT}, sort=571105, boost={spread={1, 0.15}}},
+	        explosive=FRAG_IMPACT}, sort=571105, boost={spread={1, 0.15}},
+			shroud={{size={-10, -15}, shape=ISOTRI_72, offset={2.5, 0, 0.20}}, {size={5, 6}, offset={4, 0, 0.18}, taper=0.8}}},
 			
   {17875, features=TURRET|CANNON|AUTOFIRE, fillColor=0x37006e, fillColor1=0x5580a0,
     lineColor=0xb00049, cannon={roundsPerSec=14, roundsPerBurst=3, explosive=PROXIMITY,

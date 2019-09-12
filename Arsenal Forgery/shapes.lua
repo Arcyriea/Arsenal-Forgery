@@ -549,7 +549,10 @@
   -- OCTAGON_MISSILE_LAUNCHER
   {253, {{verts={{5, -2.071}, {2.071, -5}, {-2.071, -5}, {-5, -2.071}, {-5, 2.071}, {-2.071, 5}, {2.071, 5},
           {5, 2.071}}, ports={{7, 0.5, LAUNCHER}, {7, 0.5, MISSILE}, {0, 0.5, LAUNCHER}, {0, 0.5, MISSILE}, {1, 0.5, LAUNCHER}, {1, 0.5, MISSILE}, {2, 0.5, LAUNCHER}, {2, 0.5, MISSILE},
-		  {3, 0.5, LAUNCHER}, {3, 0.5, MISSILE}, {4, 0.5, LAUNCHER}, {4, 0.5, MISSILE}, {5, 0.5, LAUNCHER}, {5, 0.5, MISSILE}, {6, 0.5, LAUNCHER}, {6, 0.5, MISSILE},}}, }, launcher_radial=true}
+		  {3, 0.5, LAUNCHER}, {3, 0.5, MISSILE}, {4, 0.5, LAUNCHER}, {4, 0.5, MISSILE}, {5, 0.5, LAUNCHER}, {5, 0.5, MISSILE}, {6, 0.5, LAUNCHER}, {6, 0.5, MISSILE},}}, 
+		 {verts={{12.071, -5}, {5, -12.071}, {-5, -12.071}, {-12.071, -5}, {-12.071, 5}, {-5, 12.071}, {5, 12.071},
+          {12.071, 5}}, ports={{7, 0.5, LAUNCHER}, {0, 0.5, MISSILE}, {0, 0.5, LAUNCHER}, {1, 0.5, LAUNCHER}, {2, 0.5, LAUNCHER}, {3, 0.5, LAUNCHER}, {4, 0.5, LAUNCHER}, {5, 0.5, LAUNCHER}, {6,
+            0.5, LAUNCHER}}} }, launcher_radial=true}
   -- SHARD_MISSILES
   {254, {{verts={{-1.5, -2.472}, {-10.011, 0}, {-1.5, 2.472}, {1.5, 2.472}, {10.011, 0}, {1.5, -2.472}}, ports={{5, 0.5, MISSILE}, {0, 0.5, NONE}, {1, 0.5, NONE},
           {2, 0.5, MISSILE}, {3, 0.5, NONE}, {4, 0.5, NONE}}},
