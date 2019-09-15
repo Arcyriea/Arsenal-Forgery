@@ -12,6 +12,6 @@ You can use this mod outside steam folder but the blocks ID won't be relocated i
 
 ^Please do not accidentally upload / "publish" my mod to the workshop.
 
-(Sometimes the Beta Version would be current with the Live Version (basically there is no beta at all currently for testing), which would mean that you are free to not do any manual patching at the time. This statement is only to be considered when Arthur has a beta available)
+(Sometimes the Beta Version would be current with the Live Version (basically there is no beta at all currently for testing), which would mean that you are free to not do any manual patching at the time. This statement is only to be considered when Arthur has push a beta build to the live build)
 
 The mod will not automatically update (like reverting itself, or just simply pruned some features only from beta) after doing the manual patch, it only does when I upload a new version of the mod directly to Steam. If such a case happens, feel free to go back here and download new version of the archive and unzip the patch again.
