@@ -1105,9 +1105,13 @@
 	  chargeMin=0.1, chargeMaxTime=2.5},
      replicateTime=2.1, launcherPower=85, launcherOutSpeed=20},
 
-  {173, name="Hotbox Module", features=GENERATOR, group=12, shape=COMMAND,
-    durability=0.4, density=0.15, fillColor=0xff69b4, fillColor1=0x8b1a1a, lineColor=0x8b0000,
-    powerCapacity=1, capacity=1, generatorCapacityPerSec=2500, blurb="A volatile fusion core that offer a large energy regeneration but has no storage capacity to store them"},
+  {173, name="Hotbox Module", features=GENERATOR|NOICON, group=12, shape=COMMAND, deathFeatures=CANNON|EXPLODE, points=750,
+    durability=0.4, density=0.15, fillColor=0xff69b4, fillColor1=0x8b1a1a, lineColor=0x8b0000, explosive=FRIENDLY_FIRE|ENABLED, explodeRadius=125, explodeDamage=2500,
+    powerCapacity=1, capacity=1, generatorCapacityPerSec=2500, blurb="A volatile fusion core that offer a large energy regeneration but has no storage capacity to store them, very harmful when destroyed but will release plasma mines cluster in its wake",
+	cannon={roundsPerSec=18, pattern=ABSOLUTE, spread=3.142, roundsPerBurst=18, burstyness=1,
+      muzzleVel=2500, damage=1, range=100, rangeStdDev=100, explosive=FRAG_PROXIMITY|FRIENDLY_FIRE,
+      fragment={damage=1, roundsPerBurst=6, range=1, muzzleVel=10, pattern=SPIRAL|ABSOLUTE, spread=3.124,
+	  explosive=FRAG_PROXIMITY|FRIENDLY_FIRE, fragment={damage=15, roundsPerBurst=1, range=10, muzzleVel=1, explosive=FINAL|FRIENDLY_FIRE, pattern=ABSOLUTE, explodeRadius=125}}}},
   
   {174, scale=2, name="Capacitor", features=GENERATOR, group=12, shape=RECT,
     durability=1.0, density=0.30, fillColor=0xfff68f, fillColor1=0x8b8b7a, lineColor=0xffffff,
@@ -1117,13 +1121,17 @@
     durability=0.5, density=0.15, fillColor=0x80e040, fillColor1=0x407000, lineColor=0xaef300,
     laser={width=4, damage=-75, color=0x4080e040, range=665}},
 
-  {176, shape=RECT_LAUNCHER1, name="Kamize Dispatcher", features=LAUNCHER, group=12,
-    durability=0.500, blurb="Launches assembling suicide bomber drones that seek down hostiles", density=0.150,
+  {176, shape=RECT_LAUNCHER1, name="Furiy Dispatcher", features=LAUNCHER, group=12,
+    durability=0.500, blurb="Launches plasma suicide bomber drones that fires plasma balls", density=0.150,
     fillColor=0x6f5250, fillColor1=0x794937, lineColor=0xbda09a, replicateBlock=
-    {177, command={faction=12, blueprint="Kamize_Suicide"}, shape=OCTAGON, name="Kamize Assembler", features=COMMAND|ASSEMBLER|SHIELD|GENERATOR,
-    group=12, durability=3, density=0.15, fillColor=0xf9dcbe, fillColor1=0xd2aa30, lineColor=0xbaadb6, 
-    shield={strength=400, regen=200, radius=50, color=0x19332202, lineColor=0xc332202, damagedColor=0x4c8d5e06},
-      generatorCapacityPerSec=200.000, powerCapacity=300}, replicateTime=2.5, launcherSpeed=300, launcherAngVel=3},
+    {scale=7, shape=301, name="Furiy Drone", features=COMMAND|LAUNCHER|GENERATOR|NOICON|THRUSTER|TORQUER|FREERES|NOCLIP_ALLY, deathFeatures=CANNON,
+    group=12, durability=0.5, density=0.15, fillColor=0xf9dcbe, fillColor1=0xd2aa30, lineColor=0xbaadb6, thrusterForce=18000, torquerTorque=12000,
+    lifetime=15, explodeDamage=100, explodeRadius=10, cannon={damage=1, range=0, muzzleVel=1, explosive=FRAG_PROXIMITY, roundsPerSec=1,
+	  fragment={damage=1, roundsPerBurst=15, range=1, muzzleVel=1, pattern=SPIRAL, spread=-2.932,
+	  explosive=FRAG_PROXIMITY, fragment={damage=15, roundsPerBurst=1, range=3, muzzleVel=1, explosive=FINAL, color=0xee5245, explodeRadius=25}}},
+      generatorCapacityPerSec=100.000, powerCapacity=300, replicateBlock={group=12, shape=MISSILE, lifetime=0.1, features=EXPLODE|THRUSTER|NOCLIP_ALLY, deathFeatures=CANNON, thrusterForce=800,
+	  explodeDamage=1, explodeRadius=1, cannon={damage=2, roundsPerSec=12, roundsPerBurst=12, burstyness=1, range=3, pattern=SPIRAL, spread=2.880, muzzleVel=1, explosive=FINAL, color=0xee5245, explodeRadius=17.5}},
+	  launcherPower=100, replicateTime=1.5, launcherSpeed=100}, replicateTime=6, launcherSpeed=100, launcherAngVel=3},
 
   {178, shape=CANNON2, name="Phoehn Lance", features=LASER|CANNON|CHARGING, group=8, scale=2,
     durability=0.30, blurb="Mid-range burst-assault spinal phase laser", density=0.10,
@@ -1521,13 +1529,13 @@
     fillColor1=8267, lineColor=0x71965, turretSpeed=17.650, cannon={roundsPerSec=9, muzzleVel=1200, power=7.9,
       damage=22.5, color=0x769f5, range=1150, burstyness=0.344, spread=0.026, roundsPerBurst=5}},
 
-  {17054, shape=205, name="Platform Fabricator", features=LAUNCHER, group=2, scale=3,
+  {17054, shape=205, name="Plating Fabricator", features=LAUNCHER_BARRAGE, group=2, scale=4,
     durability=0.5, density=0.15, fillColor=0xe09010, fillColor1=0xccb80a, lineColor=0xaef300,
-    replicateBlock=
-    {17055, shape=222, name="Plantable Platform", features=ENVIRONMENTAL, group=2,
-      durability=2.5, density=25, fillColor=0x333333, fillColor1=0x4d4d4d, lineColor=0x999999,
-      launchResources=50},
-     replicateTime=15, launcherSpeed=50},
+    blurb="A makeshift armor plating that sticks to environmental blocks, prohibits plant growth while providing extra protection for a limited time", replicateBlock=
+    {17055, shape=RECT_ROOT, scale=1, name="Plantable Plate", features=COMMAND|SEED|FREERES|REGROWER, group=2, launchLifetime=2000,
+      durability=5, fillColor=0x333333, fillColor1=0x4d4d4d, lineColor=0x999999, seedLifetime=500,
+      launchResources=50, armor=50, command={blueprint="2_PlateArmor"}},
+     replicateTime=5, launcherSpeed=50},
 
   {17056, shape=OCTAGON, name="Skirmish MTS", features=TURRET|CANNON, group=4, barrelTaper=0.5,
     durability=0.5, blurb="Skirmish ranged plasm turret", density=0.15, fillColor=0x40206b,
@@ -5229,7 +5237,7 @@
   {17818, shape=OCTAGON, scale=2, group=15, features=LAUNCHER|TURRET, name="Vardictor Orb Launcher", points=789,
     blurb="A mysterious artifact tech weapon, found and improvised by the Vardisian, launches powerful calibrating plasma orbs.",
     fillColor=0x2a2a2a, fillColor1=0x2f8b2f, lineColor=0xc4f4c4, durability=0.5, density=0.15, replicateBlock=
-	{features=COMMAND|THRUSTER|TORQUER|EXPLODE, command={}, group=15, shape=OCTAGON, fillColor=0x2abc2a, fillColor1=0x2f8b2f, lineColor=0xc4f4c4, durability=5, density=0.15,
+	{features=COMMAND|THRUSTER|TORQUER|EXPLODE, command={}, group=15, shape=OCTAGON, fillColor=0x2abc2a, fillColor1=0x2f8b2f, lineColor=0xc4f4c4, durability=0.5, density=0.15,
 	  deathFeatures=CANNON, lifetime=1, cannon={damage=100, roundsPerSec=10, roundsPerBurst=10, burstyness=1, range=100, muzzleVel=1000, spread=2.828, color=0x20fa20, pattern=ABSOLUTE|SPIRAL,
 	  explosive=FRAG_PROXIMITY, fragment={roundsPerBurst=3, damage=1, muzzleVel=1500, range=100, color=0x1020fa20, pattern=WAVE|ABSOLUTE, spread=0.3,
 	explosive=FRAG_PROXIMITY, fragment={damage=1, roundsPerBurst=5, muzzleVel=-1500, range=-100, color=0x2020fa20, pattern=WAVE|ABSOLUTE, spread=0.01,
@@ -5267,9 +5275,9 @@
 	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-1500, rangeStdDev=-100, color=0x4020fafa, pattern=CONSTANT|ABSOLUTE, spread=0.1,
 	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=1500, rangeStdDev=100, color=0x5020fafa, pattern=CONSTANT|ABSOLUTE, spread=0.1,
 	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-1500, rangeStdDev=-100, color=0x6020fafa, pattern=CONSTANT|ABSOLUTE, spread=0.1}}}}}},
-	  }, explodeDamage=1, explodeRadius=1, thrusterForce=10000, torquerTorque=1000, replicateBlock={command={}, group=8, fillColor=0x2abcbc, fillColor1=0x2f8b8b, lineColor=0xc4f4f4, durability=1.5, density=0.15,
-	  shape=250, lifetime=5, features=COMMAND|CANNON|ALWAYSFIRE|NOCLIP|EXPLODE|THRUSTER|TORQUER|GENERATOR, torquerTorque=2000, thrusterForce=2000, explodeRadius=1, explodeDamage=1,
-	  cannon={damage=30, roundsPerSec=100, range=25, muzzleVel=1, color=0x8020fafa, pattern=ABSOLUTE|NOFLASH}, generatorCapacityPerSec=500, powerCapacity=500}, replicateTime=0.001}, replicateTime=45, launcherOutSpeed=100000}
+	  }, explodeDamage=1, explodeRadius=1, thrusterForce=10000, torquerTorque=1000, replicateBlock={command={}, group=8, fillColor=0x2abcbc, fillColor1=0x2f8b8b, lineColor=0xc4f4f4, durability=15, density=0.15,
+	  shape=250, lifetime=5, features=COMMAND|CANNON|ALWAYSFIRE|NOCLIP_ALLY|EXPLODE|THRUSTER|TORQUER|GENERATOR, torquerTorque=2000, thrusterForce=2000, explodeRadius=1, explodeDamage=60,
+	  cannon={damage=30, roundsPerSec=100, range=25, muzzleVel=1, color=0x8020fafa, pattern=ABSOLUTE|NOFLASH}, generatorCapacityPerSec=500, powerCapacity=500}, replicateTime=0.001}, replicateTime=45, launcherPower=800, launcherOutSpeed=100000}
 	  
   {17821, features=TURRET|CANNON|NOICON|LAUNCHER, fillColor=0xe33434, fillColor1=0xee4c1f, lineColor=0xff7100, barrelSize={18, 3}, points=91,
     aihint_range=1500, barrelTaper=0.8, cannon={roundsPerSec=1.5, roundsPerBurst=1, explosive=ENABLED|FRAG_PROXIMITY|FRAG_NOFLASH, muzzleVel=1500, projectileSize=2.5,
@@ -5504,7 +5512,7 @@
     group=12, shape=327, scale=4, name="Heavy Bodywork", durability=2.25, density=0.15,
     sort=-10000},
 	
-  {17873, shape=329, name="Aqualite Supershield", features=SHIELD|ACTIVATE,
+  {17873, shape=329, name="Aqualite Supershield", features=SHIELD|ACTIVATE|NOICON,
     group=11, durability=2, density=0.15, fillColor=0x836fff, fillColor1=0x4876ff,
     lineColor=0x254dfb, blurb="A super shield that is manually activated, it is used to counteract most explosive weapons and even neutralizes the nukes before they can damage, however it came along with high energy upkeep while active and is very expensive",
 	shield={strength=2500, regen=2000, radius=500, color=0x197f98f5,
@@ -6094,15 +6102,33 @@
     turretLimit=3.142, density=0.15, sort=80006, shroud={{size={2, 8}, taper=0.9, offset={1, 0}}, {size={-5, -17.5}, offset={-1.5, 0, 0.12}, shape=COMMAND, count=1},
 	        {size={2, 7.5}, offset={12.5, 0, 0.175}, count=1}, {size={2, 7.5}, offset={15, 0, 0.2}, count=1}}},
 	
-  {17969, features=TURRET|CANNON|AUTOFIRE, fillColor=0x6f5250, fillColor1=0x4a3b38, aihint_range=5000, barrelSize={0.001, 0.001},
-    lineColor=0xbda09a, cannon={roundsPerSec=7, pattern=ABSOLUTE, spread=3.142, roundsPerBurst=5, burstyness=1,
-      muzzleVel=25000, damage=1, range=100, rangeStdDev=100, explosive=FRAG_FINAL, color=0xee5245, power=25,
-      fragment={damage=1, roundsPerBurst=6, range=1, muzzleVel=10, pattern=SPIRAL|ABSOLUTE, spread=3.124,
-	  explosive=FRAG_PROXIMITY, fragment={damage=15, roundsPerBurst=1, range=10, muzzleVel=1, explosive=FINAL, pattern=ABSOLUTE, color=0xee5245, explodeRadius=125}}},
-	  group=12, scale=3, name="RB Subsystem", durability=0.5, points=300,
-	  blurb="A defensive assault plasma mines generator, these mines are static traps that can harm ships that tries to flies through them while blocking some missile shots that are unlucky to be on their path",
-    density=0.15, sort=80008, shroud={{size={25, 25}, offset={0, 0, 0.12}, shape=OCTAGON, count=1}, {size={25, 25}, offset={0, 0, 0.12}, shape=338, count=1}, {size={17.8, 8.9}, offset={-8.9, 0, 0.12}, shape=SQUARE, count=1},
+  {17969, features=TURRET|CANNON|AUTOFIRE|NOICON, fillColor=0x6f5250, fillColor1=0x4a3b38, aihint_range=5000, barrelSize={0.001, 0.001},
+    lineColor=0xbda09a, turretLimit=0, cannon={roundsPerSec=14, pattern=ABSOLUTE, spread=3.142, explodeRadius=50, projectileSize=0.1,
+      muzzleVel=7500, damage=30, range=100, rangeStdDev=100, explosive=FRAG_FINAL|PROXIMITY|FRAG_NOFLASH, color=0xee5245, recoil=0,
+      fragment={damage=1, roundsPerBurst=6, range=1, muzzleVel=10, pattern=SPIRAL|ABSOLUTE, spread=-2.618,
+	  explosive=FRAG_PROXIMITY|FRAG_NOFLASH, fragment={damage=5, roundsPerBurst=1, range=8, muzzleVel=1, explosive=PROXIMITY, pattern=ABSOLUTE, color=0xee5245, explodeRadius=50}}},
+	  group=12, scale=3, name="PM Subsystem", durability=0.5, 
+	  blurb="A defensive assault plasma mines generator, these mines are static traps that can harm ships that tries to flies through them while blocking some of missile swarm path",
+    density=0.15, sort=80010, shroud={{size={25, 25}, offset={0, 0, 0.12}, shape=OCTAGON, count=1}, {size={25, 25}, offset={0, 0, 0.12}, shape=338, count=1}, {size={17.8, 8.9}, offset={-8.9, 0, 0.12}, shape=SQUARE, count=1},
 	        {size={15, 15}, offset={0, 0, 0.12}, shape=OCTAGON, count=1}}},
+			
+  {17970, shape=211, name="Plating Fabricator", features=LAUNCHER|NOPALETTE, group=2,
+    durability=0.5, density=0.15, fillColor=0xe09010, fillColor1=0xccb80a, lineColor=0xaef300,
+    blurb="A makeshift armor plating that sticks to environmental blocks, prohibits plant growth while providing extra protection for a limited time", replicateBlock=
+    {17971, shape=RECT_ROOT, scale=1, name="Plantable Plate", features=COMMAND|SEED|FREERES|THRUSTER|TORQUER|AUTOLAUNCH|REGROWER, group=2, launchLifetime=2000,
+      durability=5, fillColor=0x333333, fillColor1=0x4d4d4d, lineColor=0x999999, seedLifetime=500, thrusterForce=1000, torquerTorque=1000,
+      launchResources=50, armor=50, command={blueprint="2_PlateArmor"}},
+     replicateTime=5, launcherSpeed=50},
+	 
+  {17972, features=TURRET|CANNON|AUTOFIRE|NOICON, fillColor=0x6f5250, fillColor1=0x4a3b38, aihint_range=900, barrelSize={9, 2}, barrelCount=2,
+    lineColor=0xbda09a, cannon={roundsPerSec=8, spread=0.222, explodeRadius=20,
+      muzzleVel=2000, damage=20, range=700, rangeStdDev=100, explosive=FRAG_FINAL|PROXIMITY|FRAG_NOFLASH, recoil=0,
+      fragment={damage=2, roundsPerBurst=10, range=1, muzzleVel=10, pattern=SPIRAL|ABSOLUTE, spread=-2.828, explodeRadius=20,
+	  explosive=FRAG_FINAL|FRAG_NOFLASH|PROXIMITY, fragment={damage=2, roundsPerBurst=1, range=-8, muzzleVel=-1, explosive=PROXIMITY, pattern=ABSOLUTE, color=0xee5245, explodeRadius=20}}},
+	  group=12, scale=3, name="RB Subsystem", durability=0.5, 
+	  blurb="A defense subsystem plasma mine launcher cannon",
+    density=0.15, sort=80008, shroud={{size={25, 25}, offset={4.65, 0, 0.04}, shape=338, count=1}, {size={17.8, 8.9}, offset={-4.25, 0, 0.04}, shape=SQUARE, count=1},
+	        {size={15, 15}, offset={4.65, 0, 0.05}, shape=OCTAGON, count=1}}},
 	
 //---Vanilla Modifications Adjustments---
 
