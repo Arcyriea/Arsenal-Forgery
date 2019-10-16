@@ -49,7 +49,7 @@
       aihint_range=1600, group=8, shape=MISSILE_SHORT, scale=1, lifetime=30.000, durability=0.500, 
       density=0.500, turretSpeed=2.900, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
       powerCapacity=120.000, capacity=100.000, thrusterForce=8000.000, thrusterColor=0x90808080,
-      thrusterColor1=0x904060a0, torquerTorque=12000.000, cannon={roundsPerSec=1.450,
+      thrusterColor1=0x904060a0, torquerTorque=12000.000, cannon={roundsPerSec=1.450, recoil=0.01,
       roundsPerBurst=2, burstyness=0.888, muzzleVel=3200.000, power=6.000, damage=50.000,
       color=47081, range=1800.000}, generatorCapacityPerSec=40.000},
      replicateTime=12.000, launcherPower=170.000, launcherOutSpeed=50.000, sort=110024},
@@ -810,7 +810,7 @@
 	  fragment={muzzleVel=300.000, damage=144, color=0xee5245, range=30.000, explosive=ENABLED|FRAG_FINAL, spread=0.05, explodeRadius=20.000,
 	  fragment={muzzleVel=300.000, damage=144, color=0xee5245, range=30.000, explosive=ENABLED|FRAG_FINAL, spread=0.05, explodeRadius=20.000,
 	  fragment={muzzleVel=300.000, damage=144, color=0xee5245, range=30.000, explosive=FINAL|FRAG_FINAL, spread=0.05, explodeRadius=20.000,
-	  fragment={damage=2, range=10, muzzleVel=1, spread=3.142, roundsPerBurst=11, pattern=ABSOLUTE|SPIRAL, color=0xee5245}}}}}},
+	  fragment={damage=2, range=10, muzzleVel=1, spread=-2.856, roundsPerBurst=11, pattern=ABSOLUTE|SPIRAL, color=0xee5245}}}}}},
 
   {117, name="Hardpoint Sabăt", features=CANNON, group=12, shape=CANNON2, points=17,
     durability=1.300, density=0.150, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xee5245,
@@ -820,7 +820,7 @@
 	  fragment={muzzleVel=250.000, damage=120, color=0xee5245, range=20.000, explosive=ENABLED|FRAG_FINAL, spread=0.05, explodeRadius=10.000,
 	  fragment={muzzleVel=250.000, damage=120, color=0xee5245, range=20.000, explosive=ENABLED|FRAG_FINAL, spread=0.05, explodeRadius=10.000,
 	  fragment={muzzleVel=250.000, damage=120, color=0xee5245, range=20.000, explosive=FINAL|FRAG_FINAL, spread=0.05, explodeRadius=10.000,
-	  fragment={damage=2, range=10, muzzleVel=1, spread=3.142, roundsPerBurst=9, pattern=ABSOLUTE|SPIRAL, color=0xee5245}}}}}}},
+	  fragment={damage=2, range=10, muzzleVel=1, spread=-2.792, roundsPerBurst=9, pattern=ABSOLUTE|SPIRAL, color=0xee5245}}}}}}},
 
   {118, name="Charge Cannon", features=TURRET|CANNON|CHARGING, group=3, shape=PENTAGON, 
     durability=1.500, density=0.150, fillColor=0x7a0a28, fillColor1=0xa36a1b,
@@ -834,7 +834,9 @@
     {shape=MISSILE, features=COMMAND|THRUSTER|TORQUER|CANNON|GENERATOR|EXPLODE|ONEUSE, group=12, lifetime=5.000, durability=0.500,
       density=0.150, fillColor=0x514644, fillColor1=0x3a2b26, lineColor=0xffc125, torquerTorque=6000.000, thrusterForce=4000.000,
       explodeDamage=15.000, explodeRadius=1.000, cannon={roundsPerSec=4.200, muzzleVel=600.000, spread=0.125, roundsPerBurst=6, burstyness=0.950,
-      power=2.000, damage=10.000, color=0xffc125, range=400.000, explosive=PROXIMITY, explodeRadius=3}, generatorCapacityPerSec=10.000, powerCapacity=20.000}, replicateTime=1.700},
+      power=2.000, damage=10.000, color=0xffc125, range=400.000, explosive=PROXIMITY|FRAG_FINAL, explodeRadius=3,
+	  fragment={spread=-2.5136, damage=2, roundsPerBurst=5, explosive=PROXIMITY, explodeRadius=3, color=0xffc125, pattern=SPIRAL,
+	  range=1, muzzleVel=1}}, generatorCapacityPerSec=10.000, powerCapacity=20.000}, replicateTime=1.700},
 
   {120, shape=RECT_LAUNCHER, name="Fragment Missile [L]", features=LAUNCHER, group=12, scale=2,
     durability=0.500, blurb="Fire missiles full of proximity fragments", density=0.150,
@@ -842,7 +844,9 @@
     {shape=MISSILE, scale=2, features=COMMAND|THRUSTER|TORQUER|CANNON|GENERATOR|EXPLODE|ONEUSE, group=12, lifetime=5.000, durability=0.500,
       density=0.150, fillColor=0x514644, fillColor1=0x3a2b26, lineColor=0xffc125, torquerTorque=12000.000, thrusterForce=16000.000,
       explodeDamage=30.000, explodeRadius=1.000, cannon={roundsPerSec=4.200, muzzleVel=600.000, spread=0.125, roundsPerBurst=6, burstyness=0.950,
-      power=2.000, damage=20.000, color=0xffc125, range=400.000, explosive=PROXIMITY, explodeRadius=6}, generatorCapacityPerSec=10.000, powerCapacity=20.000}, replicateTime=2.200},
+      power=2.000, damage=20.000, color=0xffc125, range=400.000, explosive=PROXIMITY|FRAG_FINAL, explodeRadius=6,
+	  fragment={spread=-2.5136, damage=4, roundsPerBurst=5, explosive=PROXIMITY, explodeRadius=3, color=0xffc125, pattern=SPIRAL,
+	  range=1, muzzleVel=1}}, generatorCapacityPerSec=10.000, powerCapacity=20.000}, replicateTime=2.200},
 
   {121, shape=RHOMBUS_36_144, name="Penrose Zero", group=3, durability=1.000, density=0.070,
     fillColor=0xe1a71c, fillColor1=0xed6511, lineColor=0xff0100, growRate=40.000, scale=2, sort=-10000},
@@ -929,7 +933,7 @@
 
   {138, name="Raiphase Void", features=TURRET|LASER|CHARGING, group=3, shape=PENTAGON, scale=2,
     durability=1.500, density=0.150, fillColor=0xe33434, fillColor1=0xee4c1f, lineColor=0xff7100,
-    blurb="A direct hit, dimensional rift rigged ballistic cannon, its targeting is not meant for dogfighting combats",
+    blurb="A direct hit, dimensional rift rigged ballistic cannon, instantly hit anything without even flying out through the barrel",
     laser={explosive=ENABLED, damage=80.000, width=2, color=0x0fff7500, color=0x0fff7500, range=1000.000, explodeRadius=80.000}, turretSpeed=2.000,
     chargeMin=1.00, chargeMaxTime=1.200, barrelTaper=0.5, barrelSize={10, 5}},
 
@@ -1129,7 +1133,7 @@
     lifetime=15, explodeDamage=100, explodeRadius=10, cannon={damage=1, range=0, muzzleVel=1, explosive=FRAG_PROXIMITY, roundsPerSec=1,
 	  fragment={damage=1, roundsPerBurst=15, range=1, muzzleVel=1, pattern=SPIRAL, spread=-2.932,
 	  explosive=FRAG_PROXIMITY, fragment={damage=15, roundsPerBurst=1, range=3, muzzleVel=1, explosive=FINAL, color=0xee5245, explodeRadius=25}}},
-      generatorCapacityPerSec=100.000, powerCapacity=300, replicateBlock={group=12, shape=MISSILE, lifetime=0.1, features=EXPLODE|THRUSTER|NOCLIP_ALLY, deathFeatures=CANNON, thrusterForce=800,
+      generatorCapacityPerSec=100.000, powerCapacity=300, replicateBlock={group=12, shape=MISSILE, lifetime=0.5, features=COMMAND|TORQUER|EXPLODE|THRUSTER|NOCLIP_ALLY, deathFeatures=CANNON, thrusterForce=800, torquerTorque=10000,
 	  explodeDamage=1, explodeRadius=1, cannon={damage=2, roundsPerSec=12, roundsPerBurst=12, burstyness=1, range=3, pattern=SPIRAL, spread=2.880, muzzleVel=1, explosive=FINAL, color=0xee5245, explodeRadius=17.5}},
 	  launcherPower=100, replicateTime=1.5, launcherSpeed=100}, replicateTime=6, launcherSpeed=100, launcherAngVel=3},
 
@@ -5265,7 +5269,7 @@
 	  {size={50, 5}, offset={5, 20, 0.15}, taper=0.5}, {size={30, 4}, offset={55, -20, 0.125}}, {size={30, 4}, offset={55, 20, 0.125}}}},
 	
   {17820, shape=OCTAGON, scale=2, group=8, features=LAUNCHER|TURRET, name="Nanofiber Thread Launcher", sort=310093, turretLimit=0,
-    blurb="First appeared near the Phoehn secret scientist holdout. And later was developed into an advanced nanothread launcher of sort.", points=115,
+    blurb="Devastating againsts anything that moves onward into its trails... Ineffective against immobile or kiting tactic targets", points=115,
     fillColor=0x2a2a2a, fillColor1=0x2f8b8b, lineColor=0xc4f4f4, durability=0.5, density=0.15, replicateBlock=
 	{features=COMMAND|LAUNCHER_BARRAGE|ONEUSE|NOCLIP|NOICON|THRUSTER|TORQUER|EXPLODE, command={}, group=8, shape=253, fillColor=0x2abcbc, fillColor1=0x2f8b8b, lineColor=0xc4f4f4, durability=0.5, density=0.15,
 	  deathFeatures=CANNON, lifetime=10, cannon={damage=1, roundsPerSec=100, roundsPerBurst=100, burstyness=1, rangeStdDev=100, muzzleVel=1000, spread=3.142, color=0x20fafa, pattern=ABSOLUTE,
@@ -5658,7 +5662,7 @@
 		17886,
 		group=9,
 		name="Crimsonroid Cannon"
-		features=CANNON|TURRET,
+		features=CANNON|TURRET|NOICON,
 		shape=HEXAGON,
 		scale=9,
 		fillColor=0x330000,
@@ -5668,14 +5672,20 @@
 		density=0.5,
 		growRate=16.25,
 		armor=1000,
+		barrelTaper=-2.5,
 		cannon={damage=1000, roundsPerSec=0.6, burstyness=1, range=3500, color=0xff5000, muzzleVel=1000},
+		shroud={{size={50, 45}, offset={-15, 0, 0.7}, taper=0.8}, {size={-40, -60}, shape=ADAPTER, offset={-45, 0, 0.5}},
+		{size={-45, -150}, shape=SENSOR, offset={-37.5, 0, 0.75}}, {size={50, 12.5}, taper=0.5, offset={20, 0, 0.8}},
+		{size={50, 25}, shape=RIGHT_TRI2L, offset={-55, -30, 0.6}}, {size={50, 25}, shape=RIGHT_TRI2R, offset={-55, 30, 0.6}},
+		{size={30, 12.5}, shape=231, offset={45, 25, 0.8}}, {size={30, 12.5}, shape=232, offset={45, -25, 0.8}},
+		{size={40, 75}, shape=RIGHT_TRI2L, offset={-15, -50, 0.8}}, {size={40, 75}, shape=RIGHT_TRI2R, offset={-15, 50, 0.8}},}
 	},
 	
   {
 		17887,
 		group=9,
 		name="Crimsonroid Cannon"
-		features=CANNON|TURRET,
+		features=CANNON|TURRET|NOICON,
 		shape=RHOMBUS_72_108,
 		scale=9,
 		fillColor=0x330000,
@@ -5685,7 +5695,13 @@
 		density=0.5,
 		growRate=16.25,
 		armor=1000,
+		barrelTaper=-2,
 		cannon={damage=500, roundsPerSec=0.6, burstyness=1, range=3500, color=0xff5000, muzzleVel=1000},
+		shroud={{size={33.333, 30}, offset={-10, 0, 0.7}, taper=0.8}, {size={-26.666, -40}, shape=ADAPTER, offset={-30, 0, 0.5}},
+		{size={-30, -100}, shape=SENSOR, offset={-25, 0, 0.75}}, {size={33.333, 8.333}, taper=0.5, offset={13.333, 0, 0.8}},
+		{size={33.333, 16.666}, shape=RIGHT_TRI2L, offset={-36.666, -20, 0.6}}, {size={33.333, 16.666}, shape=RIGHT_TRI2R, offset={-36.666, 20, 0.6}},
+		{size={20, 8.333}, shape=231, offset={30, 16.666, 0.8}}, {size={20, 8.333}, shape=232, offset={30, -16.666, 0.8}},
+		{size={26.666, 50}, shape=RIGHT_TRI2L, offset={-10, -33.333, 0.8}}, {size={26.666, 50}, shape=RIGHT_TRI2R, offset={-10, 33.333, 0.8}},}
 	},
 	
   {17888, shape=303, name="Crystallite", group=11, durability=2, fillColor=0x43e77, scale=2,
@@ -6123,10 +6139,10 @@
   {17972, features=TURRET|CANNON|AUTOFIRE|NOICON, fillColor=0x6f5250, fillColor1=0x4a3b38, aihint_range=900, barrelSize={9, 2}, barrelCount=2,
     lineColor=0xbda09a, cannon={roundsPerSec=8, spread=0.222, explodeRadius=20,
       muzzleVel=2000, damage=20, range=700, rangeStdDev=100, explosive=FRAG_FINAL|PROXIMITY|FRAG_NOFLASH, recoil=0,
-      fragment={damage=2, roundsPerBurst=10, range=1, muzzleVel=10, pattern=SPIRAL|ABSOLUTE, spread=-2.828, explodeRadius=20,
+      fragment={damage=2, roundsPerBurst=10, range=1, muzzleVel=10, pattern=SPIRAL, spread=-2.828, explodeRadius=20,
 	  explosive=FRAG_FINAL|FRAG_NOFLASH|PROXIMITY, fragment={damage=2, roundsPerBurst=1, range=-8, muzzleVel=-1, explosive=PROXIMITY, pattern=ABSOLUTE, color=0xee5245, explodeRadius=20}}},
 	  group=12, scale=3, name="RB Subsystem", durability=0.5, 
-	  blurb="A defense subsystem plasma mine launcher cannon",
+	  blurb="A defense subsystem plasma mine launcher cannon. Fires rounds that leave behind a plasma mine particle which will lasts for a while",
     density=0.15, sort=80008, shroud={{size={25, 25}, offset={4.65, 0, 0.04}, shape=338, count=1}, {size={17.8, 8.9}, offset={-4.25, 0, 0.04}, shape=SQUARE, count=1},
 	        {size={15, 15}, offset={4.65, 0, 0.05}, shape=OCTAGON, count=1}}},
 	
