@@ -5,7 +5,7 @@ PLease install 7zip (or alternatively use WinRar) if you want to extract the .zi
 
 This is where you can download Arsenal Forgery without going to Steam, the beta branch version of the mod will always be uploaded in here first to wait before the beta of the game went to live, which will work differently than the one on Steam if there is a beta present.
 
-Please rename the whole "Arsenal Forgery" folder to "433982918" then put the folder at:
+When playing with Steam Beta, Please rename the whole "Arsenal Forgery" folder to "433982918" then put the folder at:
 
 ..\Steam\steamapps\workshop\content\329130\ 
 
