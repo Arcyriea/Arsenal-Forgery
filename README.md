@@ -3,7 +3,7 @@ INSTALLATION NOTE FOR MANUALLY PATCHING THE MOD TO USE WITH THE BETA BRANCH OF R
 Before we proceed...
 PLease install 7zip (or alternatively use WinRar) if you want to extract the .zip file: https://www.7-zip.org/download.html
 
-Some of the features on the github version of the mod are different to the one currently uploaded to Steam because they are not yet implemented into the base game yet... And as Arthur is taking a break from updating the game at the moment, which mean the beta branch update of the game has not been pushed to the official one, and uploading the github change directly to Steam right now would broken the game for most of the peoples who use my mod right now, I decided to upload it there isolated with the rest of game so that when you want to you would find my patch here and try it out yourself.
+This is where you can download Arsenal Forgery without going to Steam, the beta branch version of the mod will always be uploaded in here first to wait before the beta of the game went to live, which will work differently than the one on Steam if there is a beta present.
 
 Please rename the whole "Arsenal Forgery" folder to "433982918" then put the folder at:
 
