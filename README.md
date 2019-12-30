@@ -1,4 +1,4 @@
-INSTALLATION NOTE FOR MANUALLY PATCHING THE MOD TO USE WITH THE BETA BRANCH OF REASSEMBLY
+INSTALLATION NOTE FOR MANUALLY PATCHING THE MOD TO USE WITH THE BETA BRANCH OF REASSEMBLY WHEN PLAYING THROUGH STEAM
 
 Before we proceed...
 PLease install 7zip (or alternatively use WinRar) if you want to extract the .zip file: https://www.7-zip.org/download.html
