@@ -150,7 +150,7 @@
     scale=2, durability=0.500, density=0.150, fillColor=0x808080,
     fillColor1=0x505050, lineColor=0xdfe0e2, replicateBlock=
     {17320, command={flags=ATTACK, blueprint="15_Thermiblade_Flea"}, features=COMMAND|THRUSTER|TORQUER|MELEE|FREERES|LASER|GENERATOR|ALWAYSFIRE|NOCLIP_ALLY|REGROWER, group=15, shape=276,
-      scale=3, lifetime=15.000, durability=2.000, density=0.025, powerCapacity=120.000, points=500,
+      scale=3, lifetime=15.000, durability=2.000, density=0.025, powerCapacity=120.000, points=500, sound="none",
       fillColor=0xe8a97e, fillColor1=0x775339, lineColor=0x5d0d02, capacity=100.000, meleeDamage=1,
       thrusterForce=12500.000, thrusterColor=0x9054f5c4, laser={power=20.000, width=4.000,
         damage=1000.000, color=0x7fff2100, range=150.000}, thrusterColor1=0x90cff5e9,
@@ -265,7 +265,7 @@
 
   {27, name="Combat Flarer", features=LAUNCHER_BARRAGE, group=3, shape=GEM_3_LAUNCHER,
     durability=0.500, density=0.150, fillColor=0x7a0a28, fillColor1=0xa36a1b,
-    lineColor=0xe0fa08, replicateBlock={command={}, features=COMMAND|TORQUER|THRUSTER|FREERES|LASER|ALWAYSFIRE|GENERATOR|EXPLODE, blockshape=DISH_MISSILE, group=3,
+    lineColor=0xe0fa08, replicateBlock={command={}, features=COMMAND|TORQUER|THRUSTER|FREERES|LASER|ALWAYSFIRE|GENERATOR|EXPLODE, blockshape=DISH_MISSILE, group=3, sound="none",
       lifetime=10.000, durability=0.200, density=0.100, fillColor=0x800000, fillColor1=0xb32d00, powerCapacity=2, generatorCapacityPerSec=2,
       lineColor=0xff7100, thrusterForce=1250.000, torquerTorque=2500.000, name="Flare", laser={power=1, width=2, damage=800, immobilizeForce=60000, color=0xa0ff2100, range=100},
       thrusterColor=0x90ffffff, thrusterColor1=0x90ff8000, explodeDamage=40, explodeRadius=1}, replicateTime=2.00, launcherPower=40},
@@ -284,16 +284,16 @@
   {30, name="Trail Pod", features=LAUNCHER_BARRAGE|AUTOFIRE, group=8, shape=SQUARE_LAUNCHER,
     durability=2.500, blurb="Reproduces missile-destroyer to intercepts incoming projectiles, release fragmentations along the way to trap other unfriendly ordinances as well killing mosquitos",
     density=0.150, fillColor=0xaaaaaa, fillColor1=0x777777, lineColor=0x3390eb, growRate=2.500, replicateBlock=
-    {command={}, name="Fragmentation Missile", features=COMMAND|THRUSTER|TORQUER|FREERES|EXPLODE|CANNON|ALWAYSFIRE|GENERATOR,
+    {command={}, name="Fragmentation Missile", features=COMMAND|THRUSTER|TORQUER|FREERES|EXPLODE|CANNON|ALWAYSFIRE|GENERATOR, sound="none",
       group=8, shape=255, lifetime=10.000, cannon={roundsPerSec=100.000, explosive=PROXIMITY,
       muzzleVel=-50.000, spread=-0.142, power=1.000, pattern=ABSOLUTE, explodeRadius=8,
-      damage=5.000, color=47081, rangeStdDev=-100.000}, durability=0.500, density=0.100, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
-      thrusterForce=9500.000, thrusterColor=0x90808080, thrusterColor1=0x904060a0, torquerTorque=6000.000, explodeDamage=1.000, explodeRadius=1.000,
+      damage=8.000, color=47081, rangeStdDev=-100.000}, durability=0.500, density=0.100, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
+      thrusterForce=9500.000, thrusterColor=0x90808080, thrusterColor1=0x904060a0, torquerTorque=6000.000, explodeDamage=30.000, explodeRadius=1.000,
       generatorCapacityPerSec=125.000, powerCapacity=125.000},
      replicateTime=1.25, launcherPower=150.000, launcherOutSpeed=500.000, launcherAngVel=24.000, sort=110025},
 
   {31, name="[L]Reactive Laser", features=LASER|TURRET|AUTOFIRE|CHARGING, group=8,
-    health=25.000, durability=1.000, blurb="Light standard short range reactive defense laser that counter swarm missiles threats", density=0.150,
+    health=25.000, durability=1.000, blurb="Light standard short range reactive defense laser that serve as a support PD weaponry", density=0.150,
     fillColor=0x414077, fillColor1=0x417078, lineColor=0x3390eb, turretSpeed=30.000, laser={width=1.000, damage=2.000,
       color=0x7f00b7e9, range=950.000, power=1}, sort=80023, chargeMin=1, chargeMaxTime=0.025, barrelSize={0.001, 0.001},
 	  shroud={{size={2, 2}, offset={0, 0, 0.1}, shape=338}, {size={4, 4}, offset={0, 0, 0.05}, shape=338}}},
@@ -591,7 +591,7 @@
     fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb, cannon={roundsPerSec=1.200,
       muzzleVel=2800.000, damage=180.000, color=47081, range=2200.000}, sort=70042},
 
-  {81, name="Mjolnir Cannon", features=TURRET|CANNON, group=8, scale=5, barrelTaper=0.8,
+  {81, name="Mjolnir Cannon", features=TURRET|CANNON, group=8, scale=5, barrelTaper=0.8, barrelOffset={-30, 0},
     durability=1.500, blurb="Heavy Artillery Battery Cannon", density=0.500, turretSpeed=0.800,
     fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb, cannon={roundsPerSec=0.200,
       roundsPerBurst=3, burstyness=0.950, muzzleVel=2100.000, spread=0.050, damage=250.000,
@@ -599,7 +599,14 @@
 	  fragment={spread=3.142, roundsPerBurst=6, range=500, rangeStdDev=250, muzzleVel=1600.000,
 	  explosive=FRAG_PROXIMITY|FINAL, explodeRadius=30, damage=20, color=47081, pattern=ABSOLUTE,
 	  fragment={spread=3.142, roundsPerBurst=12, range=200, rangeStdDev=100, muzzleVel=800.000,
-	  explosive=PROXIMITY, explodeRadius=15, damage=5, color=47081, pattern=ABSOLUTE}}}, sort=60400},
+	  explosive=PROXIMITY, explodeRadius=15, damage=5, color=47081, pattern=ABSOLUTE}}}, sort=60400,
+	  shroud={{size={-12.5, -25}, shape=COMMAND, offset={-35, 0, 0.021}, count=1, tri_color1_id=1, line_color_id=2},
+	  {size={-10, -10}, shape=COMMAND, offset={10, 0, 0.361}, count=1, tri_color1_id=1, line_color_id=2},
+	  {size={-30, -30}, shape=COMMAND, offset={10, 0, 0.359}, count=1, tri_color1_id=1, line_color_id=2},
+      {size={20, 10}, offset={60, 0, 0.241}, taper=0.85, count=1, tri_color1_id=1, line_color_id=2},
+	  {size={20, 30}, offset={-15, 0, 0.261}, taper=-0.55, count=1, tri_color1_id=1, line_color_id=2},
+	  {size={15, 40}, offset={3.5, 0, 0.331}, taper=0.75, count=1, tri_color1_id=1, line_color_id=2},
+	  {size={40, 57.5}, offset={30, 0, 0.002}, shape=ISOTRI_36, count=1, tri_color1_id=1, line_color_id=2}}},
 
   {82, command={faction=8}, name="Station Stabilizer Command", features=COMMAND|REGROWER, group=8, shape=COMMAND, fillColor=0x777777, fillColor1=0x113077,
     lineColor=0xaab0c0, density=5000.000},
@@ -625,16 +632,23 @@
       roundsPerBurst=2, burstyness=1.000, range=800, rangeStdDev=200.000, spread=0.030, recoil=0}},
 
   {87, name="Valkyrie Artillery", features=TURRET|CANNON, group=2, scale=5,
-    durability=1.500, blurb="Spread Burst Artillery Support", density=0.500, turretSpeed=3.000,
-    fillColor=0x104a99, fillColor1=0x4f8e5c, lineColor=0xaef300, barrelTaper=0.95, 
-	  cannon={roundsPerSec=0.500, roundsPerBurst=5, burstyness=0.990, muzzleVel=2200.000, explodeRadius=100,
+    durability=1.500, blurb="Shotgun Burst Heavy Artillery Support", density=0.500, turretSpeed=3.000,
+    fillColor=0x104a99, fillColor1=0x4f8e5c, lineColor=0xaef300, barrelTaper=0.95, barrelOffset={-30, 0},
+	  cannon={roundsPerSec=0.500, roundsPerBurst=4, burstyness=0.990, muzzleVel=2200.000, explodeRadius=100,
 	  spread=0.120, damage=175.000, color=0xecfe00, range=5000.000, explosive=PROXIMITY|FRAG_PROXIMITY,
 	  fragment={spread=3.142, damage=25.000, roundsPerBurst=4, range=50.000, color=0xecfe00, 
 	  explosive=FINAL|FRAG_PROXIMITY, muzzleVel=1100.000, explodeRadius=60, pattern=SPIRAL,
 	  fragment={spread=0.786, damage=15.000, roundsPerBurst=5, range=50.000, rangeStdDev=25, color=0xecfe00, 
 	  explosive=PROXIMITY|FRAG_IMPACT, muzzleVel=550.000, explodeRadius=20, pattern=ABSOLUTE,
 	  fragment={spread=1.571, damage=10, muzzleVel=275.000, range=15, rangeStdDev=5, color=0xecfe00,
-	  roundsPerBurst=10, explosive=PROXIMITY, explodeRadius=5, pattern=WAVE}}}}},
+	  roundsPerBurst=10, explosive=PROXIMITY, explodeRadius=5, pattern=WAVE}}}},
+	  shroud={{size={18, 30}, offset={-9, 0, 0.4}, taper=-0.75},
+	  {size={15, 20}, offset={-27, 0, 0.05}, }, {size={15, 5}, offset={65, 0, 0.385}, },
+	  {size={15, 5}, offset={-27, 0, 0.5}, }, {size={15, 10}, offset={65, 0, 0.375}, },
+      {size={5, 13}, offset={-34, 0, 0.5}, }, {size={17.5, 17.5}, offset={28, 0, 0.05}, },
+      {size={21, 30}, offset={9, 0, 0.4}, taper=0.75},
+      {size={12, 12}, offset={6, 0, 0.6}, taper=-0.65},
+      {size={18, 12}, offset={18, 0, 0.6}, taper=0.65}}},
 
   {88, command={faction=2}, name="Gravitic Stabilizer Command", features=COMMAND|REGROWER, group=2, fillColor=0x69a95, fillColor1=0x66a95,
     lineColor=0xaef300, density=5000.000},
@@ -1281,14 +1295,14 @@
   {198, name="Militia Drone Fabricator", features=LAUNCHER, group=2, shape=211,
     durability=1.500, blurb="Launching automated drones designed to engage the enemy when you're under attack",
     density=0.150, fillColor=0x5b5b5b, fillColor1=0x7c9837, lineColor=0xaef300, replicateBlock=
-    {command={}, name="Civilian Defense Drone", features=COMMAND|THRUSTER|GENERATOR|CANNON|TURRET|TORQUER|FREERES|AUTOLAUNCH|NOCLIP_ALLY,
-        group=2, blockshape=SQUARE_HALF, lifetime=24.000, durability=2.000, turretSpeed=100,
-        density=0.200, fillColor=0x104a99, fillColor1=0x4f8e5c, lineColor=0xaef300,
+    {command={}, name="Civilian Defense Drone", features=COMMAND|THRUSTER|GENERATOR|CANNON|TURRET|TORQUER|FREERES|AUTOLAUNCH|NOCLIP_ALLY|ONEUSE,
+        group=2, shape=SQUARE_HALF, lifetime=24.000, durability=2.000, turretSpeed=100,
+        density=0.200, fillColor=0x104a99, fillColor1=0x4f8e5c, lineColor=0xaef300, aihint_range=600,
         powerCapacity=120.000, capacity=100.000, thrusterForce=4500.000, thrusterColor=0x90808080,
-        thrusterColor1=0x904060a0, torquerTorque=7500.000, cannon={roundsPerSec=2.125, explosive=FRAG_PROXIMITY,
-        muzzleVel=1500.000, power=15.500, damage=10.000, color=0xecfe00, range=800.000, spread=0.010,
-		fragment={damage=5, color=0xecfe00, rangeStdDev=400, roundsPerBurst=5, muzzleVel=1250, spread=1.250, pattern=WAVE}}, generatorCapacityPerSec=50.000},
-     replicateTime=7.250, launcherPower=15.000},
+        thrusterColor1=0x904060a0, torquerTorque=7500.000, cannon={roundsPerSec=2.125, explosive=FRAG_PROXIMITY|ENABLED,
+        muzzleVel=1500.000, power=15.500, damage=10.000, color=0xecfe00, range=900.000, spread=0.010, explodeRadius=15,
+		fragment={damage=5, color=0xecfe00, rangeStdDev=400, roundsPerBurst=8, muzzleVel=1250, spread=3.142, pattern=RANDOM|ABSOLUTE}}, generatorCapacityPerSec=50.000},
+     replicateTime=3.250, launcherPower=15.000},
 
   {199, name="Defence Thrower", features=TURRET|CANNON|AUTOFIRE, group=3, shape=ISOTRI_72,
     durability=0.400, density=0.150, fillColor=0x7a0a28, fillColor1=0xa36a1b, lineColor=0xe0fa08,
@@ -1642,21 +1656,21 @@
       replicateTime=4.45, launcherPower=150},
 
   {17068, name="[R]Reactive Laser", features=LASER|TURRET|AUTOFIRE|CHARGING, group=8,
-    durability=1.000, blurb="A variant of the Reactive Laser with most of it improvement focused in range", density=0.150,
-    fillColor=0x414077, fillColor1=0x417078, lineColor=0x3390eb, turretSpeed=10.000, laser={width=2.000, damage=40.000,
-      color=0x7f00b7e9, range=1275.000}, sort=80026, chargeMin=1, chargeMaxTime=0.5, barrelSize={0.001, 0.001},
+    durability=1.000, blurb="A variant of the Reactive Laser with most of it improvement focused in range, can shoot down drones from a distance", density=0.150,
+    fillColor=0x414077, fillColor1=0x417078, lineColor=0x3390eb, turretSpeed=10.000, laser={width=2.000, damage=50.000,
+      color=0x7f00b7e9, range=1675.000}, sort=80026, chargeMin=1, chargeMaxTime=0.75, barrelSize={0.001, 0.001},
 	  shroud={{size={3, 3}, offset={0, 0, 0.1}, shape=338}, {size={8, 8}, offset={0, 0, 0.05}, shape=338}}},
 
   {17069, name="[H]Reactive Laser", features=LASER|TURRET|AUTOFIRE|CHARGING, group=8,
-    durability=1.000, blurb="A heavy variant of the Reactive Laser which increases most of it's damage, designed to take down heavy missiles, not good against swarms", density=0.150,
+    durability=1.000, blurb="A heavy variant of the Reactive Laser which increases most of it's damage, designed to take down heavy missiles, not good against swarms (of small & nimble threats)", density=0.150,
     fillColor=0x414077, fillColor1=0x417078, lineColor=0x3390eb, turretSpeed=5.000, laser={width=3.000, damage=110.000,
       color=0x7f00b7e9, range=700.000}, sort=80025, chargeMin=1, chargeMaxTime=1.5, barrelSize={0.001, 0.001},
 	  shroud={{size={6, 6}, offset={0, 0, 0.1}, shape=338}, {size={8, 8}, offset={0, 0, 0.05}, shape=338}}},
 
   {17070, name="[M]Reactive Laser", features=LASER|TURRET|AUTOFIRE|CHARGING, group=8,
-    durability=1.000, blurb="A medium class variant of the Reactive Laser which enable it to take down some drones in one shot", density=0.150,
-    fillColor=0x414077, fillColor1=0x417078, lineColor=0x3390eb, turretSpeed=15.000, laser={width=2.000, damage=50.000,
-      color=0x7f00b7e9, range=825.000}, sort=80024, chargeMin=1, chargeMaxTime=0.75, barrelSize={0.001, 0.001},
+    durability=1.000, blurb="A medium class variant of the Reactive Laser which enable it to take down missiles in one-two single blast", density=0.150,
+    fillColor=0x414077, fillColor1=0x417078, lineColor=0x3390eb, turretSpeed=15.000, laser={width=2.000, damage=8.000,
+      color=0x7f00b7e9, range=825.000}, sort=80024, chargeMin=1, chargeMaxTime=0.12, barrelSize={0.001, 0.001},
 	  shroud={{size={4, 4}, offset={0, 0, 0.1}, shape=338}, {size={6, 6}, offset={0, 0, 0.05}, shape=338}}},
 
   {17071, shape=205, name="Proximity Launcher", features=LAUNCHER, group=12, aihint_range=1000,
@@ -1674,7 +1688,7 @@
     durability=2.000, blurb="Effective on detonating large explosive objects and sabotage ships from inside", density=0.150,
     fillColor=0x808080, fillColor1=0x505050, lineColor=0xdfe0e2, replicateBlock=
     {command={flags=WANDER|POINT_DEFENSE|FIRE_AT_WILL}, features=LASER|ALWAYSFIRE|COMMAND|THRUSTER|TORQUER|EXPLODE|GENERATOR|NOCLIP, group=15, shape=DISH_MISSILE, scale=2,
-      lifetime=4.400, durability=1.000, density=0.150, fillColor=0x505050, name="Sabotage Terrorist", powerCapacity=100, barrelCount=2,
+      lifetime=4.400, durability=1.000, density=0.150, fillColor=0x505050, name="Sabotage Terrorist", powerCapacity=100, barrelCount=2, sound="none",
       fillColor1=0x96bc2a, lineColor=0xdfe0e2, capacity=100.000, thrusterForce=4560.000, generatorCapacityPerSec=10,
       thrusterColor=0x9054f5c4, thrusterColor1=0x90cff5e9, torquerTorque=3200.000, laser={width=2, damage=300, color=0x42f4ff00, power=10, range=-50, immobilizeForce=85500},
       explodeDamage=1.000, explodeRadius=1.000}, replicateTime=2.00, launcherPower=10.000},
@@ -1826,21 +1840,21 @@
   {17096, shape=RECT_LONG, scale=5, name="Structure Port Platform", features=ENVIRONMENTAL, group=12, fillColor=0x30203b, fillColor1=0x10104b, armor=30,
     blurb="A platform that provide foundation where rooted buildings can be built on a station or inlaid into a battleship", lineColor=0x384098, growRate=8.25},
 
-  {17097, shape=RECT_ROOT, name="Stabilizer Root", features=ROOT|LASER|ALWAYSFIRE, group=12, durability=0.75, fillColor=0xe0c840,
+  {17097, shape=RECT_ROOT, name="Stabilizer Root", features=ROOT|LASER|ALWAYSFIRE, group=12, durability=0.75, fillColor=0xe0c840, sound="none",
     fillColor1=0xD6955C, lineColor=0xfca904, growRate=16.5, laser={width=4, damage=-100, color=0x40e0c840, range=100}},
 
   {17098, shape=RECT_ROOT, name="Restorer Root", features=ROOT|LASER|CHARGING, group=12, durability=1.125,
     density=0.15, fillColor=0xe05040, fillColor1=0xC6D65C, lineColor=0xbda09a, growRate=16.5,
     laser={width=5, damage=-150, color=0x40e05040, range=100}, chargeMaxTime=1.00, chargeMin=0.5},
 
-  {17099, shape=RECT_ROOT, scale=2, name="Stabilizer Root", features=ROOT|LASER|ALWAYSFIRE, group=12, durability=0.75,
+  {17099, shape=RECT_ROOT, scale=2, name="Stabilizer Root", features=ROOT|LASER|ALWAYSFIRE, group=12, durability=0.75, sound="none",
     fillColor=0xe0c840, fillColor1=0xD6955C, lineColor=0xfca904, growRate=16.5, laser={width=6, damage=-200, color=0x40e0c840, range=100}},
 
   {17100, shape=RECT_ROOT, scale=2, name="Restorer Root", features=ROOT|LASER|CHARGING, group=12, durability=1.125,
     density=0.15, fillColor=0xe05040, fillColor1=0xC6D65C, lineColor=0xbda09a, growRate=16.5,
     laser={width=7, damage=-300, color=0x40e05040, range=100}, chargeMaxTime=1.00, chargeMin=0.5},
 
-  {17101, shape=RECT_ROOT, scale=3, name="Stabilizer Root", features=ROOT|LASER|ALWAYSFIRE, group=12, durability=0.75,
+  {17101, shape=RECT_ROOT, scale=3, name="Stabilizer Root", features=ROOT|LASER|ALWAYSFIRE, group=12, durability=0.75, sound="none",
     fillColor=0xe0c840, fillColor1=0xD6955C, lineColor=0xfca904, growRate=16.5, laser={width=8, damage=-400, color=0x40e0c840, range=100}},
 
   {17102, shape=RECT_ROOT, scale=3, name="Restorer Root", features=ROOT|LASER|CHARGING, group=12, durability=1.125,
@@ -1910,11 +1924,11 @@
     durability=0.500, density=0.150, fillColor=0xED3232, fillColor1=0xF2A0A0, lineColor=0xee5245, armor=65,
     cannon={roundsPerSec=1.880, muzzleVel=900.000, spread=0.015, damage=150.000, color=0xee5245, range=1150.000, explosive=ENABLED|FRAG_NOFLASH, explodeRadius=15}},
   
-  {17113, shape=234, name="D-Gemlighter-H", features=LASER|ALWAYSFIRE|TURRET, group=12, turretLimit=0,
+  {17113, shape=234, name="D-Gemlighter-H", features=LASER|ALWAYSFIRE|TURRET, group=12, turretLimit=0, sound="none",
     durability=0.5, blurb="VERTICAL facing crystal holder of the Plasmacaster weaponry, it may affects other kind of projectiles weaponry if placed adjacent together",
     density=0.15, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xbda09a, laser={damage=500, range=20, power=0, width=2, color=0x55FFFFFF}},
 
-  {17114, shape=238, name="D-Gemlighter-V", features=LASER|ALWAYSFIRE|TURRET, group=12, turretLimit=0,
+  {17114, shape=238, name="D-Gemlighter-V", features=LASER|ALWAYSFIRE|TURRET, group=12, turretLimit=0, sound="none",
     durability=0.5, blurb="HORIZONTAL facing crystal holder of the Plasmacaster weaponry, it may affects other kind of projectiles weaponry if placed adjacent together",
     density=0.15, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xbda09a, laser={damage=500, range=20, power=0, width=2, color=0x55FFFFFF}},
 
@@ -2672,7 +2686,7 @@
       width=6.000, damage=700.000, color=0x7fcf1090, range=2100.000}, growRate=20.000},
 	  
   {17252, name="[M]Interceptor Launchpad", features=LAUNCHER|AUTOFIRE, group=8, shape=RECT_LAUNCHER1,
-    health=38.000, durability=0.500, blurb="A bit stronger and durable than the light variants, it can now takes down more durable targets",
+    durability=0.500, blurb="A bit stronger and durable than the light variants, it can now takes down more durable targets",
     density=0.150, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb, replicateBlock=
     {command={flags=POINT_DEFENSE|FIRE_AT_WILL}, name="Interception Drone", features=COMMAND|THRUSTER|GENERATOR|TURRET|LASER|TORQUER|FREERES|SHIELD|AUTOFIRE|NOCLIP_ALLY,
       group=8, shape=ISOTRI_72, lifetime=40.000, durability=0.500, density=0.150, turretSpeed=360.000, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
@@ -2684,7 +2698,7 @@
      replicateTime=20.000, launcherPower=125.000, launcherOutSpeed=50.000, sort=110011},
 	 
   {17253, name="[H]Interceptor Launchpad", features=LAUNCHER|AUTOFIRE, group=8, shape=RECT_LAUNCHER1,
-    health=38.000, durability=0.500, blurb="Buffed up to withstands many hits on its own as well as annihilating the most heaviest kind of drones and missiles",
+    durability=0.500, blurb="Buffed up to withstands many hits on its own as well as annihilating the most heaviest kind of drones and missiles",
     density=0.150, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb, replicateBlock=
     {command={flags=POINT_DEFENSE|FIRE_AT_WILL}, name="Interception Drone", features=COMMAND|THRUSTER|GENERATOR|TURRET|LASER|TORQUER|FREERES|SHIELD|AUTOFIRE|NOCLIP_ALLY,
       group=8, shape=267, lifetime=40.000, durability=0.500, density=0.150, turretSpeed=360.000, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
@@ -2699,10 +2713,10 @@
     durability=0.5, density=0.15, blurb="Designed to weaken shields with photon beam and photon collision surges, however it proven to be quite effective at eliminating smaller crafts in numbers", 
 	fillColor=0x113077, fillColor1=0x98f5ff, lineColor=0x3390eb, replicateBlock=
     {command={}, shape=MISSILE, features=COMMAND|THRUSTER|TORQUER|LASER|GENERATOR|ONEUSE|EXPLODE|CHARGING, group=8, deathFeatures=CANNON,
-      lifetime=10, durability=1.2, density=0.15, fillColor=0x113077, fillColor1=0x98f5ff, lineColor=0x3390eb, thrusterForce=2000,
-	  torquerTorque=20000, thrusterColor=0x90808080, thrusterColor1=0x904060a0, chargeMin=1, chargeMaxTime=2, explodeDamage=100, explodeRadius=0,
+      lifetime=10, durability=1.2, density=0.15, fillColor=0x113077, fillColor1=0x98f5ff, lineColor=0x3390eb, thrusterForce=2000, 
+	  torquerTorque=20000, thrusterColor=0x90808080, thrusterColor1=0x904060a0, chargeMin=1, chargeMaxTime=2, explodeDamage=100, explodeRadius=1,
 	  laser={power=10, width=3.000, damage=100, color=0x7ffffafa, range=750, pulsesPerSec=2, pulseAvailability=0.85, linearForce=-500}, 
-	  cannon={roundsPerSec=0.1, muzzleVel=10, power=0, damage=100, range=20, rangeStdDev=20, color=0xfffafa},
+	  cannon={roundsPerSec=0.1, muzzleVel=10, power=0, damage=100, range=20, rangeStdDev=20, color=0xfffafa}, aihint_muzzleVel=100000,
 	  powerCapacity=10.000, generatorCapacityPerSec=10.000}, replicateTime=4, launcherPower=70, launcherOutSpeed=50, sort=110024},
 	  
   {17255, shape=RECT_LAUNCHER, name="SBM Scatterer", features=LAUNCHER, group=2,
@@ -2729,11 +2743,11 @@
     lineColor=0xfca904, group=12, scale=1, name="Generator/Storage", durability=0.5,
     density=0.15, powerCapacity=700, generatorCapacityPerSec=200}
 	
-  {17258, name="Thermiblade Emitter", group=15, shape=GEM_1, features=LASER|ALWAYSFIRE, scale=2, durability=6.000, density=0.200,
+  {17258, name="Thermiblade Emitter", group=15, shape=GEM_1, features=LASER|ALWAYSFIRE, scale=2, durability=6.000, density=0.200, sound="none",
     fillColor=0xe8a97e, fillColor1=0x775339, lineColor=0x5d0d02, laser={width=6.000,
         damage=1000.000, color=0x7fff2100, linearForce=15000, range=200.000}},
 		
-  {17259, name="Thermijet Booster", group=15, shape=255, features=CANNON|ALWAYSFIRE|THRUSTER, scale=2, durability=5.000, density=0.200,
+  {17259, name="Thermijet Booster", group=15, shape=255, features=CANNON|ALWAYSFIRE|THRUSTER, scale=2, durability=5.000, density=0.200, sound="none",
     fillColor=0xe8a97e, fillColor1=0x775339, lineColor=0x5d0d02, blurb="Add an uncontrollable type of ramjet that'll eventually fries anything that flies behind its path",
 	  cannon={roundsPerSec=200, muzzleVel=-750.000, power=1.000, damage=2.000, color=0xff5100, rangeStdDev=-100.000,
       spread=0.1}, thrusterForce=44000, thrusterColor=0x90ff5100, thrusterColor1=0x90ff2100},
@@ -3178,7 +3192,7 @@
     lineColor=0x587494, group=11, shape=PENTAGON, scale=9, durability=2.5, density=0.5},
 	
   {17336, fillColor=0x638dd0, fillColor1=0x8dbfe1, lineColor=0x258afb, features=LASER|ALWAYSFIRE|NOPALETTE,
-    laser={power=1, width=15, color=0x4f548af5, range=125, immobilizeForce=75000},
+    laser={power=1, width=15, color=0x4f548af5, range=125, immobilizeForce=75000}, sound="none",
     group=11, shape=280, scale=4, name="Power Distributor Stabilizer", durability=2},
 	
   {17337, features=TURRET|LASER|NOPALETTE, turretSpeed=60, fillColor=0x37006e, fillColor1=0x860285,
@@ -3186,7 +3200,7 @@
       range=2500, color=0x7fcf1090, decay=0.1}, group=11, shape=PENTAGON, scale=3, name="Defender Crystal",
     durability=2, density=0.15, barrelSize={0.001, 0.001}},
 	
-  {17338, features=LASER|GENERATOR|NOPALETTE|ALWAYSFIRE|TRACTOR, fillColor=0x37006e, fillColor1=0x860285,
+  {17338, features=LASER|GENERATOR|NOPALETTE|ALWAYSFIRE|TRACTOR, fillColor=0x37006e, fillColor1=0x860285, sound="none",
     lineColor=0xb00049, generatorCapacityPerSec=500, tractorRange=1, laser={width=5, power=1,
       range=120, color=0x7fcf1090}, group=11, shape=ISOTRI_36, scale=4, name="Power Feed Crystal",
     durability=2, density=0.15},
@@ -3335,7 +3349,7 @@
   {17374, features=LAUNCHER, fillColor=0x37006e, fillColor1=0x860285, lineColor=0xb00049,
     scale=2, replicateBlock=
     {17375, command={}, name="Prystallic Seed", features=COMMAND|THRUSTER|SEED|REGROWER|FREERES|NOPALETTE|GENERATOR|NOCLIP_ALLY|LASER|ALWAYSFIRE, capacity=100, launchLifetime=30,
-      fillColor=0xe780ff, fillColor1=0x8c60ff, lineColor=0x8725fb, thrusterColor=0x9090cef0, powerCapacity=1000, generatorCapacityPerSec=500,
+      fillColor=0xe780ff, fillColor1=0x8c60ff, lineColor=0x8725fb, thrusterColor=0x9090cef0, powerCapacity=1000, generatorCapacityPerSec=500, sound="none",
       thrusterColor1=0x9090d7f0, group=11, shape=5012, scale=2, durability=2.5, seedLifetime=300, laser={width=8, damage=-400,
       range=-222, color=0x1f30047c}, density=0.15, thrusterForce=3000}, group=11, shape=5010, name="PRYSTAL GROWER", 
 	  blurb="Plants healing crystals on asteroids to help repair crystal structures, but do not plant it near or under a friendly crystal tower, otherwise they will explode and kill them off once the crystal expires",
@@ -3439,7 +3453,7 @@
   {17407, growRate=200, features=THRUSTER|EXPLODE, fillColor=0x404040, fillColor1=0x202020, lineColor=0x000000,
     group=9, shape=286, name="Missile Body", durability=2.5, blurb="Missile body block", thrusterForce=5000, explodeDamage=5, explodeRadius=10},
 	
-  {17408, name="Doomjet Booster", group=9, shape=287, features=CANNON|ALWAYSFIRE|THRUSTER|EXPLODE, durability=2.500, growRate=50,
+  {17408, name="Doomjet Booster", group=9, shape=287, features=CANNON|ALWAYSFIRE|THRUSTER|EXPLODE, durability=2.500, growRate=50, sound="none",
     fillColor=0x404040, fillColor1=0x202020, lineColor=0x000000, blurb="Add an uncontrollable type of ramjet that'll eventually fries anything that flies behind its path",
 	  cannon={roundsPerSec=100, muzzleVel=-750.000, power=1.000, damage=2.000, color=0xcf1010, rangeStdDev=-50.000}, thrusterForce=22000},
 	  
@@ -3507,43 +3521,43 @@
   {17425, growRate=200, fillColor=0x404040, fillColor1=0x202020, lineColor=0x000000, features=EXPLODE,
     group=9, shape=ADAPTER, name="Hull", durability=2.5, blurb="Missile building block", explodeDamage=5, explodeRadius=10},
 	
-  {17426, shape=202, name="Flarer Beam Long", features=LASER|ALWAYSFIRE, group=3,
+  {17426, shape=202, name="Flarer Beam Long", features=LASER|ALWAYSFIRE, group=3, sound="none",
     durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
     laser={damage=600, range=300, width=3, color=0x2fff2100}},
 	
-  {17427, shape=202, name="Flarer Beam Short", features=LASER|ALWAYSFIRE, group=3,
+  {17427, shape=202, name="Flarer Beam Short", features=LASER|ALWAYSFIRE, group=3, sound="none",
     durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
     laser={damage=600, range=100, width=3, color=0x2fff2100}},
 	
-  {17428, shape=202, name="Flust Booster", features=LASER|ALWAYSFIRE, group=3,
+  {17428, shape=202, name="Flust Booster", features=LASER|ALWAYSFIRE, group=3, sound="none",
     durability=0.5, density=0.15, fillColor=0xffa500, fillColor1=0xc6120a, lineColor=0xff0100,
     laser={linearForce=360000, range=100, power=9, width=3, color=0x1fffff80}},
 	
-  {17429, shape=202, name="Flarer Beam Middle", features=LASER|ALWAYSFIRE, group=3,
+  {17429, shape=202, name="Flarer Beam Middle", features=LASER|ALWAYSFIRE, group=3, sound="none",
     durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
     laser={damage=600, range=200, width=3, color=0x2fff2100}},
 	
-  {17430, shape=202, name="Flarer Beam Longer", features=LASER|ALWAYSFIRE, group=3,
+  {17430, shape=202, name="Flarer Beam Longer", features=LASER|ALWAYSFIRE, group=3, sound="none",
     durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
     laser={damage=600, range=400, width=3, color=0x2fff2100}},
 	
-  {17431, shape=202, name="Flarer Beam Further", features=LASER|ALWAYSFIRE, group=3,
+  {17431, shape=202, name="Flarer Beam Further", features=LASER|ALWAYSFIRE, group=3, sound="none",
     durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
     laser={damage=600, range=500, width=3, color=0x2fff2100}},
 	
-  {17432, shape=202, name="Flarer Beam Far", features=LASER|ALWAYSFIRE, group=3,
+  {17432, shape=202, name="Flarer Beam Far", features=LASER|ALWAYSFIRE, group=3, sound="none",
     durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
     laser={damage=600, range=600, width=3, color=0x2fff2100}},
 	
-  {17433, shape=202, name="Flarer Beam Farther", features=LASER|ALWAYSFIRE, group=3,
+  {17433, shape=202, name="Flarer Beam Farther", features=LASER|ALWAYSFIRE, group=3, sound="none",
     durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
     laser={damage=600, range=700, width=3, color=0x2fff2100}},
 	
-  {17434, shape=202, name="Flarer Beam Distant", features=LASER|ALWAYSFIRE, group=3,
+  {17434, shape=202, name="Flarer Beam Distant", features=LASER|ALWAYSFIRE, group=3, sound="none",
     durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
     laser={damage=600, range=800, width=3, color=0x2fff2100}},
 	
-  {17435, name="Beam Transmitter", shape=ADAPTER, fillColor=0xff5000, fillColor1=0x303030, lineColor=0x802020,
+  {17435, name="Beam Transmitter", shape=ADAPTER, fillColor=0xff5000, fillColor1=0x303030, lineColor=0x802020, sound="none",
     group=9, durability=2, features=LASER|ALWAYSFIRE, laser={power=1, range=125, color=0x4fff5000, damage=-10, width=6}},
 	
   {17436, name="Eye Scorcher", shape=OCTAGON, fillColor=0xff5000, fillColor1=0x303030, lineColor=0x802020, scale=2, barrelSize={0.001, 0.001},
@@ -3584,7 +3598,7 @@
     shape=290, replicateBlock=
     {command={}, features=COMMAND|THRUSTER|TORQUER|EXPLODE, lifetime=8, capacity=100,
       fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb, thrusterColor=0x90808080,
-      thrusterColor1=0x904060a0, group=8, shape=290, scale=3, durability=0.1,
+      thrusterColor1=0x904060a0, group=8, shape=290, scale=3, durability=0.4,
       thrusterForce=120000, torquerTorque=2000000, explodeDamage=155, explodeRadius=150},
       group=8, durability=0.5, density=0.15, blurb="Launches deadly heavy harpoon warheads (Derivative of Sentient mod missile shape)",
 	  replicateTime=2.5, launcherPower=500, launcherOutSpeed=50, sort=110061},
@@ -4222,7 +4236,7 @@
         17714,
         group=15,
         features=CANNON|ALWAYSFIRE|NOPALETTE|TURRET,
-        name="Foxfire Orbs",
+        name="Foxfire Orbs", sound="none",
 		barrelSize={0.001, 0.001},
         blurb="Melee-like orb-shield emmiter, projectile schematic was been given by Bluebolt on Reassembly Discord",
         shape=OCTAGON,
@@ -4289,7 +4303,7 @@
 		barrelSize={0.001, 0.001},
         name="Silvaorbs Shield",
         blurb="Melee-like orb-shield emmiter, projectile schematic was been given by Bluebolt on Reassembly Discord",
-        shape=297,
+        shape=297, sound="none",
         scale=1,
         fillColor=0xbbbbbb, fillColor1=0x8d8d8d, lineColor=0xf4f4f4,
         growRate=60,
@@ -4360,7 +4374,7 @@
 		barrelSize={0.001, 0.001},
         name="Silvaorbs Shield",
         blurb="Melee-like orb-shield emmiter, projectile schematic was been given by Bluebolt on Reassembly Discord",
-        shape=297,
+        shape=297, sound="none",
         scale=2,
         fillColor=0xbbbbbb, fillColor1=0x8d8d8d, lineColor=0xf4f4f4,
         growRate=60,
@@ -4431,7 +4445,7 @@
 		barrelSize={0.001, 0.001},
         name="Silvaorbs Shield",
         blurb="Melee-like orb-shield emmiter, projectile schematic was been given by Bluebolt on Reassembly Discord",
-        shape=297,
+        shape=297, sound="none",
         scale=3,
         fillColor=0xbbbbbb, fillColor1=0x8d8d8d, lineColor=0xf4f4f4,
         growRate=60,
@@ -4506,7 +4520,7 @@
 		barrelSize={0.001, 0.001},
         name="Silvaorbs Shield",
         blurb="Melee-like orb-shield emmiter, projectile schematic was been given by Bluebolt on Reassembly Discord",
-        shape=298,
+        shape=298, sound="none",
         scale=1,
         fillColor=0xbbbbbb, fillColor1=0x8d8d8d, lineColor=0xf4f4f4,
         growRate=60,
@@ -4577,7 +4591,7 @@
 		barrelSize={0.001, 0.001},
         name="Silvaorbs Shield",
         blurb="Melee-like orb-shield emmiter, projectile schematic was been given by someone named Bluebolt on Reassembly Discord, an octagonal turret weapon or similar shape shield emmiter can be installed inside it.",
-        shape=298,
+        shape=298, sound="none",
         scale=2,
         fillColor=0xbbbbbb, fillColor1=0x8d8d8d, lineColor=0xf4f4f4,
         growRate=60,
@@ -4648,7 +4662,7 @@
 		barrelSize={0.001, 0.001},
         name="Silvaorbs Shield",
         blurb="Melee-like orb-shield emmiter, projectile schematic was been given by someone named Bluebolt on Reassembly Discord, an octagonal turret weapon or similar shape shield emmiter can be installed inside it.",
-        shape=298,
+        shape=298, sound="none",
         scale=3,
         fillColor=0xbbbbbb, fillColor1=0x8d8d8d, lineColor=0xf4f4f4,
         growRate=60,
@@ -4789,7 +4803,7 @@
       durability=1.000, density=0.100, fillColor=0x5b5b5b, fillColor1=0x7c9837, lineColor=0xaef300,
       powerCapacity=120.000, capacity=100.000, thrusterForce=3000.000, thrusterColor=0x90808080,
       thrusterColor1=0x904060a0, name="Flashing Class Missile", replicateBlock=
-	  {features=COMMAND|CANNON|GENERATOR|NOCLIP_ALLY|AUTOLAUNCH|ALWAYSFIRE|THRUSTER|TORQUER|EXPLODE, name="SS-25 Fast Missile", group=2, lifetime=15.000, shape=516,
+	  {features=COMMAND|CANNON|GENERATOR|NOCLIP_ALLY|AUTOLAUNCH|ALWAYSFIRE|THRUSTER|TORQUER|EXPLODE, name="SS-25 Fast Missile", group=2, lifetime=15.000, shape=516, sound="none",
         durability=0.500, density=0.100, fillColor=0x5b5b5b, fillColor1=0x7c9837, cannon={damage=2, color=0xecfe00, range=-10, power=1, muzzleVel=-100, roundsPerSec=40},
 		generatorCapacityPerSec=100, powerCapacity=100, explodeDamage=122, explodeRadius=22, lineColor=0xaef300, capacity=0.100, thrusterForce=800, torquerTorque=12000}, 
       replicateTime=5, launchSpeed=0}, replicateTime=3, launcherPower=150.000},
@@ -4802,7 +4816,7 @@
       durability=1.000, density=0.100, fillColor=0x5b5b5b, fillColor1=0x7c9837, lineColor=0xaef300,
       powerCapacity=120.000, capacity=100.000, thrusterForce=2500.000, thrusterColor=0x90808080,
       thrusterColor1=0x904060a0, name="Slashing Class Missile", replicateBlock=
-	  {features=COMMAND|CANNON|GENERATOR|NOCLIP_ALLY|AUTOLAUNCH|ALWAYSFIRE|THRUSTER|TORQUER|EXPLODE, name="SS-50 Fast Missile", group=2, lifetime=15.000, shape=515,
+	  {features=COMMAND|CANNON|GENERATOR|NOCLIP_ALLY|AUTOLAUNCH|ALWAYSFIRE|THRUSTER|TORQUER|EXPLODE, name="SS-50 Fast Missile", group=2, lifetime=15.000, shape=515, sound="none",
         durability=0.500, density=0.100, fillColor=0x5b5b5b, fillColor1=0x7c9837, cannon={damage=2, color=0xecfe00, range=-10, power=1, muzzleVel=-100, roundsPerSec=50},
 		generatorCapacityPerSec=100, powerCapacity=100, explodeDamage=222, explodeRadius=2, lineColor=0xaef300, capacity=0.100, thrusterForce=700, torquerTorque=10000}, 
       replicateTime=5, launchSpeed=0}, replicateTime=2, launcherPower=150.000},
@@ -4917,44 +4931,31 @@
 	fillColor=0x7a67ee, fillColor1=0xb03060, lineColor=0xd8d8d8, replicateBlock={features=COMMAND|THRUSTER|TORQUER|AUTOFIRE|CANNON|TURRET|GENERATOR|NOCLIP_ALLY|AUTOLAUNCH, 
 	fillColor=0x7a67ee, fillColor1=0xb03060, lineColor=0xd8d8d8, shape=301, scale=2, thrusterForce=20000, torquerTorque=7500, generatorCapacityPerSec=300,
 	powerCapacity=1000, turretLimit=3.142, barrelTaper=0.60, durability=3.75, density=0.20, turretSpeed=5,
-	cannon={roundsPerSec=4.22, range=600, damage=10, explosive=FRAG_PROXIMITY, muzzleVel=1200, color=0x551a8b,
-	fragment={damage=1, roundsPerBurst=10, rangeStdDev=30, spread=3.141, explosive=FINAL, muzzleVel=1200, color=0x551a8b, explodeRadius=10}}}, replicateTime=40},
+	cannon={roundsPerSec=4.22, range=600, damage=40, muzzleVel=1200, color=0x551a8b, recoil=0}}, replicateTime=40},
 	
   {17747, features=LAUNCHER|NOPALETTE|NOCLIP, name="Thiliumia Sprite", group=2, shape=212, durability=2.25, density=0.20,
     blurb="A vegetable launcher branched off from a Thiliumia's exotic materials, it can reproduces multiple protector sprites to fight for you",
-	fillColor=0x20b2aa, fillColor1=0x00fa9a, lineColor=0xd8d8d8, replicateBlock={features=COMMAND|THRUSTER|TORQUER|AUTOFIRE|CANNON|GENERATOR|NOCLIP_ALLY|AUTOLAUNCH, 
+	fillColor=0x20b2aa, fillColor1=0x00fa9a, lineColor=0xd8d8d8, replicateBlock={features=COMMAND|THRUSTER|ROTATOR|TORQUER|AUTOFIRE|CANNON|GENERATOR|NOCLIP_ALLY|AUTOLAUNCH, 
 	fillColor=0x20b2aa, fillColor1=0x00fa9a, lineColor=0xd8d8d8, shape=301, scale=3, thrusterForce=20000, torquerTorque=7500, generatorCapacityPerSec=325,
 	powerCapacity=1000, barrelTaper=0.60, durability=2.25, density=0.20,
-	cannon={roundsPerSec=4.22, range=600, damage=20, explosive=FRAG_IMPACT, muzzleVel=1200, color=0x1a898b,
-	fragment={damage=5, roundsPerBurst=10, rangeStdDev=-6, spread=-1.570, explosive=FRAG_PROXIMITY, muzzleVel=-120, color=0x1a898b, pattern=ABSOLUTE
-	fragment={damage=5, roundsPerBurst=1, range=10, explosive=FRAG_IMPACT, muzzleVel=120, color=0x1a898b, pattern=ABSOLUTE|CONSTANT,
-	fragment={damage=5, roundsPerBurst=1, range=-10, explosive=FRAG_PROXIMITY, muzzleVel=-120, color=0x1a898b, pattern=ABSOLUTE|CONSTANT,
-	fragment={damage=5, roundsPerBurst=1, range=10, muzzleVel=120, color=0x1a898b, pattern=ABSOLUTE|CONSTANT,
-	}}}}}}, replicateTime=40},
+	cannon={roundsPerSec=4.22, range=600, damage=20, muzzleVel=1200, color=0x1a898b, recoil=0}}, replicateTime=40},
 	
   {17748, features=LAUNCHER|NOPALETTE|NOCLIP, name="Tholiani Disciple", group=2, shape=212, durability=3.75, density=0.20,
     blurb="A vegetable launcher branched off from a Tholiani's genetic materials, it can replicates multiple fighter sprites to fight for you",
 	fillColor=0x7a67ee, fillColor1=0xb03060, lineColor=0xd8d8d8, replicateBlock={features=COMMAND|THRUSTER|TORQUER|AUTOFIRE|CANNON|TURRET|GENERATOR|NOCLIP_ALLY|AUTOLAUNCH, 
 	fillColor=0x7a67ee, fillColor1=0xb03060, lineColor=0xd8d8d8, shape=301, scale=1, thrusterForce=20000, torquerTorque=7500, generatorCapacityPerSec=400,
-	powerCapacity=1000, turretLimit=3.142, barrelTaper=0.60, durability=3.75, density=0.20, turretSpeed=5,
-	cannon={roundsPerSec=8.44, range=600, damage=10, explosive=FRAG_PROXIMITY, muzzleVel=1200, color=0x551a8b, roundsPerBurst=2, burstyness=1,
-	fragment={damage=1, roundsPerBurst=10, rangeStdDev=30, spread=3.141, explosive=FINAL, muzzleVel=1200, color=0x551a8b, explodeRadius=10}}}, replicateTime=60},
+	powerCapacity=1000, turretLimit=3.142, barrelTaper=0.60, durability=3.75, density=0.20, turretSpeed=5, barrelCount=2,
+	cannon={roundsPerSec=8.44, range=600, damage=40, muzzleVel=1200, color=0x551a8b, roundsPerBurst=2, burstyness=1, recoil=0}}, replicateTime=60},
 	
   {17749, features=LAUNCHER|NOPALETTE|NOCLIP, name="Thiliumia Disciple", group=2, shape=212, durability=2.25, density=0.20,
     blurb="A vegetable launcher branched off from a Thiliumia's exotic materials, it can reproduces multiple protector sprites to fight for you",
-	fillColor=0x20b2aa, fillColor1=0x00fa9a, lineColor=0xd8d8d8, replicateBlock={features=COMMAND|THRUSTER|TORQUER|AUTOFIRE|CANNON|GENERATOR|NOCLIP_ALLY|LAUNCHER|TURRET|AUTOLAUNCH, 
+	fillColor=0x20b2aa, fillColor1=0x00fa9a, lineColor=0xd8d8d8, replicateBlock={features=COMMAND|THRUSTER|TORQUER|AUTOFIRE|CANNON|GENERATOR|NOCLIP_ALLY|LAUNCHER|TURRET|AUTOLAUNCH|ROTATOR, 
 	fillColor=0x20b2aa, fillColor1=0x00fa9a, lineColor=0xd8d8d8, shape=301, scale=5, thrusterForce=20000, torquerTorque=7500, generatorCapacityPerSec=325,
 	powerCapacity=1000, barrelTaper=0.60, durability=2.25, density=0.20, aihint_range=600,
-	cannon={roundsPerSec=4.22, range=600, damage=20, explosive=FRAG_IMPACT, muzzleVel=1200, color=0x1a898b,
-	fragment={damage=20, roundsPerBurst=1, range=-10, explosive=FRAG_PROXIMITY, muzzleVel=-120, color=0x1a898b, pattern=ABSOLUTE|CONSTANT
-	fragment={damage=20, roundsPerBurst=1, range=10, explosive=FRAG_IMPACT, muzzleVel=120, color=0x1a898b, pattern=ABSOLUTE|CONSTANT,
-	fragment={damage=20, roundsPerBurst=1, range=-10, explosive=FRAG_PROXIMITY, muzzleVel=-120, color=0x1a898b, pattern=ABSOLUTE|CONSTANT,
-	fragment={damage=20, roundsPerBurst=1, range=10, muzzleVel=120, color=0x1a898b, pattern=ABSOLUTE|CONSTANT}}}}}, 
-	replicateBlock={features=COMMAND|ONEUSE|CANNON|THRUSTER|TORQUER|FREERES|NOCLIP|GENERATOR, lifetime=4, generatorCapacityPerSec=100, 
+	cannon={roundsPerSec=4.22, range=600, damage=20, muzzleVel=1200, color=0x1a898b, recoil=0}, 
+	replicateBlock={features=COMMAND|ONEUSE|CANNON|THRUSTER|TORQUER|FREERES|NOCLIP|GENERATOR|ROTATOR, lifetime=4, generatorCapacityPerSec=100, 
 	powerCapacity=100, torquerTorque=500, thrusterForce=2000, shape=MISSILE, fillColor=0x20b2aa, fillColor1=0x00fa9a, lineColor=0xd8d8d8, density=0.20,
-	cannon={roundsPerSec=1, range=600, damage=20, explosive=FRAG_IMPACT, muzzleVel=1200, color=0x1a898b,
-	fragment={damage=20, roundsPerBurst=1, range=-100, explosive=FRAG_PROXIMITY, muzzleVel=-1200, color=0x1a898b, pattern=ABSOLUTE|CONSTANT
-	fragment={damage=20, roundsPerBurst=1, range=100, muzzleVel=1200, color=0x1a898b, pattern=ABSOLUTE|CONSTANT}}}}, replicateTime=4}, replicateTime=60},
+	cannon={roundsPerSec=1, range=600, damage=20, muzzleVel=1200, color=0x1a898b}}, replicateTime=4}, replicateTime=60},
 	
   {17750, shape=SEED_1, name="Tholiani Root", features=ROOT|NOPALETTE, group=2,
       durability=3.75, density=0.20, fillColor=0x7a67ee, fillColor1=0xb03060, lineColor=0xd8d8d8,
@@ -5280,7 +5281,7 @@
 	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=1500, rangeStdDev=100, color=0x5020fafa, pattern=CONSTANT|ABSOLUTE, spread=0.1,
 	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-1500, rangeStdDev=-100, color=0x6020fafa, pattern=CONSTANT|ABSOLUTE, spread=0.1}}}}}},
 	  }, explodeDamage=1, explodeRadius=1, thrusterForce=10000, torquerTorque=1000, replicateBlock={command={}, group=8, fillColor=0x2abcbc, fillColor1=0x2f8b8b, lineColor=0xc4f4f4, durability=15, density=0.15,
-	  shape=250, lifetime=5, features=COMMAND|CANNON|ALWAYSFIRE|NOCLIP_ALLY|EXPLODE|THRUSTER|TORQUER|GENERATOR, torquerTorque=2000, thrusterForce=2000, explodeRadius=1, explodeDamage=60,
+	  shape=250, lifetime=5, features=COMMAND|CANNON|ALWAYSFIRE|NOCLIP_ALLY|EXPLODE|THRUSTER|TORQUER|GENERATOR, torquerTorque=2000, thrusterForce=2000, explodeRadius=1, explodeDamage=60, sound="none",
 	  cannon={damage=30, roundsPerSec=100, range=25, muzzleVel=1, color=0x8020fafa, pattern=ABSOLUTE|NOFLASH}, generatorCapacityPerSec=500, powerCapacity=500}, replicateTime=0.001}, replicateTime=45, launcherPower=800, launcherOutSpeed=100000}
 	  
   {17821, features=TURRET|CANNON|NOICON|LAUNCHER, fillColor=0xe33434, fillColor1=0xee4c1f, lineColor=0xff7100, barrelSize={18, 3}, points=91,
@@ -5713,7 +5714,7 @@
   {17890, shape=303, name="Crystallite", group=11, durability=2, fillColor=0x43e77, scale=4,
     fillColor1=0x4167c, lineColor=0x254dfb, growRate=20, sort=-10000},
 	
-  {17891, features=CANNON|ALWAYSFIRE|NOPALETTE|NOCLIP_ALLY, fillColor=0x202020, fillColor1=0x404040, lineColor=0x101010,
+  {17891, features=CANNON|ALWAYSFIRE|NOPALETTE|NOCLIP_ALLY, fillColor=0x202020, fillColor1=0x404040, lineColor=0x101010, sound="none",
     cannon={roundsPerSec=75, muzzleVel=200, spread=3.142, damage=1, rangeStdDev=200, color=0x00000000, explosive=FRAG_PROXIMITY, recoil=0,
 	fragment={damage=1, muzzleVel=200, rangeStdDev=200, color=0x70ffffff, pattern=RANDOM|ABSOLUTE,
 	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-200, rangeStdDev=-200, color=0x50000000, pattern=WAVE|ABSOLUTE,
@@ -5724,7 +5725,7 @@
     scale=2, name="Dark Matter Relay", points=0, durability=0.5, density=0.15, blurb="A hyperspace energy relay to distribute Dark Matter energy to nearby solar systems",
     sort=60010},
 	
-  {17892, features=CANNON|ALWAYSFIRE|NOPALETTE|TELESPAWN|NOCLIP_ALLY, fillColor=0x202020, fillColor1=0x404040, lineColor=0x101010,
+  {17892, features=CANNON|ALWAYSFIRE|NOPALETTE|TELESPAWN|NOCLIP_ALLY, fillColor=0x202020, fillColor1=0x404040, lineColor=0x101010, sound="none",
     cannon={roundsPerSec=75, muzzleVel=200, spread=3.142, damage=1, rangeStdDev=200, color=0x00000000, explosive=FRAG_PROXIMITY, recoil=0,
 	fragment={damage=1, muzzleVel=200, rangeStdDev=200, color=0x70ffffff, pattern=RANDOM|ABSOLUTE, roundsPerBurst=10,
 	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-200, rangeStdDev=-200, color=0x50000000, pattern=WAVE|ABSOLUTE,
@@ -5735,7 +5736,7 @@
     scale=3, name="Dark Matter Warpport", points=100, durability=0.5, density=0.15, blurb="A warp portal made out of dark matter, that can teleport any fully constructed ships into the system, consumes renewable dark matter over time",
     sort=60010},
 	
-  {17893, features=CANNON|ALWAYSFIRE|NOPALETTE|TRACTOR|NOCLIP_ALLY, fillColor=0x202020, fillColor1=0x404040, lineColor=0x101010, tractorRange=0,
+  {17893, features=CANNON|ALWAYSFIRE|NOPALETTE|TRACTOR|NOCLIP_ALLY, fillColor=0x202020, fillColor1=0x404040, lineColor=0x101010, tractorRange=0, sound="none",
     cannon={roundsPerSec=75, roundsPerBurst=75, burstyness=1, muzzleVel=200, spread=3.142, damage=1, range=200, color=0x00000000, explosive=FRAG_PROXIMITY, recoil=0,
 	pattern=SPIRAL|ABSOLUTE, fragment={damage=1, muzzleVel=-200, rangeStdDev=-200, color=0x70ffffff, pattern=CONSTANT|ABSOLUTE, roundsPerBurst=10,
 	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-200, rangeStdDev=-200, color=0x50000000, pattern=WAVE|ABSOLUTE,
@@ -5746,7 +5747,7 @@
     name="Dark Matter Harvester", points=0, durability=0.5, density=0.15, blurb="A dark matter harvester, gather dark particles from empty space and then multiply and spread them elsewhere to other system",
     sort=60010},
 	
-  {17894, features=CANNON|ALWAYSFIRE|NOPALETTE|TRACTOR|NOCLIP_ALLY, fillColor=0x202020, fillColor1=0x404040, lineColor=0x101010, tractorRange=0,
+  {17894, features=CANNON|ALWAYSFIRE|NOPALETTE|TRACTOR|NOCLIP_ALLY, fillColor=0x202020, fillColor1=0x404040, lineColor=0x101010, tractorRange=0, sound="none",
     cannon={roundsPerSec=75, roundsPerBurst=75, burstyness=1, muzzleVel=200, spread=3.142, damage=1, range=300, color=0x00000000, explosive=FRAG_PROXIMITY, recoil=0,
 	pattern=SPIRAL|ABSOLUTE, fragment={damage=1, muzzleVel=-200, rangeStdDev=-200, color=0x70ffffff, pattern=CONSTANT|ABSOLUTE, roundsPerBurst=10,
 	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-200, rangeStdDev=-200, color=0x50000000, pattern=WAVE|ABSOLUTE,
@@ -5953,7 +5954,7 @@
 	  finForce=-225000, lifetime=1}, replicateTime=0.1, launcherSpeed=0},
 	  
   {17940, name="Silvaorb Manipulator", group=15, shape=ADAPTER, features=CANNON|AUTOFIRE, durability=5.000, density=0.200,
-    fillColor=0xeaeaea, fillColor1=0x7c7c7c, lineColor=0x4f4f4f, blurb="A melee energy orb generator, that generates an orb at a limited distance",
+    fillColor=0xeaeaea, fillColor1=0x7c7c7c, lineColor=0x4f4f4f, blurb="A melee energy orb generator, that generates an orb at a limited distance", sound="none",
 	  cannon={roundsPerSec=100, power=1, muzzleVel=1, damage=1.000, color=0x00818181, range=0, explosive=FRAG_PROXIMITY, roundsPerBurst=150, burstyness=0.01, projectileSize=2,
       pattern=ABSOLUTE|SPIRAL, fragment={color=0x00000000, damage=1.000, muzzleVel=1000, range=275, roundsPerBurst=1, projectileSize=0, pattern=SPIRAL, explosive=FRAG_PROXIMITY, 
 	  fragment={color=0x20818181, damage=10.000, muzzleVel=100.000, range=0.3, spread=3.141, pattern=RANDOM|ABSOLUTE, roundsPerBurst=5, projectileSize=2}}}},
@@ -5988,19 +5989,19 @@
 --(17945)
 	
   {17946, features=CANNON|ALWAYSFIRE|CANNON_BOOST, capacity=0.1, fillColor=0x800080, fillColor1=0xa030a0,
-    lineColor=0xb000b0, group=4, rotatorLimit=1.57, points=2,
+    lineColor=0xb000b0, group=4, rotatorLimit=1.57, points=2, sound="none",
     shape=339, name="Charge Booster", durability=3, density=0.15,
     sort=10012, cannon={roundsPerSec=10, muzzleVel=-1000.000, power=1.000, damage=5.000, color=0x90804080, range=-50, rangeStdDev=-50.000, projectileSize=1},
 	boost={muzzleVel={1.125, 0}, range={1, 25}}},
 	
   {17947, features=CANNON|ALWAYSFIRE|CANNON_BOOST, capacity=0.1, fillColor=0x800080, fillColor1=0xa030a0,
-    lineColor=0xb000b0, group=4, scale=2, rotatorLimit=1.57, points=4,
+    lineColor=0xb000b0, group=4, scale=2, rotatorLimit=1.57, points=4, sound="none",
     shape=339, name="Charge Booster", durability=3, density=0.125,
     sort=10013, cannon={roundsPerSec=10, muzzleVel=-2000.000, power=1.000, damage=10.000, color=0x90804080, range=-100, rangeStdDev=-100.000, projectileSize=2},
 	boost={muzzleVel={1.25, 0}, range={1, 50}}},
 	
   {17948, features=CANNON|ALWAYSFIRE|CANNON_BOOST, capacity=0.1, fillColor=0x800080, fillColor1=0xa030a0,
-    lineColor=0xb000b0, group=4, scale=3, rotatorLimit=1.57, points=8,
+    lineColor=0xb000b0, group=4, scale=3, rotatorLimit=1.57, points=8, sound="none",
     shape=339, name="Charge Booster", durability=3, density=0.1,
     sort=10014, cannon={roundsPerSec=10, muzzleVel=-3000.000, power=1.000, damage=20.000, color=0x90804080, range=-200, rangeStdDev=-200.000, projectileSize=4},
 	boost={muzzleVel={1.50, 0}, range={1, 100}}},
@@ -6145,7 +6146,115 @@
 	  blurb="A defense subsystem plasma mine launcher cannon. Fires rounds that leave behind a plasma mine particle which will lasts for a while",
     density=0.15, sort=80008, shroud={{size={25, 25}, offset={4.65, 0, 0.04}, shape=338, count=1}, {size={17.8, 8.9}, offset={-4.25, 0, 0.04}, shape=SQUARE, count=1},
 	        {size={15, 15}, offset={4.65, 0, 0.05}, shape=OCTAGON, count=1}}},
+			
+  {17973, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, name="Segment", durability=3, blurb="Exterior hull", sort=-10000},
+  
+  {17974, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, scale=2, name="Segment", durability=3, blurb="Exterior hull", sort=-10000},
+  
+  {17975, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, scale=3, name="Segment", durability=3, blurb="Exterior hull", sort=-10000},
+  
+  {17976, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=RIGHT_TRI2L, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+  
+  {17977, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=RIGHT_TRI2L, scale=2, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+  
+  {17978, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=RIGHT_TRI2L, scale=3, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+  
+  {17979, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=RIGHT_TRI2R, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+  
+  {17980, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=RIGHT_TRI2R, scale=2, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+  
+  {17981, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=RIGHT_TRI2R, scale=3, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+  
+  {17982, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=ADAPTER, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+  
+  {17983, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=ADAPTER, scale=2, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+  
+  {17984, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=ADAPTER, scale=3, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+  
+  {17985, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=RIGHT_TRI, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+  
+  {17986, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=RIGHT_TRI, scale=2, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+  
+  {17987, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=RIGHT_TRI, scale=3, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
 	
+  {17988, shape=GEM_1, name="Segment", group=15, durability=3.000, blurb="Exterior hull", density=0.110,
+    fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, growRate=20.000, sort=-10000},
+  
+  {17989, shape=GEM_1, scale=2, name="Segment", group=15, durability=3.000, blurb="Exterior hull", density=0.110,
+    fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, growRate=20.000, sort=-10000},
+  
+  {17990, shape=GEM_1, scale=3, name="Segment", group=15, durability=3.000, blurb="Exterior hull", density=0.110,
+    fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, growRate=20.000, sort=-10000},
+	
+  {17991, features=THRUSTER, capacity=0.1, growRate=20, fillColor=0x484040, fillColor1=0x202820,
+    lineColor=0x924D51, thrusterColor=0x9054f5c4, thrusterColor1=0x90cff5e9, group=15,
+    shape=DISH_THRUSTER, name="Thruster", durability=3, density=0.135, blurb="Thrust vector unit",
+    thrusterForce=8000, sort=10002},
+
+  {17992, features=THRUSTER, capacity=0.1, growRate=20, fillColor=0x484040, fillColor1=0x202820,
+    lineColor=0x924D51, thrusterColor=0x9054f5c4, thrusterColor1=0x90cff5e9, group=15,
+    shape=DISH_THRUSTER, scale=2, name="Thruster", durability=3, density=0.135,
+    blurb="Thrust vector unit", thrusterForce=32000, sort=10005},
+  
+  {17993, features=THRUSTER, capacity=0.1, growRate=20, fillColor=0x484040, fillColor1=0x202820,
+    lineColor=0x924D51, thrusterColor=0x9054f5c4, thrusterColor1=0x90cff5e9, group=15,
+    shape=DISH_THRUSTER, scale=3, name="Thruster", durability=3, density=0.135,
+    blurb="Thrust vector unit", thrusterForce=72000, sort=10007},
+	
+  {17994, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=295, scale=1, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+	
+  {17995, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=295, scale=2, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+	
+  {17996, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=295, scale=3, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+	
+  {17997, growRate=20, fillColor=0x484040, fillColor1=0x202820, lineColor=0x924D51, density=0.110,
+    group=15, shape=299, name="Segment", durability=3, blurb="Exterior hull",
+    sort=-10000},
+	
+  {17998, features=LAUNCHER_BARRAGE|NOICON, fillColor=0x6f5250, fillColor1=0x794937, lineColor=0xbda09a,
+    replicateBlock=
+    {command={}, lifetime=124, features=COMMAND|THRUSTER|GENERATOR|TURRET|LASER|TORQUER|FREERES|NOCLIP_ALLY|CHARGING|ROTATOR|AUTOFIRE|MELEE|ONEUSE,
+      capacity=100, fillColor=0x514644, fillColor1=0x3a2b26, lineColor=0xfca904, thrusterColor=0x90a3372a, deathFeatures=CANNON,
+      thrusterColor1=0x90ee5245, laser={width=1, damage=10, color=0x7fee5245, explosive=ENABLED, explodeRadius=5,
+        range=400}, group=12, shape=292, scale=4, name="Mite Laser Drone", cannon={damage=1, roundsPerSec=10, roundsPerBurst=10, burstyness=1, range=-10, muzzleVel=-1, pattern=SPIRAL|ABSOLUTE, spread=2.828, explosive=FINAL, explodeRadius=10},
+      durability=0.5, density=0.15, powerCapacity=120, thrusterForce=2000, turretSpeed=100, aihint_muzzleVel=100000, aihint_range=300,
+      torquerTorque=1600, generatorCapacityPerSec=10, sort=-99940, barrelTaper=0, chargeMin=1, chargeMaxTime=1},
+     group=12, shape=292, scale=3, name="Mites Hive Launcher",
+    durability=0.5, density=0.15, replicateTime=1, sort=110114},
+  	
 //---Vanilla Modifications Adjustments---
 
   {12101, shape=RECT_LAUNCHER, name="Shard Launcher", features=LAUNCHER, group=12,

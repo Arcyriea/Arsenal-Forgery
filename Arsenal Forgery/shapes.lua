@@ -1081,6 +1081,21 @@
 				verts={{-2.5, -1.5}, {-2.5, 1.5}, {2.5, 1.5}, {2.5, -1.5}, }
 				ports={{0, 0.5, MISSILE}, }
 			},
+			{
+				verts={{-10, -10}, {-10, 10}, {10, 10}, {10, -10}, {-10, -10}, {-10, 10}, {-10, -10}, {-8, -10}, {-8, 10}, {-8, -10}, {-6, -10}, {-6, 10}, {-6, -10}, {-4, -10}, {-4, 10}, {-4, -10}, {-2, -10}, {-2, 10}, {-2, -10}, {0, -10}, {0, 10}, {0, -10}, {2, -10}, {2, 10}, {2, -10}}
+				ports={{3, 0.25}, {3, 0.75}, {0, 0.25}, {0, 0.75}, {1, 0.25}, {1, 0.75}, {2, 0.25}, {2, 0.75},
+				{5, 0.1, LAUNCHER}, {5, 0.2, LAUNCHER}, {5, 0.3, LAUNCHER}, {5, 0.4, LAUNCHER}, {5, 0.5, LAUNCHER}, {5, 0.6, LAUNCHER}, {5, 0.7, LAUNCHER}, {5, 0.8, LAUNCHER}, {5, 0.9, LAUNCHER},
+				{8, 0.1, LAUNCHER}, {8, 0.2, LAUNCHER}, {8, 0.3, LAUNCHER}, {8, 0.4, LAUNCHER}, {8, 0.5, LAUNCHER}, {8, 0.6, LAUNCHER}, {8, 0.7, LAUNCHER}, {8, 0.8, LAUNCHER}, {8, 0.9, LAUNCHER},
+				{11, 0.1, LAUNCHER}, {11, 0.2, LAUNCHER}, {11, 0.3, LAUNCHER}, {11, 0.4, LAUNCHER}, {11, 0.5, LAUNCHER}, {11, 0.6, LAUNCHER}, {11, 0.7, LAUNCHER}, {11, 0.8, LAUNCHER}, {11, 0.9, LAUNCHER},
+				{14, 0.1, LAUNCHER}, {14, 0.2, LAUNCHER}, {14, 0.3, LAUNCHER}, {14, 0.4, LAUNCHER}, {14, 0.5, LAUNCHER}, {14, 0.6, LAUNCHER}, {14, 0.7, LAUNCHER}, {14, 0.8, LAUNCHER}, {14, 0.9, LAUNCHER},
+				{17, 0.1, LAUNCHER}, {17, 0.2, LAUNCHER}, {17, 0.3, LAUNCHER}, {17, 0.4, LAUNCHER}, {17, 0.5, LAUNCHER}, {17, 0.6, LAUNCHER}, {17, 0.7, LAUNCHER}, {17, 0.8, LAUNCHER}, {17, 0.9, LAUNCHER},
+				{20, 0.1, LAUNCHER}, {20, 0.2, LAUNCHER}, {20, 0.3, LAUNCHER}, {20, 0.4, LAUNCHER}, {20, 0.5, LAUNCHER}, {20, 0.6, LAUNCHER}, {20, 0.7, LAUNCHER}, {20, 0.8, LAUNCHER}, {20, 0.9, LAUNCHER},
+				{23, 0.1, LAUNCHER}, {23, 0.2, LAUNCHER}, {23, 0.3, LAUNCHER}, {23, 0.4, LAUNCHER}, {23, 0.5, LAUNCHER}, {23, 0.6, LAUNCHER}, {23, 0.7, LAUNCHER}, {23, 0.8, LAUNCHER}, {23, 0.9, LAUNCHER},}
+			}
+			{
+				verts={{-0.8, -0.8}, {-0.8, 0.8}, {0.8, 0.8}, {0.8, -0.8}}
+				ports={{0, 0.5, MISSILE}, {1, 0.5, MISSILE}, {2, 0.5, MISSILE}, {3, 0.5, MISSILE}, }
+			}
 		}
 	},
    --HANGING ROCKETS --- from Sentient mod
