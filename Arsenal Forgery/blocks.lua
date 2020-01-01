@@ -1,15 +1,17 @@
 {  
 	
-  {1, name="[L]Interceptor Launchpad", features=LAUNCHER|AUTOFIRE, group=8, shape=RECT_LAUNCHER1,
-    health=38.000, durability=0.500, blurb="Release light Interceptor drones that attacks drones and destroys light missiles",
+  {1, name="[L]Interdictor Launchpad", features=LAUNCHER, group=8, shape=RECT_LAUNCHER1,
+    health=38.000, durability=0.500, blurb="Release light Interceptor drones that carries a beam crystal undernearth to support attacking drone swarms",
     density=0.150, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb, replicateBlock=
-    {command={flags=POINT_DEFENSE|FIRE_AT_WILL|FIRE_AT_WILL}, name="Interception Drone", features=COMMAND|THRUSTER|GENERATOR|TURRET|LASER|TORQUER|FREERES|SHIELD|AUTOFIRE|NOCLIP_ALLY,
-      group=8, shape=ISOTRI_36, lifetime=40.000, durability=0.500, density=0.150, turretSpeed=360.000, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
+    {command={flags=POINT_DEFENSE|FIRE_AT_WILL|FIRE_AT_WILL}, name="Interception Drone", features=COMMAND|THRUSTER|GENERATOR|ROTATOR|LASER|TORQUER|FREERES|SHIELD|NOCLIP_ALLY,
+      group=8, shape=ISOTRI_36, lifetime=40.000, durability=0.500, density=0.150, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
       powerCapacity=120.000, capacity=100.000, thrusterColor=0x90808080,
       thrusterColor1=0x904060a0, torquerTorque=6000.000, thrusterForce=10500.000, laser={pulsesPerSec=6.000,
       pulseAvailability=0.600, power=6.000, width=2.000, damage=30.000, color=0x7f00b7e9,
-      range=500.000}, shield={strength=450.000, regen=35.000,
-      delay=2.000, radius=20.000, color=0x190e1418, lineColor=0xc1c292f, damagedColor=0x33324753}, generatorCapacityPerSec=41.000},
+      range=1000.000}, shield={strength=450.000, regen=35.000,
+      delay=2.000, radius=20.000, color=0x190e1418, lineColor=0xc1c292f, damagedColor=0x33324753}, generatorCapacityPerSec=41.000,
+	  shroud={{size={2.5, 5}, offset={-2, 0, 0.01}, taper=0.35}, {size={15, 5}, offset={2, 0, 0.01}, shape=ISOTRI_25},
+	  {size={5, 1.25}, offset={2, 0, 0.02}, shape=ISOTRI_25},}},
      replicateTime=20.000, launcherPower=75.000, launcherOutSpeed=50.000, sort=110010},
 
   {2, name="Flakfrag Launcher", features=LAUNCHER, group=8, shape=RECT_LAUNCHER1, points=25,
@@ -1354,8 +1356,10 @@
   {17009, scale=5, name="Supernova Cannon", features=TURRET|CANNON, group=15,
     durability=2, blurb="Heavy large atomic artillery cannon", density=0.15, barrelTaper=0.75, turretSpeed=1.550, 
     fillColor=0xbc642a, fillColor1=0x8b7c2f, lineColor=0xf4f0c4, cannon={roundsPerSec=0.06, explosive=FINAL|FRAG_IMPACT,
-      muzzleVel=1250, damage=500, color=0xff5100, range=2990, explodeRadius=500, projectileSize=10,
-	  fragment={color=0xff5100, damage=10.000, muzzleVel=1800.000, spread=3.124, range=1500, pattern=ABSOLUTE|WAVE, roundsPerBurst=250}}},
+      muzzleVel=1250, damage=500, color=0xff5100, range=2990, explodeRadius=500,
+	  fragment={color=0xff5100, damage=10.000, muzzleVel=1800.000, spread=3.124, range=1500, pattern=ABSOLUTE|WAVE, roundsPerBurst=250}},
+	  shroud={{size={37.5, 22.5}, offset={-8, 0, 0.3}, taper=-0.1}, {size={25, 12.5}, offset={-25, 0, 0.15}, taper=-0.1},
+	  {size={22.5, 37.5}, offset={-2, 0, 0.25}, taper=-0.15},}},
 
   {17010, name="Crockett Cannon", features=TURRET|CANNON, group=15, shape=OCTAGON,
     durability=1.5, blurb="Small compact Nuke cannon", density=0.15, fillColor=0x96bc2a, barrelTaper=0.6,
@@ -2685,28 +2689,28 @@
     fillColor1=0x860285, lineColor=0xb00049, laser={immobilizeForce=48000, linearForce=25000,
       width=6.000, damage=700.000, color=0x7fcf1090, range=2100.000}, growRate=20.000},
 	  
-  {17252, name="[M]Interceptor Launchpad", features=LAUNCHER|AUTOFIRE, group=8, shape=RECT_LAUNCHER1,
-    durability=0.500, blurb="A bit stronger and durable than the light variants, it can now takes down more durable targets",
+  {17252, name="[M]Interdictor Launchpad", features=LAUNCHER, group=8, shape=RECT_LAUNCHER1,
+    durability=0.500, blurb="A bit stronger and durable than the light variants, providing more firepower",
     density=0.150, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb, replicateBlock=
-    {command={flags=POINT_DEFENSE|FIRE_AT_WILL}, name="Interception Drone", features=COMMAND|THRUSTER|GENERATOR|TURRET|LASER|TORQUER|FREERES|SHIELD|AUTOFIRE|NOCLIP_ALLY,
-      group=8, shape=ISOTRI_72, lifetime=40.000, durability=0.500, density=0.150, turretSpeed=360.000, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
+    {command={flags=POINT_DEFENSE|FIRE_AT_WILL}, name="Interception Drone", features=COMMAND|THRUSTER|GENERATOR|ROTATOR|LASER|TORQUER|FREERES|SHIELD|NOCLIP_ALLY,
+      group=8, shape=ISOTRI_72, lifetime=40.000, durability=0.500, density=0.150, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
       powerCapacity=120.000, capacity=100.000, thrusterColor=0x90808080,
-      thrusterColor1=0x904060a0, torquerTorque=6000.000, thrusterForce=10500.000, laser={pulsesPerSec=6.000,
-      pulseAvailability=0.600, power=12.000, width=4.000, damage=70.000, color=0x7f00b7e9,
-      range=600.000}, shield={strength=500.000, regen=55.000,
-      delay=2.000, radius=20.000, color=0x190e1418, lineColor=0xc1c292f, damagedColor=0x33324753}, generatorCapacityPerSec=65.000},
+      thrusterColor1=0x904060a0, torquerTorque=6000.000, thrusterForce=10500.000, laser={power=12.000, width=3.000, damage=70.000, color=0x7f00b7e9,
+      range=1200.000}, shield={strength=500.000, regen=55.000, delay=2.000, radius=20.000, color=0x190e1418, lineColor=0xc1c292f, damagedColor=0x33324753}, 
+	  generatorCapacityPerSec=65.000, shroud={{size={5, 10}, offset={0, 0, 0.015}, shape=ISOTRI_25}, {size={5, 15}, offset={3, 0, 0.01}, shape=ISOTRI_25},
+	  {size={5, 2.25}, offset={3.5, 0, 0.0225}, shape=ISOTRI_25}, {size={4, 3}, offset={-4, 0, 0.025}, taper=-0.6}, {size={8, 3}, offset={0, 0, 0.02}, taper=0.3},}},
      replicateTime=20.000, launcherPower=125.000, launcherOutSpeed=50.000, sort=110011},
 	 
-  {17253, name="[H]Interceptor Launchpad", features=LAUNCHER|AUTOFIRE, group=8, shape=RECT_LAUNCHER1,
-    durability=0.500, blurb="Buffed up to withstands many hits on its own as well as annihilating the most heaviest kind of drones and missiles",
+  {17253, name="[H]Interdictor Launchpad", features=LAUNCHER|AUTOFIRE, group=8, shape=RECT_LAUNCHER1,
+    durability=0.500, blurb="Heavy beam drone, with heavier intensity of the beam projected",
     density=0.150, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb, replicateBlock=
-    {command={flags=POINT_DEFENSE|FIRE_AT_WILL}, name="Interception Drone", features=COMMAND|THRUSTER|GENERATOR|TURRET|LASER|TORQUER|FREERES|SHIELD|AUTOFIRE|NOCLIP_ALLY,
-      group=8, shape=267, lifetime=40.000, durability=0.500, density=0.150, turretSpeed=360.000, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
+    {command={flags=POINT_DEFENSE|FIRE_AT_WILL}, name="Interception Drone", features=COMMAND|THRUSTER|GENERATOR|ROTATOR|LASER|TORQUER|FREERES|SHIELD|NOCLIP_ALLY,
+      group=8, shape=267, lifetime=40.000, durability=0.500, density=0.150, fillColor=0x205079, fillColor1=0x207089, lineColor=0x3390eb,
       powerCapacity=120.000, capacity=100.000, thrusterColor=0x90808080,
-      thrusterColor1=0x904060a0, torquerTorque=6000.000, thrusterForce=10500.000, laser={pulsesPerSec=6.000,
-      pulseAvailability=0.600, power=12.000, width=6.000, damage=140.000, color=0x7f00b7e9,
-      range=700.000}, shield={strength=550.000, regen=70.000,
-      delay=2.000, radius=20.000, color=0x190e1418, lineColor=0xc1c292f, damagedColor=0x33324753}, generatorCapacityPerSec=85.000},
+      thrusterColor1=0x904060a0, torquerTorque=6000.000, thrusterForce=10500.000, laser={power=12.000, width=4.000, damage=200.000, color=0x7f00b7e9,
+      range=1400.000}, shield={strength=550.000, regen=70.000, delay=2.000, radius=20.000, color=0x190e1418, lineColor=0xc1c292f, damagedColor=0x33324753}, 
+	  generatorCapacityPerSec=85.000, shroud={{size={9, 9}, offset={6.8, 0, 0.015}, shape=ISOTRI_25}, {size={5.4, 7.65}, offset={0.45, 0, 0.0175}, taper=0.5},
+	  {size={4.5, 2.025}, offset={3.15, 0, 0.0225}, shape=ISOTRI_25}, {size={3.6, 5.4}, offset={-3.6, 0, 0.025}, taper=-0.6}, {size={7.6, 5.4}, offset={0, 0, 0.02}, taper=0.3},}},
      replicateTime=20.000, launcherPower=175.000, launcherOutSpeed=50.000, sort=110012},	 
 	 
   {17254, shape=RECT_LAUNCHER, name="Photon Missile", features=LAUNCHER, group=8,
@@ -3827,7 +3831,17 @@
 	fillColor=0xbbbbbb, fillColor1=0x8d8d8d, lineColor=0xf4f4f4,
 	blurb="Amplifies the fire rate of all your weapons"},
 	
---(17485) -- unused
+  {17485, features=TURRET|CANNON, fillColor=0x6f5250, fillColor1=0x4a3b38, shape=HEXAGON,
+    lineColor=0xbda09a, cannon={roundsPerSec=12.5, roundsPerBurst=250, explosive=FINAL,
+      burstyness=0.3, muzzleVel=2400, damage=45, range=5600, explodeRadius=20, spread=0.01,
+      color=0xee5245, rangeStdDev=600}, group=12, scale=5, name="Samzia Flurry Barrage Artillery Gun", durability=0.5,
+    density=0.15, sort=82006, turretSpeed=0.2, barrelOffset={-60, 0},
+	shroud={{size={70, 47.5}, shape=HEXAGON, offset={9, 0, 0.5}}, {size={15, 4}, count=3, offset={22, 0, 0.75}, taper=0.75},
+	{size={5.75, 26}, offset={6, 0, 0.65}}, {size={5.75, 23}, offset={-1, 0, 0.65}}, {size={5.75, 20}, offset={-8, 0, 0.65}},
+	{size={10, 12}, offset={-36, 0, 0.65}}, {size={10, 12}, offset={-48, 0, 0.65}}, {size={10, 12}, offset={-60, 0, 0.65}},
+	{size={-30, -60}, offset={-20, 0, 0.45}, shape=318}, {size={-40, -80}, offset={-10, 0, 0.45}, shape=318},
+	{size={-50, -100}, offset={0, 0, 0.45}, shape=318}, {size={15, 3}, count=3, offset={58, 0, 0.85}},
+	{size={15, 3}, count=3, offset={78, 0, 0.95}},}},
 	  
   {17486, features=TURRET|LASER|CHARGING, fillColor=0xbbbbbb, fillColor1=0x8d8d8d, lineColor=0xf4f4f4, barrelCount=2, barrelTaper=0.999, barrelSize={20, 4},
 	laser={damage=300, width=6, color=0xff818181, range=1800, linearForce=20000}, chargeMin=1, chargeMaxTime=5,
@@ -5393,17 +5407,36 @@
 	  
   {17834, name="Magnetic Field", group=1, features=NOCLIP|NOPALETTE, durability=1, shape=328, density=0.001, growRate=999, sort=-5000},
   
-  {17835, name="Magnetic Field", group=1, features=NOCLIP|NOPALETTE, durability=1, shape=328, scale=2, density=0.001, growRate=999, sort=-5000},
+--{17835, name="Magnetic Field", group=1, features=NOCLIP|NOPALETTE, durability=1, shape=328, scale=2, density=0.001, growRate=999, sort=-5000}, --unused
   
-  {17836, name="Magnetic Field", group=1, features=NOCLIP|NOPALETTE, durability=1, density=0.001, growRate=999, sort=-5000},
+  {17836, features=TURRET|CANNON|NOICON|LAUNCHER, fillColor=0xe33434, fillColor1=0xee4c1f, lineColor=0xff7100,
+    aihint_range=5555, cannon={roundsPerSec=0.6, roundsPerBurst=12, explosive=PROXIMITY, burstyness=0.8, muzzleVel=1700,
+      spread=0.02, rangeStdDev=222, damage=200, range=5555, explodeRadius=75, projectileSize=12,
+      color=0xff2100}, group=3, shape=PENTAGON, scale=4, name="Redbaron Artillery Phaser", durability=1.5, barrelOffset={-0, 0}, turretSpeed=1.2,
+    density=0.15, sort=610027, shroud={{size={10, 12}, offset={0, 0, 0.4}, shape=RHOMBUS_72_108}, {size={20, 25}, offset={8, 0, 0.5}, shape=RHOMBUS_72_108},
+	{size={60, 2.5}, offset={-12, 7, 0.45}}, {size={60, 2.5}, offset={-12, -7, 0.45}}, {size={20, 24}, offset={0, 0, 0.55}, shape=339},
+	{size={16, 20}, offset={20, 0, 0.55}, shape=339}, {size={-20, -21}, offset={-19.8, 0, 0.55}, shape=282}, {size={15, 18}, offset={17.2, 15, 0.4}, shape=RIGHT_TRI,},
+	{size={15, -18}, offset={17.2, -15, 0.4}, shape=RIGHT_TRI,}, {size={-15, 18}, offset={7.2, 15, 0.4}, shape=RIGHT_TRI,},
+	{size={-15, -18}, offset={7.2, -15, 0.4}, shape=RIGHT_TRI,}, {size={30, 36}, offset={40, 0, 0.55}, shape=339}, {size={22.5, 4}, offset={50, 0, 0.50}, taper=-2},},
+	blurb="Artillery Cannon of the Reds, has an ability to launch a massive attacking laser drone which launches fast heavy rockets", replicateBlock=
+    {command={}, lifetime=100, features=COMMAND|THRUSTER|GENERATOR|LASER|TORQUER|FREERES|NOCLIP_ALLY|ROTATOR|LAUNCHER_BARRAGE,
+      aihint_range=2000, capacity=100, fillColor=0x901e30, fillColor1=0xbc121d, lineColor=0xff0100, thrusterColor=0x90ffffff,
+      thrusterColor1=0x90ff8000, laser={width=15, damage=2000, color=0x7fff2100,
+        range=2000}, group=3, shape=MISSILE_LAUNCHER, durability=0.5, density=0.15, scale=4,
+      powerCapacity=1200, thrusterForce=400000, torquerTorque=500000, generatorCapacityPerSec=200,
+      sort=-99995, barrelTaper=0, replicateBlock=
+    {command={}, shape=113, features=THRUSTER|EXPLODE|FREERES|NOCLIP_ALLY, scale=3,
+      group=3, lifetime=6, durability=0.4, density=0.10, fillColor=0xe33434, 
+      fillColor1=0xee4c1f, lineColor=0xff7100, thrusterForce=850000, explodeDamage=320, explodeRadius=10,
+      thrusterColor=0x90ffffff, thrusterColor1=0x90ff8000}, replicateTime=2.5}, replicateTime=90, launcherPower=1200},
   
-  {17837, name="Magnetic Field", group=1, features=NOCLIP|NOPALETTE, durability=1, shape=RECT, scale=1, density=0.001, growRate=999, sort=-5000},
+--{17837, name="Magnetic Field", group=1, features=NOCLIP|NOPALETTE, durability=1, shape=RECT, scale=1, density=0.001, growRate=999, sort=-5000},
   
-  {17838, name="Magnetic Field", group=1, features=NOCLIP|NOPALETTE, durability=1, shape=RECT, scale=2, density=0.001, growRate=999, sort=-5000},
+--{17838, name="Magnetic Field", group=1, features=NOCLIP|NOPALETTE, durability=1, shape=RECT, scale=2, density=0.001, growRate=999, sort=-5000},
   
-  {17839, name="Magnetic Field", group=1, features=NOCLIP|NOPALETTE, durability=1, shape=328, scale=3, density=0.001, growRate=999, sort=-5000},
+--{17839, name="Magnetic Field", group=1, features=NOCLIP|NOPALETTE, durability=1, shape=328, scale=3, density=0.001, growRate=999, sort=-5000},
   
-  {17840, name="Magnetic Field", group=1, features=NOCLIP|NOPALETTE, durability=1, shape=328, scale=4, density=0.001, growRate=999, sort=-5000},
+--{17840, name="Magnetic Field", group=1, features=NOCLIP|NOPALETTE, durability=1, shape=328, scale=4, density=0.001, growRate=999, sort=-5000},
   
   {17841, growRate=16.25, fillColor=0x514644, fillColor1=0x3a2b26, lineColor=0xbaadb6,
     group=12, shape=324, name="Light Bodywork", durability=1.5, sort=-10000},
@@ -6254,6 +6287,20 @@
       torquerTorque=1600, generatorCapacityPerSec=10, sort=-99940, barrelTaper=0, chargeMin=1, chargeMaxTime=1},
      group=12, shape=292, scale=3, name="Mites Hive Launcher",
     durability=0.5, density=0.15, replicateTime=1, sort=110114},
+	
+  {17999, features=TURRET|LASER|CHARGING|GENERATOR|LAUNCHER|CANNON, fillColor=0x40206b, fillColor1=0x384098, lineColor=0x71965, bindingId=0,
+    laser={width=15, damage=3000, color=0x800769f5, range=5250}, group=4, scale=5, powerCapacity=500, aihint_range=5000,
+    name="Hyper Optic Megalaser", durability=0.5, density=0.15, turretSpeed=0.2, generatorCapacityPerSec=-1000, barrelSize={0.001, 0.001},
+	blurb="An ermonously large heavy artillery laser system, it's going to siphon all sources of energy to operate, can use cannon boosts network to improve its sub attack (also velocity & fire rate boost is meaningless for this weapon), can launches a large targeting decoys to distract enemy ships", 
+	chargeMin=1, chargeMaxTime=40, cannon={roundsPerSec=1, roundsPerBurst=1, recoil=0, explodeRadius=100,
+        muzzleVel=50000, damage=100, range=500, color=0x769f5, explosive=PROXIMITY},
+    sort=80074, barrelTaper=0.5, replicateBlock={shape=344, group=4, scale=3, features=NOCLIP|THRUSTER|ROTATOR|COMMAND|FREERES|NOICON, lifetime=40, command={},
+	fillColor=0x5040206b, fillColor1=0x30384098, lineColor=0x71965, durability=0.5, density=0.01, barrelSize={0.001, 0.001}, thrusterForce=100000}, replicateTime=40,
+	shroud={{size={25, 25}, offset={0, 0, 0.22}, shape=OCTAGON, count=1}, {size={35, 35}, offset={0, 0, 0.20}, shape=OCTAGON, count=1},
+	{size={50, 10}, offset={0, 0, 0.21}, count=1, shape=RECT}, {size={10, 30}, offset={0, 0, 0.21}, count=1, shape=RECT},
+	{size={50, 27.5}, offset={5, 0, 0.19}, count=1, shape=RECT}, {size={-22.5, -30}, offset={-30, 0, 0.20}, count=1, shape=COMMAND},
+	{size={30, 22.5}, offset={35, 0, 0.18}, count=1, shape=RECT}, {size={20, 10}, offset={47.5, 0, 0.17}, taper=0.5}, 
+	{size={-10, -80}, offset={0, 0, 0.18}, count=1, shape=DISH_THRUSTER}, {size={-7.5, -60}, offset={7.5, 0, 0.18}, count=1, shape=DISH_THRUSTER},}},
   	
 //---Vanilla Modifications Adjustments---
 
