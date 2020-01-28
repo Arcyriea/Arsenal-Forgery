@@ -1,3 +1,9 @@
+CREDITS:
+- Most of the ship designs are based off, inherited and derived from Meranera's Altered Vanilla mod.
+- Randomnumber is the one who created the Hex-Square adapter hull shapes which is used by the Bee faction on this mod, and the Terran's Artemis, Harphoon missile laucher was made by him, while the missile shape used by the launcher has been altered by me.
+
+-----
+
 INSTALLATION NOTE FOR MANUALLY PATCHING THE MOD TO USE WITH THE BETA BRANCH OF REASSEMBLY WHEN PLAYING THROUGH STEAM
 
 Before we proceed...
