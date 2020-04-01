@@ -1,6 +1,7 @@
 CREDITS:
 - Most of the ship designs are based off, inherited and derived from Meranera's Altered Vanilla mod.
 - Randomnumber is the one who created the Hex-Square adapter hull shapes which is used by the Bee faction on this mod, and the Terran's Artemis, Harphoon missile launcher was originally made by him, while the missile shape used by the launchers has been altered by me.
+- Thanks to Bluebolt for the projectile orb schemetic which is used by the Silvaorb Shield system used by the Sentinel.
 
 -----
 
