@@ -7,6 +7,7 @@ CREDITS:
 Working in progress Google Doc: https://docs.google.com/document/u/1/d/e/2PACX-1vS0uRJep5ohomd3v_8mc9e6_2PfwxgPrP8iOrO6NYZPYODG6S_5uVL-sqaT-41avekO7qhf67WJU0uM/pub
 
 That attempts to explain some stuffs peoples have no idea how to uses
+
 -----
 
 INSTALLATION NOTE FOR MANUALLY PATCHING THE MOD TO USE WITH THE BETA BRANCH OF REASSEMBLY WHEN PLAYING THROUGH STEAM
