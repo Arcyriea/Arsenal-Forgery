@@ -7,10 +7,11 @@ CREDITS:
 Working in progress Google Doc: https://tinyurl.com/Arsenal-Forgery-doc
 
 That attempts to explain some stuffs peoples have no idea how to uses
+Also Final Forgery (old) is the old version of AF where at that time frag weapons hadn't came in yet.
 
 -----
 
-INSTALLATION NOTE FOR MANUALLY PATCHING THE MOD TO USE WITH THE BETA BRANCH OF REASSEMBLY WHEN PLAYING THROUGH STEAM
+INSTALLATION NOTE FOR EXTRACTING DIRECTLY TO YOUR LOCAL MOD FOLDER OR MANUALLY PATCHING THE MOD TO USE WITH THE BETA BRANCH OF REASSEMBLY WHEN PLAYING THROUGH STEAM
 
 Before we proceed...
 PLease install 7zip (or alternatively use WinRar) if you want to extract the .zip file: https://www.7-zip.org/download.html
