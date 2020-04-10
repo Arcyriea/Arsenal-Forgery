@@ -8,7 +8,7 @@ Working in progress Google Doc: https://tinyurl.com/Arsenal-Forgery-doc
 
 That attempts to explain some stuffs peoples have no idea how to uses
 
-Final Forgery (old) is the old version of AF (in 2018) where at that time frag weapons hadn't came in yet. (Just don't activate it at the same time as AF, not using both at once)... Althrough for. AF I might still attempting to convert or fix the frag to normal weapons now.
+Final Forgery (old) is the old version of AF (in 2018) where at that time frag weapons hadn't came in yet. (Just don't activate it at the same time as AF, not using both at once)... Althrough for. AF I might still attempting to convert the frag to normal weapons now or fix them so they fit with vanilla.
 
 -----
 
