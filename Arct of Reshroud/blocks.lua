@@ -48,11 +48,8 @@
 	  {size={6, 2}, offset={15, 6, 0.18}, shape=COMMAND},
 	  {size={6, 2}, offset={15, -6, 0.18}, shape=COMMAND},}}, -- MGVD-4 Bolshevik
 	
-  {221, extends=221, features=TURRET|CANNON, fillColor=0x104a99, fillColor1=0x4f8e5c, lineColor=0xaef300,
-    cannon={roundsPerSec=3, roundsPerBurst=3, burstyness=0.7, muzzleVel=600, power=17,
-      damage=50, range=1200, color=0xecfe00}, group=2, scale=2, name="AF-75 Spitter",
-    points=10, durability=0.5, density=0.15, blurb="A powerful burst-fire turret that excels at medium range",
-    sort=60010},
+  {221, extends=221, features=TURRET|CANNON|NOICON, shroud={{size={8.5, 5.48}, taper=0.6, offset={-2.28, 0, 0.05}}, 
+      {size={4.55, 3.11}, offset={0, 0, 0.12}, taper=0.9}, {size={4.11, 2.11}, offset={-4.11, 0, 0.12}, taper=-0.7}}}, -- AF-75 Spitter
 	
   {223, extends=223, features=TURRET|CANNON|NOICON, shroud={{size={4, 5.48}, taper=0.8, offset={-1.28, 0, 0.05}}, {size={4.75, 0.75}, offset={6.5, 0, 0.075}, count=2},
       {size={3.55, 3.11}, offset={0, 0, 0.12}, taper=0.9}, {size={4.11, 2.11}, offset={-4.11, 0, 0.12}, taper=-0.7}}}, --Minigun
@@ -61,7 +58,7 @@
       {size={3.22, 3.88}, offset={-1.92, 0, 0.125}, taper=-0.75},
       {size={2.66, 1.88}, offset={3.27, 0, 0.16}, taper=0.85}
       {size={3.5, 0.75}, offset={6.5, 0, 0.075}, count=2},
-	  {size={3, 3.75}, offset={1.2, 0, 0.1}, taper=0.96},}},
+	  {size={3, 3.75}, offset={1.2, 0, 0.1}, taper=0.96},}}, --Swatter
 	
   {226, features=CANNON, fillColor=0x99a80d, fillColor1=0x878801, lineColor=0xaef300,
     cannon={roundsPerSec=30, roundsPerBurst=15, burstyness=0.95, muzzleVel=1000, spread=0.15,
@@ -69,10 +66,9 @@
     scale=2, name="SG-9 Scattergun", points=5, durability=0.5, density=0.15, blurb="Anti-ship shotgun",
     sort=60005},
 	
-  {227, features=TURRET|CANNON, fillColor=0x104a99, fillColor1=0x4f8e5c, lineColor=0xaef300,
-    cannon={roundsPerSec=0.5, muzzleVel=1100, power=150, damage=210, range=3000, color=0xecfe00},
-     group=2, scale=3, name="HC2", points=33, durability=0.5, density=0.15, sort=60033,
-    shroud={{size={6, 7}, taper=-0.7}, {size={10, 7}, offset={6, 0, 0}, taper=0.7}}},
+  {227, extends=227, features=TURRET|CANNON|NOICON, barrelTaper=0.9,
+    shroud={{size={6, 7}, offset={-3, 0, 0.13}, taper=-0.7}, {size={10, 9}, offset={3, 0, 0.13}, taper=0.7},
+	{size={5, 5}, offset={6.5, 0, 0.23}, taper=0.8}}}, -- HC2
 	
   {228, features=CANNON, fillColor=0x61a65, fillColor1=0x63a45, lineColor=0x95ac5,
     cannon={roundsPerSec=0.3, explosive=FINAL, muzzleVel=1500, power=254, damage=240,
@@ -89,18 +85,19 @@
     shroud={{size={4, 3.48}, taper=0.75, offset={1.2, 0, 0.15}}, {size={3.22, 3.88}, offset={-1.92, 0, 0.125}, taper=-0.75},
       {size={2.66, 1.88}, offset={3.27, 0, 0.16}, taper=0.85}}}, --Phalanx
 	
-  {232, features=TURRET|CANNON, fillColor=0x104a99, fillColor1=0x4f8e5c, lineColor=0xaef300,
-    cannon={roundsPerSec=1.5, muzzleVel=1200, power=42, damage=100, range=1400, color=0xecfe00},
-     group=2, scale=2, name="MC3", points=23, durability=0.5, density=0.15, sort=60023},
+  {232, extends=232, features=TURRET|CANNON|NOICON, barrelTaper=0.9, shroud={{size={4, 5.33}, offset={-2, 0, 0.16}, taper=-0.7}, {size={6.66, 6}, offset={2, 0, 0.16}, taper=0.7},
+      
+	  {size={4, 2}, offset={1, 0, 0}, taper=0.65},
+      {size={3, 3.25}, offset={6.53, 0, 0}, taper=1}}}, --MC3
 	 
-  {234, extends=234,
-    shroud={{size={6, 8}, taper=-0.75}, {size={10, 8}, offset={6, 0, 0}, taper=0.75},
-      {size={4, 4}, offset={4, 0, 0}, taper=-0.65},
-      {size={6, 4}, offset={8, 0, 0}, taper=0.65}}},
+  {234, extends=234, barrelTaper=0.9,
+    shroud={{size={6, 8}, offset={-3, 0, 0.16}, taper=-0.7}, {size={10, 9}, offset={3, 0, 0.16}, taper=0.7},
+      {size={4, 4}, offset={1, 0, 0}, taper=-0.65},
+      {size={6, 4}, offset={5, 0, 0}, taper=0.65}}}, --HC3
 	  
   {237, extends=237, features=TURRET|CANNON|NOICON, barrelOffset={-3, 0},
-    barrelCount=3, shroud={{size={2, 3.5}, offset={11.5, 0, 0.25}}, {size={4, 4.48}, taper=1, offset={1.28, 0, 0.15}}, {size={3.22, 4.48}, offset={-1.92, 0, 0.125}, taper=-0.75},
-      {size={2.66, 3.88}, offset={5.27, 0, 0.16}, taper=0.9}, {size={3.5, 0.75}, offset={12.5, 0, 0.075}, count=3},}}, -- MLS Avenger
+    barrelCount=3, shroud={{size={2, 3.5}, offset={11.5, 0, 0.25}}, {size={4, 4.48}, taper=-1.25, offset={1.28, 0, 0.15}}, {size={3.22, 4.48}, offset={-1.92, 0, 0.125}, taper=-0.75},
+      {size={2.66, 3.88}, offset={5.27, 0, 0.16}, taper=0.9}, {size={3.5, 0.75}, offset={12.5, 0, 0.15}, count=3}, {size={2.66, 1.88}, offset={3.27, 0, 0.18}, taper=-0.85}}}, -- MLS Avenger
 	
   {238, extends=238, features=TURRET|CANNON|AUTOFIRE|NOICON, shroud={{size={3, 2},
         offset={14, 0, 0}, taper=1}, {size={4, 3.48}, taper=0.75, offset={1.2, 0, 0.15}}, {size={3.22, 3.88}, offset={-1.92, 0, 0.125}, taper=-0.75},
@@ -151,19 +148,19 @@
     laser={pulsesPerSec=3, pulseAvailability=0.5, power=6, width=3, damage=75, color=0x80ecfe00,
       range=1000}, group=2, name="Arkas PRP-1", points=14, durability=0.5, density=0.15,
     blurb="This small laser cannon is capable of taking out small targets in seconds",
-    sort=70014, barrelTaper=0},
+    sort=70014, barrelTaper=0}, -- PRP-1
 	
   {252, features=TURRET|LASER, fillColor=16418, fillColor1=0x407000, lineColor=0xaef300,
     laser={pulsesPerSec=3, pulseAvailability=0.75, power=9, width=5, damage=125, color=0x80ecfe00,
       range=900}, group=2, scale=2, name="Arkas PRP-2", points=30, durability=0.5,
     density=0.15, blurb="The instantaneous nature of lasers mean that damage is delivered before all else",
-    sort=70030, barrelTaper=0},
+    sort=70030, barrelTaper=0}, -- PRP-2
 	
   {253, features=TURRET|LASER, fillColor=16418, fillColor1=0x407000, lineColor=0xaef300,
     laser={pulsesPerSec=2, pulseAvailability=0.85, power=17, width=7, damage=250,
       color=0x80ecfe00, range=800}, group=2, scale=3, name="Arkas PRP-3", points=63,
     durability=0.5, density=0.15, blurb="Need to burn through a battleship without breaking a sweat? Try this",
-    sort=70063, barrelTaper=0},
+    sort=70063, barrelTaper=0}, -- PRP-3
 	
   {254, features=SHIELD, growRate=0.813, fillColor=0x769a95, fillColor1=0x8cbe59,
     lineColor=0xaef300, shield={strength=1000, regen=200, radius=100, color=0x191f2928,
@@ -245,8 +242,8 @@
 	{size={3, 2.5}, offset={-6, 0, 0.08}}, {size={3, 1.7}, offset={-9, 0, 0.08}, taper=-0.7}, {size={4, 2.5}, offset={7.5, 0, 0.146}, taper=0.6},
 	{size={11, 0.25}, offset={-3, -2, 0.06}}, {size={11, 0.25}, offset={-3, 2, 0.06}}, {size={8.5, 8.5}, shape=COMMAND, offset={1.2, 0, 0.02}}}},
 	
-  {815, extends=815, features=TURRET|LASER, barrelTaper=0, shroud={{size={8.5, 6.5}, shape=THRUSTER, offset={3, 0, 0.01}}, {size={2, 2.3}, offset={-3, 0, 0.006}, taper=-0.5},
-	{size={3, 8}, offset={0, 0, 0.006}, taper=-0.25},}},
+  {815, extends=815, features=TURRET|LASER|NOICON, barrelTaper=0.8, barrelSize={7, 2}, shroud={{size={6.5, 4}, offset={-1.5, 0, 0.01}, taper=0.7}, {size={3, 6}, offset={0, 0, 0.002}, taper=0.9},
+	{size={1.5, 5}, offset={3, 0, 0.002}, taper=0.9}, {size={3.75, 2.25}, offset={1.5, 0, 0.1}, taper=0.9}}},
   
   {832, features=LAUNCHER, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb,
     replicateBlock=
