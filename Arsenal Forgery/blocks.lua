@@ -253,13 +253,12 @@
 	cannon={roundsPerSec=10, muzzleVel=1000, damage=4, range=700, color=0xee5245, explosive=PROXIMITY|FRAG_FINAL, explodeRadius=20, spread=0.4,
 	fragment={damage=1, range=5, muzzleVel=8, spread=3.142, roundsPerBurst=5, pattern=ABSOLUTE|SPIRAL, color=0xee5245}}},
 
-  {25, name="Nihilite Thrower", features=PALETTE|CANNON|AUTOFIRE, group=11, shape=CANNON, scale=2, aihint_range=2400, points=30,
+  {25, name="Nihilite Thrower", features=PALETTE|CANNON|AUTOFIRE, group=11, shape=CANNON, scale=2, aihint_range=1200, points=18,
     health=200.000, durability=2.000, blurb="A defensive Nihilite cloudsprayer uses for point defensive role (the spreads arc define the sensory range of the weapon, not the actual spread since the projectile moves so fast that it ignore any of the spread value)", density=0.150,
     fillColor=0x37006e, fillColor1=0x860285, lineColor=0xb00049, cannon={roundsPerSec=6.000, recoil=0, spread=1.562, pattern=WAVE,
-    muzzleVel=6000.000, damage=50.000, color=0x00cf1090, rangeStdDev=400.000, explosive=FRAG_PROXIMITY|FRAG_NOFLASH,
-	fragment={damage=25, muzzleVel=600, rangeStdDev=200, color=0x10cf1090, pattern=RANDOM, roundsPerBurst=2, spread=1.571,
-	explosive=FRAG_FINAL, fragment={damage=5, muzzleVel=600, rangeStdDev=-200, color=0x10cf1090, pattern=CONSTANT, roundsPerBurst=5, spread=1.571,
-	explosive=FRAG_FINAL, fragment={damage=4, roundsPerBurst=5, muzzleVel=-1, range=-10, color=0x60cf1090, pattern=SPIRAL|ABSOLUTE, spread=2.5136}}}},
+    muzzleVel=500.000, damage=50.000, color=0x00cf1090, range=800, rangeStdDev=400.000, explosive=FRAG_FINAL|FRAG_NOFLASH,
+	fragment={damage=10, muzzleVel=600, rangeStdDev=50, color=0x10cf1090, pattern=RANDOM, roundsPerBurst=5, spread=1.571,
+	explosive=FRAG_FINAL, fragment={damage=2, roundsPerBurst=5, muzzleVel=-1, range=-10, color=0x60cf1090, pattern=SPIRAL|ABSOLUTE, spread=2.5136}}},
 	shroud={{size={10, 5}, offset={12.5, 0, 0.01}, taper=0.5}, {size={10, 5}, offset={17.5, 0, 0.02}, taper=0.75},
 	{size={22.5, 1.25}, taper=0.25, count=1, offset={17.5, 0, 0.01}}, {size={10, 1.25}, count=1, offset={30, 2.5, 0.01}, shape=231},
 	{size={10, 1.25}, count=1, offset={30, -2.5, 0.01}, shape=232}, {size={15, 7.5}, offset={-7.5, 0, -0.01}, shape=RHOMBUS_36_144},
@@ -334,8 +333,8 @@
 	fragment={roundsPerBurst=30, muzzleVel=1500, spread=3.142, damage=1, range=100, color=0xB8D9FF, pattern=ABSOLUTE|SPIRAL}}}, sort=9999},
 
   {36, name="Fissiari Laser", features=PALETTE|LASER|TURRET|CHARGING|AUTOFIRE, group=11, shape=ISOTRI_36,
-    health=5506.000, durability=2.000, density=0.150, fillColor=0x37006e,
-    fillColor1=0x860285, lineColor=0xb00049, laser={pulsesPerSec=2.000, pulseAvailability=0.800, power=8.000,
+    durability=2.000, density=0.150, fillColor=0x37006e, barrelSize={3, 1},
+    fillColor1=0x860285, lineColor=0xb00049, laser={pulsesPerSec=2.000, pulseAvailability=0.800,
       width=3.000, damage=60.000, color=0x7fcf1090, range=2000.000}, chargeMin=0.500, chargeMaxTime=1.000,
     growRate=20.000},
 
@@ -547,10 +546,11 @@
       thrusterForce=13500.000, thrusterColor=0x90808080, thrusterColor1=0x904060a0, torquerTorque=15000.000, explodeDamage=15, explodeRadius=12.500},
      replicateTime=1.250, launcherPower=15.000, sort=110026},
 
-  {68, name="Sentry Laser", features=PALETTE|TURRET|LASER|CHARGING|AUTOFIRE, group=3, shape=RHOMBUS_36_144,
+  {68, name="Sentry Defense", features=PALETTE|TURRET|CANNON|CHARGING|AUTOFIRE, group=3, shape=RHOMBUS_36_144,
     durability=0.500, density=0.150, fillColor=0x7a0a28, fillColor1=0xa36a1b,
-    lineColor=0xe0fa08, turretSpeed=20.000, laser={width=2.000, damage=12.500,
-      color=0xa0ff2100, range=1200.000}, chargeMin=0.500, chargeMaxTime=0.500},
+	blurb="Rapid firing charging PD gun, it's fully charged first shot of a single volley is useful for destroying heavy stuffs that head toward your ship",
+    lineColor=0xe0fa08, turretSpeed=15.000, cannon={roundsPerSec=15, damage=60,
+      color=0xff2100, muzzleVel=1200, range=1400.000, spread=0.05}, chargeMin=0.2, chargeMaxTime=0.5},
 
   {69, name="Raiphase Void", features=PALETTE|TURRET|LASER|CHARGING|AUTOFIRE, group=3, shape=PENTAGON,
     durability=1.500, density=0.150, fillColor=0xe33434, fillColor1=0xee4c1f, lineColor=0xff7100, turretSpeed=20,
@@ -655,8 +655,8 @@
 
   {86, name="Plasmathrower", features=PALETTE|TURRET|CANNON|GENERATOR, group=3, shape=RHOMBUS_72_108,
     durability=0.400, density=0.150, fillColor=0x7a0a28, fillColor1=0xa36a1b, lineColor=0xe0fa08,
-    generatorCapacityPerSec=25.000, powerCapacity=100.000, aihint_range=800,
-    cannon={roundsPerSec=200.000, muzzleVel=400.000, damage=3.000, color=0xff2100,
+    generatorCapacityPerSec=25.000, powerCapacity=100.000, aihint_range=900, turretSpeed=4.25,
+    cannon={roundsPerSec=200.000, muzzleVel=400.000, damage=3.000, color=0x80ff2100, pattern=CONSTANT,
       roundsPerBurst=2, burstyness=1.000, range=800, rangeStdDev=200.000, spread=0.030, recoil=0}},
 
   {87, name="Valkyrie Artillery", features=PALETTE|TURRET|CANNON, group=2, scale=5, sort=600486,
@@ -1347,9 +1347,9 @@
      replicateTime=3.250, launcherPower=15.000},
 
   {199, name="Defence Thrower", features=PALETTE|TURRET|CANNON|AUTOFIRE, group=3, shape=ISOTRI_72,
-    durability=0.400, density=0.150, fillColor=0x7a0a28, fillColor1=0xa36a1b, lineColor=0xe0fa08,
-    cannon={roundsPerSec=100.000, muzzleVel=500.000, damage=2.000, color=0xff2100,
-      roundsPerBurst=1, burstyness=1.000, range=600.000, spread=0.020, recoil=0}},
+    durability=0.400, density=0.150, fillColor=0x7a0a28, fillColor1=0xa36a1b, lineColor=0xe0fa08, aihint_range=1200,
+    cannon={roundsPerSec=75.000, muzzleVel=500.000, damage=8.000, color=0xff2100,
+      roundsPerBurst=30, burstyness=0.1, range=600.000, spread=0.2, recoil=0, pattern=WAVE}},
 
   {17001, shape=DISH_THRUSTER, scale=2, name="Improved Thruster", features=PALETTE|THRUSTER, group=2,
     durability=0.5, blurb="An intermediate improvement of general use propulsion system", density=0.15,
@@ -1768,10 +1768,10 @@
         group=2, shape=COMMAND_MISSILE, lifetime=30.000, barrelTaper=0.3, barrelSize={12, 1.25},
 		shroud={{size={3, 6}, offset={5, 0, 0.01}, taper=0.5}},
         durability=0.750, density=0.150, fillColor=0x5b5b5b, fillColor1=0x7c9837, lineColor=0xaef300,
-        powerCapacity=120.000, capacity=100.000, thrusterForce=3250.000, thrusterColor=0x90808080,
+        powerCapacity=120.000, capacity=100.000, thrusterForce=6500.000, thrusterColor=0x90808080,
         thrusterColor1=0x904060a0, torquerTorque=11500.000, laser={width=2, pulsesPerSec=10.2,
         pulseAvailability=0.025, damage=20, color=0x80ecfe00, range=300}, generatorCapacityPerSec=340.000, turretSpeed=17.5,
-        shield={strength=450.000, regen=275.000, delay=0.01, radius=15.000, color=0x191f2928, lineColor=0xc1f2928, damagedColor=0x4c536c68, armor=10}},
+        shield={strength=450.000, regen=50.000, delay=1, radius=15.000, color=0x191f2928, lineColor=0xc1f2928, damagedColor=0x4c536c68, armor=10}},
      replicateTime=10.500, launcherPower=225.000},
 
   {17076, shape=207, name="Regeneralites Launcher", features=PALETTE|LAUNCHER,
@@ -1824,7 +1824,7 @@
     blurb="This advanced defensive turret of unknown marvel can fire outside the range of it's shield generator, it's a shield generator combined with Mastaron Defense Cannon", density=0.5,
     fillColor=0x61ffca, fillColor1=0x40f7d9, lineColor=0xa6ffdb, turretSpeed=10.824, sort=80027, shield={strength=10000,
       regen=100, radius=100, color=0x1a12432f, lineColor=0x7837986b, damagedColor=0x4d1f8183},
-	cannon={roundsPerSec=9.99, muzzleVel=1800, damage=15, explosive=PROXIMITY, range=1200, color=0x00feec, explodeRadius=10, projectileSize=0.5, spread=0.15}, --10
+	cannon={roundsPerSec=9.99, muzzleVel=1800, damage=30, range=1200, color=0x00feec, projectileSize=0.5, spread=0.15}, --10
      growRate=0.825, barrelSize={11, 2.25}, barrelTaper=0.999, barrelOffset={-3.5, 0}, shroud={{size={2, 3}, offset={-5, 0, 0.14}},
       {size={4, 4.28}, taper=-0.75, offset={-2, 0, 0.15}}, {size={3.44, 4.28}, offset={2, 0, 0.125}, taper=1},
       {size={2.33, 0.66}, offset={7.5, 0, 0.06}, taper=0.25}, {size={10, 0.75}, offset={5.45, 3, 0.12}}, {size={10, 0.75}, offset={5.45, -3, 0.12}},
@@ -1955,11 +1955,11 @@
       regen=111, radius=88, color=0x19332202, lineColor=0xc332202, damagedColor=0x4c8d5e06},
      growRate=0.825, sort=90196},
 
-  {17107, name="RB Subsystem", features=PALETTE|TURRET|CANNON|AUTOFIRE, group=12, turretSpeed=60,
-    durability=0.500, density=0.150, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xbda09a, turretSpeed=36.000,
+  {17107, name="RB Subsystem", features=PALETTE|TURRET|CANNON|AUTOFIRE, group=12, aihint_range=888,
+    durability=0.500, density=0.150, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xbda09a, turretSpeed=12.000,
 	blurb="Rapid firing machine gun PD, unleash burst after burst of projectiles that can be enough to deal damage to ships",
-    barrelOffset={-1, 0}, cannon={roundsPerSec=70, roundsPerBurst=35, burstyness=0.1, spread=0.05,
-      muzzleVel=1200, damage=2, range=888, rangeStdDev=222, color=0xee5245}, sort=80002,
+    barrelOffset={-1, 0}, cannon={roundsPerSec=70, roundsPerBurst=35, burstyness=0.2, spread=0.05, recoil=0.2,
+      muzzleVel=1200, damage=2, range=666, rangeStdDev=222, color=0xee5245}, sort=80002,
 	shroud={{size={2, 5}, taper=0.8, offset={1, 0}}, {size={-5, -2.5}, offset={-1.5, 0, 0.12}, shape=COMMAND, count=2},
 	        {size={6.65, 0.4}, offset={3, 0, 0.125}, count=2}}},
 
@@ -2197,7 +2197,7 @@
     lineColor=0xb00049, replicateBlock=
     {command={flags=POINT_DEFENSE|FIRE_AT_WILL}, shape=ISOTRI_36, features=COMMAND|THRUSTER|TORQUER|LASER|TURRET|GENERATOR|FREERES|CHARGING|NOCLIP_ALLY,
       group=11, lifetime=22, durability=2, density=0.15, fillColor=0x37006e, generatorCapacityPerSec=20.000,
-      fillColor1=0x860285, lineColor=0xb00049, thrusterForce=6500, thrusterColor=0x9090cef0,
+      fillColor1=0x860285, lineColor=0xb00049, thrusterForce=6500, thrusterColor=0x9090cef0, barrelSize={3, 1},
       thrusterColor1=0x9090d7f0, torquerTorque=6600, powerCapacity=20.000, laser={pulsesPerSec=1.000, pulseAvailability=0.800, power=4.000,
       width=2.000, damage=30.000, color=0x7fcf1090, range=1000.000}, chargeMin=0.500, chargeMaxTime=2.000},
      replicateTime=12.6, launcherPower=20.000},
@@ -2688,21 +2688,24 @@
   
   {17236, name="Immobilize Compass", features=PALETTE|TURRET|LASER|AUTOFIRE, group=3, shape=RHOMBUS_36_144,
     durability=1.500, density=0.150, fillColor=0x901e30, fillColor1=0xbc121d, lineColor=0xe3e364,
-    blurb="A beam weapon belong to the Automated Compass category, that immobilizes any ships and missiles ordinances it detects. Completely harmless",
+    blurb="A beam weapon belong to the Automated Compass category, that immobilizes any ships and missiles ordinances it detects.",
     turretSpeed=4.000,
-    laser={width=1, color=0x47e3e364, range=750.000, immobilizeForce=100000}},
+    laser={width=1, color=0x47e3e364, range=600.000, immobilizeForce=100000, damage=20}},
 
-  {17237, name="Attractor Compass", features=PALETTE|TURRET|LASER|AUTOFIRE, group=3, shape=PENTAGON,
+  {17237, name="Shining Compass", features=PALETTE|TURRET|CANNON|AUTOFIRE, group=3, shape=PENTAGON, 
     durability=1.500, density=0.150, fillColor=0x901e30, fillColor1=0xbc121d, lineColor=0xe3e364,
-    blurb="A beam weapon belong to the Automated Compass category, that pull hostiles ships closer while damaging them, can serve as a good light PD (But do not handles well againsts all sort of heavy missiles, mines and torpedoes)",
-    turretSpeed=4.000,
-    laser={width=1, color=0x47e3e364, range=1000.000, linearForce=-50000, damage=25}},
+    blurb="An Area of Denial defensive projectile emmitter", aihint_range=1000, barrelSize={0.001, 0.001}, barrelCount=1,
+    cannon={roundsPerSec=30, color=0xe3e364, range=800.000, rangeStdDev=200, muzzleVel=600, damage=20,
+	spread=3.142, pattern=RANDOM, recoil=0, explosive=FRAG_FINAL,
+	fragment={roundsPerBurst=4, spread=3.142, range=300, rangeStdDev=100, muzzleVel=600, color=0xe3e364,
+	pattern=RANDOM|ABSOLUTE, damage=5}},
+	shroud={{size={5, 5}, offset={0, 0, 0.01}, shape=OCTAGON}}},
 
   {17238, name="Repellant Compass", features=PALETTE|TURRET|LASER|AUTOFIRE, group=3, shape=RHOMBUS_72_108,
     durability=1.500, density=0.150, fillColor=0x901e30, fillColor1=0xbc121d, lineColor=0xe3e364,
-    blurb="A beam weapon belong to the Automated Compass category, it push every ships away as well as missiles. Completely harmless",
+    blurb="A beam weapon belong to the Automated Compass category, it push every ships away as well as missiles.",
     turretSpeed=4.000,
-    laser={width=1, color=0x47e3e364, range=500.000, linearForce=50000}},
+    laser={width=1, color=0x47e3e364, range=500.000, linearForce=50000, damage=20}},
 	
   {17239, shape=RHOMBUS_72_108, name="Flarespreader", features=PALETTE|TURRET|LAUNCHER, group=3,
     durability=0.4, density=0.15, fillColor=0xe33434, fillColor1=0xee4c1f, lineColor=0xff7100,
@@ -5316,16 +5319,27 @@
     durability=0.500, density=0.150, fillColor=0x202020, fillColor1=0x404040,
     lineColor=0xaef300, blurb="A cluster cruise missile launcher", replicateBlock=
 	{command={}, features=COMMAND|LAUNCHER_BARRAGE|THRUSTER|TORQUER|FREERES|NOCLIP_ALLY|ONEUSE|EXPLODE, deathFeatures=CANNON, torquerTorque=65000,
-      group=2, shape=290, lifetime=60.000, scale=6, cannon={damage=150, color=0xecfe00, range=10000, muzzleVel=5000, roundsPerSec=1.0, pattern=ABSOLUTE, explosive=FINAL, explodeRadius=30},
+      group=2, shape=290, lifetime=60.000, scale=6, cannon={damage=100, color=0xecfe00, range=1, muzzleVel=5000, roundsPerSec=1.0, pattern=ABSOLUTE, explosive=FINAL|FRAG_FINAL, explodeRadius=30,
+	  fragment={damage=12, color=0x10ecfe00, roundsPerBurst=120, range=400, rangeStdDev=300, muzzleVel=500, pattern=RANDOM|ABSOLUTE, spread=3.124, explosive=FRAG_FINAL,
+		fragment={damage=1, color=0x10ecfe00, roundsPerBurst=12, range=1, muzzleVel=10, pattern=SPIRAL|ABSOLUTE, spread=2.864, explosive=FRAG_FINAL,
+		fragment={damage=1, color=0x10ecfe00, roundsPerBurst=1, range=-2, muzzleVel=-1, pattern=SPIRAL|ABSOLUTE, explosive=FRAG_FINAL,
+		fragment={damage=1, color=0x10ecfe00, roundsPerBurst=1, range=-2, muzzleVel=-1, pattern=SPIRAL|ABSOLUTE, explosive=FRAG_FINAL,
+		fragment={damage=1, color=0x10ecfe00, roundsPerBurst=1, range=-2, muzzleVel=-1, pattern=SPIRAL|ABSOLUTE, explosive=FRAG_FINAL,
+		fragment={damage=1, color=0x10ecfe00, roundsPerBurst=1, range=-2, muzzleVel=-1, pattern=SPIRAL|ABSOLUTE}}}}}}},
       durability=2.500, density=0.100, fillColor=0x5b5b5b, fillColor1=0x7c9837, lineColor=0xaef300, command={flags=NO_PARENT|FIRE_AT_WILL},
-      capacity=100.000, thrusterForce=58500.000, thrusterColor=0x90808080, explodeDamage=1, explodeRadius=1,
+      capacity=100.000, thrusterForce=24500.000, thrusterColor=0x90808080, explodeDamage=480, explodeRadius=100,
       thrusterColor1=0x904060a0, name="SS-500", replicateBlock=
-	  {features=COMMAND|LASER|GENERATOR|NOCLIP_ALLY|TURRET|THRUSTER|TORQUER|FREERES|AUTOFIRE|EXPLODE, name="Novatori Clust Bomb",
-	    group=2, lifetime=15.000, shape=290, barrelTaper=0.99, command={flags=NO_PARENT|FIRE_AT_WILL}, explodeDamage=100,
-        durability=10.000, density=0.100, fillColor=0x5b5b5b, fillColor1=0x7c9837, scale=8, turretSpeed=30, explodeRadius=40,
-		laser={damage=400, color=0x80ecfe00, range=200, power=1, width=1, pulsesPerSec=10, decay=0.001}, barrelSize={1, 1}
-		generatorCapacityPerSec=15, powerCapacity=15, lineColor=0xaef300, capacity=0.100, thrusterForce=10000, torquerTorque=10000}, 
-      replicateTime=3, launchSpeed=0}, replicateTime=20, launcherPower=150.000},
+	  {features=COMMAND|NOCLIP_ALLY|THRUSTER|TORQUER|FREERES|EXPLODE, name="Novatori Clust Missile", deathFeatures=CANNON,
+	    group=2, lifetime=15.000, shape=516, barrelTaper=0.99, command={flags=NO_PARENT|FIRE_AT_WILL}, explodeDamage=60,
+        durability=10.000, density=0.100, fillColor=0x5b5b5b, fillColor1=0x7c9837, explodeRadius=40,
+	    cannon={roundsPerSec=2.750, roundsPerBurst=5,
+      burstyness=0.85, muzzleVel=1350.000, spread=3.142, damage=10.000,
+      explosive=FRAG_FINAL, color=0xecfe00, range=160.000, pattern=ABSOLUTE|RANDOM,
+	  fragment={damage=12, color=0xecfe00, roundsPerBurst=6, rangeStdDev=200, muzzleVel=600, pattern=ABSOLUTE, spread=3.142, explosive=FRAG_FINAL,
+		fragment={damage=1, color=0x60ecfe00, roundsPerBurst=12, range=1, muzzleVel=10, pattern=SPIRAL|ABSOLUTE, spread=2.864, explosive=FRAG_FINAL,
+		fragment={damage=1, color=0x10ecfe00, roundsPerBurst=1, range=-2, muzzleVel=-1, pattern=SPIRAL|ABSOLUTE}}}}, 
+		generatorCapacityPerSec=15, powerCapacity=15, lineColor=0xaef300, capacity=0.100, thrusterForce=2000, torquerTorque=4000}, 
+      replicateTime=2, launchSpeed=0}, replicateTime=10, launcherPower=150.000},
 	  
   {17834, name="Magnetic Field", group=1, features=NOCLIP|NOPALETTE, durability=1, shape=328, density=0.001, growRate=999, sort=-5000},
   
@@ -5984,9 +5998,10 @@
         offset={0, 0, 0}, taper=1.1}}},
 		
   {17968, features=PALETTE|TURRET|CANNON|AUTOFIRE, fillColor=0x6f5250, fillColor1=0x4a3b38, aihint_range=1400,
-    lineColor=0xbda09a, cannon={roundsPerSec=50, explosive=PROXIMITY, spread=0.25, rangeStdDev=300,
-      muzzleVel=1000, damage=3, range=700, explodeRadius=10, pattern=ABSOLUTE|SPIRAL,
-      color=0xee5245}, group=12, scale=2, name="RB Subsystem", durability=0.5,
+    lineColor=0xbda09a, cannon={roundsPerSec=40, explosive=PROXIMITY|FRAG_FINAL, spread=0.25, rangeStdDev=300,
+      muzzleVel=1000, damage=3, range=700, explodeRadius=10, pattern=SPIRAL,
+      color=0xee5245, fragment={roundsPerBurst=1, damage=3, range=200, rangeStdDev=100, muzzleVel=1000, explodeRadius=10,
+	  color=0xee5245, pattern=ABSOLUTE, explosive=PROXIMITY}}, group=12, scale=2, name="RB Subsystem", durability=0.5,
 	  blurb="Medium scale wave burst defense cannons, more effective when you got chased from behind due to the ammunition used which increase rear-firing drag resistance and increases range of projectiles at the cost of frontal-firing performance, can be useful for kiting ships or suited for rear defenses",
     turretLimit=3.142, density=0.15, sort=80006, shroud={{size={2, 8}, taper=0.9, offset={1, 0}}, {size={-5, -17.5}, offset={-1.5, 0, 0.12}, shape=COMMAND, count=1},
 	        {size={2, 7.5}, offset={12.5, 0, 0.175}, count=1}, {size={2, 7.5}, offset={15, 0, 0.2}, count=1}}},
@@ -6370,6 +6385,34 @@
   {25284, growRate=40, fillColor=0xe1a71c, fillColor1=0xed6511, lineColor=0xff0100,
     group=3, shape=349, name="Adapter", durability=0.8, density=0.07,
     sort=-10000, scale=3},
+	
+  {25290, growRate=20, fillColor=0x43e77, fillColor1=0x4167c, lineColor=0x254dfb, 
+    group=11, shape=351, name="Adaptlite", durability=2, sort=-10000,
+	blurb="Part of a crystallite system that turn a side of a pentagon block into a square adaptive sides"}
+	
+  {25300, growRate=20, fillColor=0x43e77, fillColor1=0x4167c, lineColor=0x254dfb, 
+    group=11, shape=352, name="Adaptlite", durability=2, sort=-10000,
+	blurb="Part of a crystallite system that turn a side of a pentagon block into a square adaptive sides"}
+	
+  {25310, growRate=20, fillColor=0x43e77, fillColor1=0x4167c, lineColor=0x254dfb, 
+    group=11, shape=353, name="Adaptlite", durability=2, sort=-10000,
+	blurb="Part of a crystallite system that turn a side of a pentagon block into a square adaptive sides"}
+	
+  {25320, growRate=20, fillColor=0x43e77, fillColor1=0x4167c, lineColor=0x254dfb, 
+    group=11, shape=354, name="Adaptlite", durability=2, sort=-10000,
+	blurb="Part of a crystallite system that turn a side of a pentagon block into a square adaptive sides"}
+	
+  {25330, growRate=20, fillColor=0x43e77, fillColor1=0x4167c, lineColor=0x254dfb, 
+    group=11, shape=355, name="Adaptlite", durability=2, sort=-10000,
+	blurb="Part of a crystallite system that turn a side of a pentagon block into a square adaptive sides"}
+	
+  {25340, growRate=20, fillColor=0x43e77, fillColor1=0x4167c, lineColor=0x254dfb, 
+    group=11, shape=355, name="Adaptlite", durability=2, sort=-10000,
+	blurb="Part of a crystallite system that turn a side of a wide rhombus into a square adaptive sides"}
+	
+  {25350, growRate=20, fillColor=0x43e77, fillColor1=0x4167c, lineColor=0x254dfb, 
+    group=11, shape=355, name="Adaptlite", durability=2, sort=-10000,
+	blurb="Part of a crystallite system that turn a side of a thin rhombus into a square adaptive sides"}
   
   {25827, shape=GEM_1, name="Hull", group=8, durability=2.500, blurb="Armored building block", 
     fillColor=0xaaaaaa, fillColor1=0x777777, lineColor=0xaab0c0, growRate=30.000, sort=-10000},
