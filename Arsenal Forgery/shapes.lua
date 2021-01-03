@@ -564,7 +564,10 @@
 		  {3, 0.5, LAUNCHER}, {3, 0.5, MISSILE}, {4, 0.5, LAUNCHER}, {4, 0.5, MISSILE}, {5, 0.5, LAUNCHER}, {5, 0.5, MISSILE}, {6, 0.5, LAUNCHER}, {6, 0.5, MISSILE},}}, 
 		 {verts={{12.071, -5}, {5, -12.071}, {-5, -12.071}, {-12.071, -5}, {-12.071, 5}, {-5, 12.071}, {5, 12.071},
           {12.071, 5}}, ports={{7, 0.5, LAUNCHER}, {0, 0.5, MISSILE}, {0, 0.5, LAUNCHER}, {1, 0.5, LAUNCHER}, {2, 0.5, LAUNCHER}, {3, 0.5, LAUNCHER}, {4, 0.5, LAUNCHER}, {5, 0.5, LAUNCHER}, {6,
-            0.5, LAUNCHER}}} }, launcher_radial=true}
+            0.5, LAUNCHER}}} 
+		 {verts={{5, -2.071}, {2.071, -5}, {-2.071, -5}, {-2.071, -2.9} {-17.5, -2.9}, {-22, -2.5}, {-22, 2.5}, {-17.5, 2.9}, {-2.071, 2.9}, {-2.071, 5}, {2.071, 5},
+          {5, 2.071}}, ports={{11, 0.5, LAUNCHER}, {0, 0.5, LAUNCHER}, {1, 0.5, LAUNCHER}, {5, 0.5, THRUSTER_OUT}, {5, 0.5, MISSILE},
+		  {9, 0.5, LAUNCHER}, {10, 0.5, LAUNCHER}}}}, launcher_radial=true}
   -- SHARD_MISSILES
   {254, {{verts={{-1.5, -2.472}, {-10.011, 0}, {-1.5, 2.472}, {1.5, 2.472}, {10.011, 0}, {1.5, -2.472}}, ports={{5, 0.5, MISSILE}, {0, 0.5, NONE}, {1, 0.5, NONE},
           {2, 0.5, MISSILE}, {3, 0.5, NONE}, {4, 0.5, NONE}}},
@@ -966,7 +969,7 @@
             0.5, LAUNCHER}}},}}
    -- LEFT_TRI_THRUSTER
   {289, {}, mirror_of=288}
-   --HANGING ROCKETS --- Derived from Sentient mod, shape missile have been replaced
+   --HANGING ROCKETS --- Derived from Sentient mod, the original author is Randomnumber, shape missile have been replaced
 	{290, 
 		{
 			{
@@ -1013,7 +1016,7 @@
    
 	},
 	
-   --JAVELIN --- Derived from Sentient mod, shape missile have been replaced
+   --JAVELIN --- Derived from Sentient mod, shape missile have been replaced, the original author is Randomnumber.
 	{291, 
 		{
 			{
@@ -1086,7 +1089,7 @@
 			},
 		}
 	},
-   --DECOUPLERS --- from Sentient mod
+   --DECOUPLERS --- from Sentient mod, the original author is Randomnumber.
 	{292, 
 		{
 			{
@@ -1446,5 +1449,10 @@
 			ports={{1, 0.5}, {2, 0.5}, {3, 0.5}, {0, 0.25}, {0, 0.75}}}
 			}}
 	{355, {}, mirror_of=354}
+	-- OCTAGON_SQUARE-CONTAINER
+	{356, {{verts={{0, 0}, {35.35534, 0}, {0, -35.35534}, {0, 0}, {0, -35.35534}, {-35.35534, 0}, {0, 0}, {-35.35534, 0}, {0, 35.35534}, {0, 0}, {0, 35.35534}, {35.35534, 0}, {12.071, 0}, {12.071, 5}, {5, 12.071}, {-5, 12.071}, {-12.071, 5}, {-12.071, -5}, {-5, -12.071}, {5, -12.071}, {12.071, -5}, {12.071, 0}},
+			ports={{1, 0.1}, {1, 0.5}, {1, 0.9}, {4, 0.1}, {4, 0.5}, {4, 0.9}, {7, 0.1}, {7, 0.5}, {7, 0.9}, {10, 0.1}, {10, 0.5}, {10, 0.9},
+			{12, 0}, {13, 0.5}, {14, 0.5}, {15, 0.5}, {16, 0.5}, {17, 0.5}, {18, 0.5}, {19, 0.5}}
+			}}}
 	-- RHOM-SQUARE
 	},
