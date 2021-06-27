@@ -228,7 +228,7 @@
       lineColor=0xee5245, torquerTorque=19000.000, turretSpeed=15.500, barrelCount=1, cannon={roundsPerSec=12.000, muzzleVel=1250.000, recoil=0.25,
       power=2.500, damage=10.000, color=0xee5245, range=955.000, explosive=FRAG_PROXIMITY,
 	  fragment={damage=2, range=5, muzzleVel=8, spread=3.142, roundsPerBurst=5, pattern=ABSOLUTE|SPIRAL, color=0xee5245}}, generatorCapacityPerSec=80.000, powerCapacity=160.000},
-    replicateTime=8.000, launcherSpeed=70.000, sort=110253},
+    replicateTime=8.000, launcherSpeed=70.000, sort=110252},
 
   {21, name="Reactored Uziă", features=PALETTE|CANNON|GENERATOR|TURRET, group=12, shape=CANNON, turretLimit=0, points=17,
     durability=1.500, density=0.150, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xee5245, aihint_range=1600,
@@ -241,14 +241,15 @@
 	  }, generatorCapacityPerSec=10.000, powerCapacity=100.000},
 
   {22, name="Hìrivănêur Drone", features=PALETTE|LAUNCHER, group=12, shape=RECT_LAUNCHER1,
-    health=20.000, durability=0.500, blurb="Release Hìr-irvăn-nêur harass drone that fires anti-missiles that can also harass Point Defenses", density=0.150,
+    health=20.000, durability=0.500, blurb="Release Hìr-irvăn-nêur harass drone that fires shard barrages, can also harass Point Defenses", density=0.150,
     fillColor=0x6f5250, fillColor1=0x794937, lineColor=0xbda09a, replicateBlock=
-    {command={}, name="Hìr-irvăn-nêur Drone" features=COMMAND|GENERATOR|LAUNCHER|THRUSTER|TORQUER|AUTOFIRE|FREERES|NOCLIP_ALLY, group=12, shape=224, scale=2, lifetime=50.000,
-      durability=1.500, density=0.100, fillColor=0x514644, fillColor1=0x3a2b26, thrusterForce=2880.000, thrusterBoost=2, thrusterBoostTime=2.000,
-      lineColor=0xee5245, torquerTorque=19000.000, replicateBlock={command={}, name="Hì-ivăn-nêu" features=COMMAND|EXPLODE|THRUSTER|TORQUER|FREERES|NOCLIP_ALLY, group=12, blockshape=DISH_MISSILE, 
-      lifetime=10.000, durability=2.500, density=0.100, fillColor=0x514644, fillColor1=0x3a2b26, thrusterForce=1280.000,
-      lineColor=0xee5245, torquerTorque=19000.000, explodeDamage=1, explodeRadius=0}, replicateTime=0.1, launcherSpeed=35.000, generatorCapacityPerSec=60.000, powerCapacity=140.000},
-    replicateTime=15.000, launcherSpeed=70.000},
+    {command={}, name="Hìr-irvăn-nêur Drone" features=COMMAND|GENERATOR|LAUNCHER_BARRAGE|THRUSTER|TORQUER|ROTATOR|AUTOFIRE|FREERES|NOCLIP_ALLY, group=12, shape=224, scale=2, lifetime=50.000,
+      durability=1.500, density=0.100, fillColor=0x514644, fillColor1=0x3a2b26, lineColor=0xfca904, thrusterForce=9880.000, thrusterBoost=2, thrusterBoostTime=2.000, rotatorLimit=3.24,
+      torquerTorque=19000.000, replicateBlock={name="Hì-ivăn-nêu" features=EXPLODE|FREERES|NOCLIP_ALLY, group=12, shape=254, scale=3,
+      lifetime=2.000, durability=2.500, density=0.100, fillColor=0x514644, fillColor1=0x3a2b26,
+      lineColor=0xee5245, explodeDamage=30, explodeRadius=15}, replicateTime=0.1, launcherSpeed=350.000, launcherAngVel=-12, generatorCapacityPerSec=60.000, powerCapacity=140.000,
+	  shroud={{size={3.5, 25}, offset={-0.5, 0, -0.01}, shape=DISH_THRUSTER}, {size={-15, -4.5}, offset={-2.5, 0, -0.02}, shape=ISOTRI_13}}},
+    replicateTime=3.000, launcherSpeed=70.000, sort=110253},
 
   {23, name="Pounger Dish", features=PALETTE|LAUNCHER, group=15, shape=RECT_LAUNCHER1,
     durability=2.000, blurb="Launches dishes that deals moderate damage on impact and pushes ships away at great force", density=0.150,
@@ -282,7 +283,7 @@
     density=0.150, fillColor=0x37006e, fillColor1=0x860285, lineColor=0xb00049, cannonBoost={power={2.000, 0.000},
       damage={1.500, 0.000}, muzzleVel={1.100, 0.000}, range={1.500, 0.000}, roundsPerSec={0.6, 0}}, points=116},
 
-  {27, name="Flarer Blades", features=PALETTE|LAUNCHER_BARRAGE, group=3, shape=GEM_3_LAUNCHER,
+  {27, name="Flarer Blades", features=PALETTE|LAUNCHER_BARRAGE, group=3, shape=GEM_3_LAUNCHER, sort=110060,
     durability=0.500, density=0.150, fillColor=0x7a0a28, fillColor1=0xa36a1b,
     lineColor=0xe0fa08, replicateBlock={command={}, features=COMMAND|TORQUER|THRUSTER|FREERES|LASER|ALWAYSFIRE|GENERATOR|EXPLODE, blockshape=DISH_MISSILE, group=3, sound="none",
       lifetime=10.000, durability=0.200, density=0.100, fillColor=0x800000, fillColor1=0xb32d00, powerCapacity=2, generatorCapacityPerSec=2,
@@ -365,7 +366,7 @@
   {57, name="Anchor Module Launcher", features=PALETTE|LAUNCHER, group=8, shape=RECT_LAUNCHER1, sort=200011,
     durability=0.500, density=0.150, fillColor=0xaaaaaa, fillColor1=0x777777, lineColor=0x3390eb,
     --blurb="If you want to add an Anchor building to your fleet palette, open up the Command mode by pressing 'Tab' or '2' button then mouseover a friendly Anchor building nearby and press '3'.", 
-	blurb="Beware of adding any Anchor buildings to your fleet design screen, they are currently unstable (Seed command modules with modified designs that do not belong to their default designs can make the game more likely to crashes after world regeneration) if you try to modify them and best to leave them be.", 
+	blurb="Beware of adding any Anchor buildings to your fleet design screen, they are currently unstable (Seed command modules with altered player designs that do not belong to their default designs can make the game more likely to crashes after world regeneration) if you try to redesign them and best to leave them be.", 
 	replicateBlock=
     {41, command={faction=8}, name="Anchor Command", features=COMMAND|SEED|ROOT|ASSEMBLER|THRUSTER|TORQUER|TRACTOR, group=8, shape=258, durability=10.000,
 	  blurb="Import Anchor design only work if the current ship you are importing the design uses the same command module shape as the Anchor design.",
@@ -460,7 +461,7 @@
 	--explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-600, rangeStdDev=-200, color=0x30000000, pattern=CONSTANT|ABSOLUTE,
 	--explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-500, rangeStdDev=-200, color=0x20ffffff, pattern=CONSTANT|ABSOLUTE,
 	--explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-400, rangeStdDev=-200, color=0x10000000, pattern=CONSTANT|ABSOLUTE,}}}}}}},
-    shape=266, scale=2, durability=0.250, density=0.150, fillColor=0xaaaaaa, generatorCapacityPerSec=500.000, 
+    shape=266, scale=2, durability=0.250, density=0.150, fillColor=0xaaaaaa, generatorCapacityPerSec=200.000, 
     fillColor1=0x205079, lineColor=0x3390eb, capacity=25.000, powerCapacity=5000,
       replicateBlock={command={}, name="Charger Drones", features=COMMAND|LASER|THRUSTER|TORQUER|GENERATOR|NOCLIP_ALLY|LAUNCHER|AUTOLAUNCH|FREERES|ROTATOR, group=8, lifetime=250,
       shape=258, durability=0.250, density=0.150, fillColor=0xaaaaaa, scale=4, rotatorLimit=3.142,
@@ -634,8 +635,8 @@
 	  fragment={muzzleVel=300.000, damage=30.000, color=0xee5245, range=30.000, spread=0.1}}}}}}, generatorCapacityPerSec=20.000, powerCapacity=200.000},
 
   {77, name="Hyper Laser", features=PALETTE|TURRET|LASER, group=3, shape=RHOMBUS_72_108, durability=1.500,
-    density=0.150, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100, laser={pulsesPerSec=2.250,
-      pulseAvailability=0.435, width=1.220, damage=85.000, color=0xa0ff2100, range=1600.000}},
+    density=0.150, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100, laser={pulsesPerSec=0.5625,
+      pulseAvailability=0.435, width=1.220, damage=85.000, color=0xa0ff2100, range=1400.000}},
 
   {78, name="Sabăt Cannon", features=PALETTE|CANNON|GENERATOR|TURRET, group=12, shape=CANNON2, turretLimit=0, scale=2, points=73,
     durability=1.500, density=0.150, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xee5245, aihint_range=1300,
@@ -1078,8 +1079,8 @@
       width=5.000, damage=1000.000, color=0xa0ff2100, range=650.000}, sort=70062},
 
   {144, name="Hyper Laser", features=PALETTE|TURRET|LASER, group=3, shape=RHOMBUS_72_108, durability=1.500, scale=2,
-    density=0.150, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100, laser={pulsesPerSec=2.250,
-      pulseAvailability=0.435, width=1.550, damage=106.250, color=0xa0ff2100, range=2000.000}},
+    density=0.150, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100, laser={pulsesPerSec=0.5625,
+      pulseAvailability=0.435, width=1.550, damage=106.250, color=0xa0ff2100, range=1600.000}},
 
   {145, shape=DISH_THRUSTER, name="Maneuver Vent", features=PALETTE|THRUSTER, group=3, sort=10011
     durability=0.500, blurb="Vented thrust for maneuveing purposes", density=0.150, fillColor=0xffd700, fillColor1=0xff8c00,
@@ -1221,15 +1222,15 @@
 	  chargeMin=1, chargeMaxTime=0.2, sort=310058},
 
   {172, shape=RECT_LAUNCHER, name="S-19 Stinger", features=PALETTE|LAUNCHER, group=2, sort=520046,
-    durability=0.5, blurb="Long range high damage fast guided missiles, that had an extra ability to initiate burst jump suicide collision", density=0.15,
+    durability=0.5, blurb="Long range high damage guided missiles, that had an extra ability to initiate burst jump suicide collision", density=0.15,
     fillColor=0x5b5b5b, fillColor1=0x7c9837, lineColor=0xaef300, replicateBlock=
     {command={}, shape=MISSILE, features=COMMAND|THRUSTER|TORQUER|EXPLODE|TURRET|LASER|GENERATOR|CHARGING, group=2,
       lifetime=4, durability=0.2, density=0.07, fillColor=0xecfe00, fillColor1=0xa5d618, generatorCapacityPerSec=2.000,
-      lineColor=0x3b9b3b, capacity=100, thrusterForce=1550, thrusterColor=0x9095aeac, powerCapacity=2.000,
+      lineColor=0x3b9b3b, capacity=100, thrusterForce=550, thrusterColor=0x9095aeac, powerCapacity=2.000,
       laser={power=1.000, width=0, damage=2.500, color=0x7fadff2f, range=1100.000, linearForce=-292},
       turretSpeed=100, thrusterColor1=0x9075ceac, torquerTorque=2000, explodeDamage=112, explodeRadius=10, 
 	  barrelSize={0.001, 0.001}, chargeMin=0.1, chargeMaxTime=2.5},
-     replicateTime=2.1, launcherPower=85, launcherOutSpeed=20},
+     replicateTime=2.1, launcherPower=65, launcherOutSpeed=20},
 
   {173, name="Hotbox Module", features=PALETTE|GENERATOR|NOICON, group=12, shape=COMMAND, deathFeatures=CANNON|EXPLODE, points=750,
     durability=0.4, density=0.15, fillColor=0xff69b4, fillColor1=0x8b1a1a, lineColor=0x8b0000, explosive=FRIENDLY_FIRE|ENABLED, explodeRadius=125, explodeDamage=2500,
@@ -1364,7 +1365,7 @@
       thrusterColor1=0x9090d7f0, torquerTorque=14500, explodeDamage=45, explodeRadius=15},
      replicateTime=2, launcherSpeed=300},
 
-  {193, shape=202, name="Flare Missile", features=PALETTE|LAUNCHER, group=3,
+  {193, shape=202, name="Flare Missile", features=PALETTE|LAUNCHER, group=3, sort=110057,
     durability=0.5, density=0.15, fillColor=0xe33434, fillColor1=0xee4c1f, lineColor=0xff7100,
     replicateBlock=
     {command={}, shape=MISSILE, features=COMMAND|THRUSTER|EXPLODE|TORQUER|FREERES,
@@ -1373,7 +1374,7 @@
       thrusterColor=0x90ffffff, thrusterColor1=0x90ff8000, torquerTorque=6500}, replicateTime=1.75,
      launcherPower=30, launcherOutSpeed=10},
   
-  {194, shape=ISOTRI_72, name="Half-Generator", features=PALETTE|GENERATOR, group=3,
+  {194, shape=ISOTRI_72, name="Half-Generator", features=PALETTE|GENERATOR, group=3, sort=20029,
     durability=1.5, density=0.15, fillColor=0x602d10, fillColor1=0xa01b0a, lineColor=0xff0100,
     powerCapacity=150, capacity=200, generatorCapacityPerSec=50},
 
@@ -1387,12 +1388,12 @@
       explodeDamage=35.000, explodeRadius=5.000}, replicateTime=1.300, launcherPower=45.000,
     launcherOutSpeed=40.000, sort=110025},
 
-  {196, shape=207, name="Fiery Propellant Bomb", features=PALETTE|LAUNCHER, group=3,
+  {196, shape=207, name="Fiery Propellant Bomb", features=PALETTE|LAUNCHER, group=3, sort=110058,
     durability=0.5, density=0.15, fillColor=0xe33434, fillColor1=0xee4c1f, lineColor=0xff7100,
     replicateBlock=
     {command={}, shape=MISSILE_SHORT, features=COMMAND|THRUSTER|TORQUER|EXPLODE|FREERES,
       group=3, lifetime=10, durability=0.95, density=0.25, fillColor=0xe33434, 
-      fillColor1=0xee4c1f, lineColor=0xff7100, thrusterForce=3550, explodeDamage=75, explodeRadius=80,
+      fillColor1=0xee4c1f, lineColor=0xff7100, thrusterForce=2550, explodeDamage=75, explodeRadius=30,
       thrusterColor=0x90ffffff, thrusterColor1=0x90ff8000, torquerTorque=2500}, replicateTime=2.85,
      launcherPower=65},
   
@@ -1597,24 +1598,24 @@
       {17039, shape=GEM_1, name="Tholiani Stem", group=2, durability=7.50, fillColor=0x7a67ee,
         fillColor1=0xb03060, lineColor=0xd8d8d8, growRate=3, features=NOPALETTE|INTLINES, scale=2},
 
-  {17040, shape=214, name="Muzzle Addon", features=PALETTE|CANNON_BOOST, group=4,
+  {17040, shape=214, name="Muzzle Addon", features=PALETTE|CANNON_BOOST, group=4, sort=150009,
     durability=0.5, blurb="Adding 2 free addon ports and slightly boost the muzzle speed & damage but lower a small amount of range",
     density=0.15, fillColor=0x74480, fillColor1=8267, lineColor=0x71965, cannonBoost={muzzleVel={1, 50},
       power={1, 5}, range={0.98, -50}, damage={1, 5}}},
-
-  {17041, shape=213, name="Muzzle Coil", features=PALETTE|CANNON_BOOST, group=4,
+ 
+  {17041, shape=213, name="Muzzle Coil", features=PALETTE|CANNON_BOOST, group=4, sort=150010,
     durability=0.5, blurb="A standalone muzzle coil that can be attached to a modular cannon as an external addon, can also be attached to projectiles turrets",
     density=0.15, fillColor=0x74480, fillColor1=8267, lineColor=0x71965, cannonBoost={muzzleVel={1, 150},
-      power={1, 2.5}, damage={1, 2.5}, roundsPerSec={0.95, 0}}},
+      power={1, 2}, damage={1, 2}, roundsPerSec={0.95, 0}}},
 
   {17042, shape=216, name="MDS Turret", features=PALETTE|TURRET|CANNON|AUTOFIRE, group=4, barrelTaper=0.5,
-    durability=0.5, blurb="Automated Defensive plasm turret", density=0.15, fillColor=0x40206b,
+    durability=0.5, blurb="Automated Defensive plasm turret", density=0.15, fillColor=0x40206b, sort=80110,
     fillColor1=8267, lineColor=0x71965, turretSpeed=15.150, cannon={roundsPerSec=5, muzzleVel=1200,
       damage=15, color=0x769f5, range=850, burstyness=0.850, explosive=PROXIMITY, explodeRadius=15},
 	  shroud={{size={5, 5}, shape=224, offset={-2.5, 0}}}},
  
   {17043, shape=216, name="Assault MTS", features=PALETTE|TURRET|CANNON, group=4, barrelTaper=0.5, barrelOffset={1.55, 0},
-    durability=0.5, blurb="Assault plasm turret", density=0.15, fillColor=0x40206b,
+    durability=0.5, blurb="Assault plasm turret", density=0.15, fillColor=0x40206b, sort=80112,
     fillColor1=8267, lineColor=0x71965, cannon={roundsPerSec=8, muzzleVel=1500,
       damage=20, color=0x769f5, range=1250, burstyness=0.500}, turretSpeed=2.150,
 	  shroud={{size={1.5, 12.5}, shape=224, offset={0.8, 0}},
@@ -1622,46 +1623,46 @@
 	          {size={1.25, 7.5}, shape=224, offset={-1.85, 0}},
 			  {size={-5, -2.5}, shape=ISOTRI_25_WEAPON, offset={-4.25, 0}},}},
   
-  {17044, shape=217, name="Power Coil", features=PALETTE|CANNON_BOOST, group=4,
+  {17044, shape=217, name="Power Coil", features=PALETTE|CANNON_BOOST, group=4, sort=150011,
     durability=0.5, blurb="A standalone damage amplifier coil that significantly increases damage of an attached turret",
-    density=0.15, fillColor=0x74480, fillColor1=8267, lineColor=0x71965, cannonBoost={muzzleVel={1, 25},
-      power={1.25, 0}, damage={1.25, 0}, roundsPerSec={0.85, 0}}},
+    density=0.15, fillColor=0x74480, fillColor1=8267, lineColor=0x71965, cannonBoost={muzzleVel={1, 50},
+      power={1.025, 0}, damage={1.0, 5}, roundsPerSec={0.90, 0}}},
 
   {17045, shape=218, name="Power Assistor", features=PALETTE|GENERATOR, group=4, durability=0.5,
     density=0.15, fillColor=0x384098, fillColor1=0xa03000, lineColor=0x40206b, powerCapacity=1,
-    capacity=100, generatorCapacityPerSec=150},
+    capacity=100, generatorCapacityPerSec=150, sort=20040},
 
   {17046, shape=218, name="Power Assistor", features=PALETTE|GENERATOR, group=4, durability=0.5, scale=2,
     density=0.15, fillColor=0x384098, fillColor1=0xa03000, lineColor=0x40206b, powerCapacity=1,
-    capacity=100, generatorCapacityPerSec=500},
+    capacity=100, generatorCapacityPerSec=500, sort=20041},
 
   {17047, shape=218, name="Power Assistor", features=PALETTE|GENERATOR, group=4, durability=0.5, scale=3,
     density=0.15, fillColor=0x384098, fillColor1=0xa03000, lineColor=0x40206b, powerCapacity=1,
-    capacity=100, generatorCapacityPerSec=1200},
+    capacity=100, generatorCapacityPerSec=1200, sort=20042},
 
   {17048, name="Generator", features=PALETTE|GENERATOR, group=4, shape=RECT_LONG, scale=2, durability=0.5,
     density=0.15, fillColor=0x384098, fillColor1=0xa03000, lineColor=0x40206b, powerCapacity=625,
-    capacity=200, generatorCapacityPerSec=225},
+    capacity=200, generatorCapacityPerSec=225, sort=20031},
 
   {17049, name="Generator", features=PALETTE|GENERATOR, group=4, shape=RECT_LONG, scale=3, durability=0.5,
     density=0.15, fillColor=0x384098, fillColor1=0xa03000, lineColor=0x40206b, powerCapacity=950,
-    capacity=300, generatorCapacityPerSec=350},
+    capacity=300, generatorCapacityPerSec=350, sort=20032},
 
   {17050, shape=OCTAGON, name="Gauss Repulsor", features=PALETTE|LASER|CHARGING|TURRET, group=15, turretSpeed=2.6,
     durability=2, blurb="Assault-Defensive Repulsor Gauss Turret", density=0.15, fillColor=0x96bc2a,
     fillColor1=0x378b2f, lineColor=0xf4f0c4, sort=310073, laser={width=5, damage=150,
       color=0x7f97ee2f, range=1250, linearForce=3000, immobilizeForce=1500}, chargeMin=0.5, chargeMaxTime=0.8},
 
-  {17051, shape=219, name="Fire Booster", features=PALETTE|CANNON_BOOST, group=4,
+  {17051, shape=219, name="Fire Booster", features=PALETTE|CANNON_BOOST, group=4, sort=150012,
     durability=0.5, blurb="Boost turret's fire rate by 20%, but lower 12% of damage for each ones attached and lower power usage", scale=2,
-    density=0.15, fillColor=0x74480, fillColor1=8267, lineColor=0x71965, cannonBoost={damage={0.88, 0}, range={0.92, 0}, roundsPerSec={1.20, 0}, power={0.88, 0}}},
+    density=0.15, fillColor=0x74480, fillColor1=8267, lineColor=0x71965, cannonBoost={damage={0.88, 0}, range={1.0, -100}, roundsPerSec={1.20, 0}, power={0.96, 0}}},
   
-  {17052, shape=219, name="Fire Booster", features=PALETTE|CANNON_BOOST, group=4,
+  {17052, shape=219, name="Fire Booster", features=PALETTE|CANNON_BOOST, group=4, sort=150013,
     durability=0.5, blurb="Boost turret's fire rate by 10%, but lower 6% of damage for each ones attached and lower power usage",
-    density=0.15, fillColor=0x74480, fillColor1=8267, lineColor=0x71965, cannonBoost={damage={0.94, 0}, range={0.96, 0}, roundsPerSec={1.10, 0}, power={0.94, 0}}},
+    density=0.15, fillColor=0x74480, fillColor1=8267, lineColor=0x71965, cannonBoost={damage={0.94, 0}, range={1.0, -50}, roundsPerSec={1.10, 0}, power={0.98, 0}}},
 
   {17053, shape=216, name="MDS Repeater", features=PALETTE|TURRET|CANNON|AUTOFIRE, group=4, barrelTaper=0.5,
-    durability=0.5, blurb="A repeater defense turret", density=0.15, fillColor=0x40206b,
+    durability=0.5, blurb="A repeater defense turret", density=0.15, fillColor=0x40206b, sort=80111,
     fillColor1=8267, lineColor=0x71965, turretSpeed=17.650, cannon={roundsPerSec=9, muzzleVel=1200, power=7.9,
       damage=22.5, color=0x769f5, range=1150, burstyness=0.344, spread=0.026, roundsPerBurst=5}},
 
@@ -1674,20 +1675,20 @@
      replicateTime=5, launcherSpeed=50, sort=190010},
 
   {17056, shape=OCTAGON, name="Skirmish MTS", features=PALETTE|TURRET|CANNON, group=4, barrelTaper=0.5,
-    durability=0.5, blurb="Skirmish ranged plasm turret", density=0.15, fillColor=0x40206b,
-    fillColor1=8267, lineColor=0x71965, cannon={roundsPerSec=0.8, muzzleVel=1100,
+    durability=0.5, blurb="Skirmish ranged plasm turret", density=0.15, fillColor=0x40206b, sort=80113,
+    fillColor1=8267, lineColor=0x71965, cannon={roundsPerSec=0.8, muzzleVel=1100, 
       damage=36, color=0x769f5, range=1770, explodeRadius=20, explosive=ENABLED}, turretSpeed=4.444,
 	  shroud={{size={5, 3}, shape=SQUARE, offset={-1.25, 0}},
 			  {size={7.5, 1.5}, shape=RECT, offset={-3.75, 0}, count=2},
 			  {size={2, 3}, shape=SQUARE, offset={-6, 0}},}},
 
-  {17057, shape=211, name="Omni-Torpedo Satellite Launcher", features=PALETTE|LAUNCHER, group=4,
+  {17057, shape=211, name="Mobile Torpedo Satellite", features=PALETTE|LAUNCHER, group=4,
     durability=0.5, density=0.15, fillColor=0x20201b, fillColor1=8267,
-    lineColor=0x69e81d, replicateBlock=
-    {command={}, shape=224, scale=3, features=COMMAND|THRUSTER|GENERATOR|TORQUER|LAUNCHER|FREERES|AUTOFIRE|NOCLIP_ALLY,
+    lineColor=0x69e81d, sort=110046, replicateBlock=
+    {command={}, shape=224, scale=3, features=COMMAND|THRUSTER|GENERATOR|TORQUER|LAUNCHER|FREERES|AUTOFIRE|NOCLIP_ALLY|ROTATOR,
       group=4, lifetime=25, durability=2.0, density=0.15, fillColor=0x69e81d,
       fillColor1=0x42b573, lineColor=0x769f5, powerCapacity=120, capacity=100,
-      torquerTorque=25000, thrusterForce=5000, thrusterColor=0x90800000, thrusterColor1=0x90804040, replicateBlock=
+      torquerTorque=250000, thrusterForce=5000, thrusterColor=0x90800000, thrusterColor1=0x90804040, replicateBlock=
       {shape=MISSILE, features=THRUSTER|EXPLODE, group=4, lifetime=5, scale=2,
         durability=1.0, density=0.15, fillColor=0x69e81d, fillColor1=0x42b573, lineColor=0x769f5,
         capacity=0.1, thrusterForce=12000, thrusterColor=0x90800000, thrusterColor1=0x90804040,
@@ -1727,7 +1728,7 @@
       capacity=0.1, thrusterForce=15000, thrusterColor=0x90808080, thrusterColor1=0x904060a0,
       explodeDamage=500, explodeRadius=75}, replicateTime=3.25, launcherPower=35, launcherSpeed=150, sort=110059},
 
-  {17061, scale=2, name="Zephyr Cannon", features=PALETTE|TURRET|CANNON|NOICON, group=8, 
+  {17061, scale=2, name="Zephyr Cannon", features=PALETTE|TURRET|CANNON|NOICON, group=8, turretSpeed=3,
     durability=0.5, blurb="An explosive attilery cannon which can be used to destroys unshielded ships", density=0.15,
     fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb, cannon={roundsPerSec=0.4,
       explosive=FINAL, muzzleVel=1200, damage=50, color=47081, range=2800,
@@ -1739,7 +1740,7 @@
 	  {size={1.5, 5}, shape=SQUARE, offset={18, 0, 0.225}},
 	  {size={3, 3.5}, shape=SQUARE, offset={20, 0, 0.175}}}},
 
-  {17062, scale=3, name="Zephyr Cannon", features=PALETTE|TURRET|CANNON|NOICON, group=8, 
+  {17062, scale=3, name="Zephyr Cannon", features=PALETTE|TURRET|CANNON|NOICON, group=8, turretSpeed=3,
     durability=0.5, blurb="An explosive attilery cannon which can be used to destroys unshielded ships", density=0.15,
     fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb, cannon={roundsPerSec=0.3,
       explosive=FINAL, muzzleVel=1200, damage=60, color=47081, range=3000,
@@ -1769,7 +1770,7 @@
 	  fragment={muzzleVel=205, damage=40, color=0x97ee2f, rangeStdDev=225.5}}},
 
   {17067, shape=206, name="Hatcher Dispatcher", features=PALETTE|LAUNCHER, group=4,
-    durability=0.5, density=0.15, fillColor=0x20201b, fillColor1=8267,
+    durability=0.5, density=0.15, fillColor=0x20201b, fillColor1=8267, sort=110047,
     blurb="Combat drone that produce suicide drones equipped with condesed plasm cannons", lineColor=0x69e81d, replicateBlock=
     {command={}, shape=256, features=COMMAND|THRUSTER|GENERATOR|TORQUER|LAUNCHER|TURRET|CANNON|FREERES|AUTOFIRE,
       group=4, lifetime=25, durability=1, density=0.15, fillColor=0x69e81d, cannon={roundsPerSec=0.5, muzzleVel=600, power=24, damage=40,
@@ -1870,21 +1871,21 @@
 	  range=300, rangeStdDev=200, muzzleVel=1000, spread=0.685, explosive=FRAG_FINAL,
 	  fragment={damage=50, range=-15, muzzleVel=-1, spread=2.095, color=0x7fcf1090, pattern=ABSOLUTE|SPIRAL, roundsPerBurst=3}}},
 
-  {17079, shape=202, name="Sliewftant Sniparius", features=PALETTE|LAUNCHER, group=3,
+  {17079, shape=202, name="Sliewftant Sniparius", features=PALETTE|LAUNCHER, group=3, sort=110059,
     durability=0.5, density=0.15, fillColor=0x7a0a28, fillColor1=0xa36a1b, lineColor=0xe0fa08,
-    replicateBlock=
-    {command={}, shape=MISSILE, features=COMMAND|TURRET|LASER|THRUSTER|EXPLODE|GENERATOR|TORQUER|FREERES,
-      group=3, lifetime=6, durability=0.4, density=0.10, fillColor=0x7a0a28, fillColor1=0xa36a1b, lineColor=0xe0fa08,
-      thrusterForce=9950, explodeDamage=75, explodeRadius=5, powerCapacity=5.000,
-      laser={power=1.250, width=0.000, damage=10.000, color=47081, range=2000.000, pulsesPerSec=1.000, pulseAvailability=0.500},
+    blurb="High damage velocity missiles, poor accuracy against small targets at long range", replicateBlock=
+    {command={}, shape=MISSILE, features=COMMAND|TURRET|LASER|THRUSTER|EXPLODE|GENERATOR|TORQUER|FREERES|FIN|ALWAYSFIRE,
+      group=3, lifetime=12, durability=0.4, density=0.10, fillColor=0x7a0a28, fillColor1=0xa36a1b, lineColor=0xe0fa08,
+	  barrelSize={25, 2}, thrusterForce=5550, explodeDamage=75, explodeRadius=5, powerCapacity=5.000, finForce=-5750, turretLimit=0,
+      laser={power=1.250, width=5.000, damage=156.000, color=47081, range=50.000, color=0x7fff2100, pulseAvailability=0.500},
       thrusterColor=0x90ffffff, thrusterColor1=0x90ff8000, torquerTorque=7700, generatorCapacityPerSec=5.000}, replicateTime=1.95,
      launcherPower=55},
 
-  {17080, shape=SQUARE_HALF, name="Weaponry Manipulator", features=PALETTE|CANNON_BOOST, group=4,
+  {17080, shape=SQUARE_HALF, name="Weaponry Manipulator", features=PALETTE|CANNON_BOOST, group=4, sort=150014,
     durability=0.5, blurb="All Stats +1% for any projectiles based weaponries it is attached to",
     density=0.15, fillColor=0x74480, fillColor1=8267, lineColor=0x71965, cannonBoost={damage={1.01, 0}, roundsPerSec={1.01, 0}, power={1.01, 0}, range={1.01, 0}, muzzleVel={1.01, 0}}},
 
-  {17081, shape=SQUARE_HALF, name="Defense Pulsers", features=PALETTE|TURRET|LASER|AUTOFIRE|CHARGING, group=4,
+  {17081, shape=SQUARE_HALF, name="Defense Pulsers", features=PALETTE|TURRET|LASER|AUTOFIRE|CHARGING, group=4, sort=80014,
     durability=0.5, density=0.15, fillColor=0x40206b, fillColor1=0x384098, lineColor=0x71965,
     turretSpeed=16.824, laser={width=2, damage=50, color=0x800769f5, range=461, decay=0.01},
     chargeMaxTime=2.5, chargeMin=0.5},
@@ -1900,10 +1901,10 @@
 	  {size={2, 0.5}, offset={7.45, 1.78, 0.11}}, {size={2, 0.5}, offset={10.45, 1.78, 0.11}}, {size={2, 0.5}, offset={13.45, 1.78, 0.11}},
 	  {size={2, 0.5}, offset={7.45, -1.78, 0.11}}, {size={2, 0.5}, offset={10.45, -1.78, 0.11}}, {size={2, 0.5}, offset={13.45, -1.78, 0.11}},}},
 
-  {17083, shape=229, name="Railer Cannon", features=PALETTE|CANNON, group=4, 
+  {17083, shape=229, name="Railer Cannon", features=PALETTE|CANNON, group=4, sort=60007,
     durability=0.5, blurb="Modular Long range Railcannon", density=0.15, fillColor=0x40206b,
-    fillColor1=8267, lineColor=0x71965, cannon={roundsPerSec=1.25, muzzleVel=1500,
-      damage=80, color=0x769f5, range=3600}},
+    fillColor1=8267, lineColor=0x71965, cannon={roundsPerSec=1.25, muzzleVel=1500, explosive=ENABLED, explodeRadius=0,
+      damage=240, color=0x769f5, range=3600}},
 
   {17084, shape=230, name="Particle Cannon", features=PALETTE|CANNON, group=8,
     durability=0.5, blurb="High velocity accurrate assalt long range projectile cannon", density=0.15,
@@ -2185,10 +2186,10 @@
     group=11, durability=1, density=0.150, fillColor=0x836fff, fillColor1=0x4876ff,
     lineColor=0x254dfb, laser={width=3.000, damage=-40.000, color=0x7f98f5ff, range=850.000}},
 
-  {17136, shape=240, scale=2, name="Riflecannon MTS", features=PALETTE|TURRET|CANNON, group=4,
-    durability=0.5, blurb="Assault plasm turret", density=0.15, fillColor=0x40206b,
+  {17136, shape=240, scale=2, name="Riflecannon MTS", features=PALETTE|TURRET|CANNON, group=4, sort=80114,
+    durability=0.5, blurb="Assault plasm turret, can support explosive capability", density=0.15, fillColor=0x40206b,
     fillColor1=8267, lineColor=0x71965, cannon={roundsPerSec=2, muzzleVel=1500,
-      damage=15, color=0x769f5, range=1450, explosive=ENABLED, explodeRadius=0}, turretSpeed=3.150},
+      damage=65, color=0x769f5, range=1450, explosive=ENABLED, explodeRadius=0}, turretSpeed=3.150},
   
   {17137, shape=244, name="Thrustlite", features=PALETTE|THRUSTER, group=11,
     durability=2, density=0.15, fillColor=0x2149e, fillColor1=0x423687, lineColor=0x254dfb,
@@ -2217,9 +2218,10 @@
     {command={}, shape=ISOTRI_36, features=COMMAND|THRUSTER|TORQUER|TURRET|LASER|CANNON|GENERATOR|FREERES|NOCLIP,
       group=11, lifetime=22, durability=2, density=0.15, fillColor=0x37006e, generatorCapacityPerSec=44.000,
       fillColor1=0x860285, lineColor=0xb00049, capacity=100, thrusterForce=4500, thrusterColor=0x9090cef0,
-      thrusterColor1=0x9090d7f0, torquerTorque=8000, powerCapacity=56.000, turretSpeed=20.500, laser={power=4.000,
-      width=2.000, damage=85.000, color=0x7fcf1090, immobilizeForce=25000, range=1188.000}, cannon={roundsPerSec=4.2, roundsPerBurst=3, burstyness=0.75,
-      muzzleVel=650, power=6, damage=12, color=0xcf1090, range=1180, spread=0.032}},
+      thrusterColor1=0x9090d7f0, torquerTorque=8000, powerCapacity=56.000, turretSpeed=20.500, 
+	  laser={power=4.000, width=2.000, damage=85.000, color=0x7fcf1090, immobilizeForce=25000, range=1188.000}, 
+	  cannon={roundsPerSec=4.2, roundsPerBurst=10, burstyness=0.75, muzzleVel=650, damage=12, color=0xcf1090, range=1180, pattern=CONSTANT}
+	  },
      replicateTime=22.588, launcherPower=56.000},
 
   {17142, shape=207, name="Diffractor Launcher", features=PALETTE|LAUNCHER,
@@ -2271,37 +2273,37 @@
       width=2.000, damage=30.000, color=0x7fcf1090, range=1000.000}, chargeMin=0.500, chargeMaxTime=2.000},
      replicateTime=12.6, launcherPower=20.000},
 
-  {17147, shape=242, name="Energy Fuse", features=PALETTE|CANNON_BOOST|GENERATOR, group=4,
+  {17147, shape=242, name="Energy Fuse", features=PALETTE|CANNON_BOOST|GENERATOR, group=4, sort=150015,
     durability=0.5, blurb="Lower the amount of energy needed to fire a cannon weapon, this energy fuse can also store some power",
     density=0.15, fillColor=0x74480, fillColor1=8267, lineColor=0x71965, cannonBoost={power={0.80, 0}}, powerCapacity=500.000, capacity=1},
 
-  {17148, shape=242, name="Damage Fuse", features=PALETTE|CANNON_BOOST, group=4,
+  {17148, shape=242, name="Damage Fuse", features=PALETTE|CANNON_BOOST, group=4, sort=150016,
     durability=0.5, blurb="Increase damage dealt of any attached projectile weapon",
     density=0.15, fillColor=0x420000, fillColor1=0xae0000, lineColor=0xa15774, 
-    cannonBoost={power={1.20, 0}, damage={1.30, 0}, roundsPerSec={0.90, 0}, range={0.90, 0}, muzzleVel={0.90, 0}}},
+    cannonBoost={power={1.02, 0}, damage={1.00, 30}, roundsPerSec={0.80, 0}, range={0.95, 0}, muzzleVel={0.90, 0}}},
 
-  {17149, shape=242, name="Fusion Fuse", features=PALETTE|CANNON_BOOST, group=4,
-    durability=0.5, blurb="Grant or increase explosive charge capabilities of any projectile weapons that can support fusion capability installation",
+  {17149, shape=242, name="Fusion Fuse", features=PALETTE|CANNON_BOOST, group=4, sort=150017,
+    durability=0.5, blurb="Grant or increase explosive charge capabilities of any projectile weapons that can support explosive capability",
     density=0.15, fillColor=0x561b00, fillColor1=0xe58300, lineColor=0x85924f, 
-    cannonBoost={power={1.20, 0}, damage={0.95, 0}, roundsPerSec={0.95, 0}, range={0.90, 0}, muzzleVel={0.90, 0}, explodeRadius={1, 15}}},
+    cannonBoost={power={1.02, 0}, damage={0.90, 0}, roundsPerSec={0.80, 0}, range={0.95, 0}, muzzleVel={0.90, 0}, explodeRadius={1, 5}}},
 
-  {17150, shape=242, name="Ranger Fuse", features=PALETTE|CANNON_BOOST, group=4,
+  {17150, shape=242, name="Ranger Fuse", features=PALETTE|CANNON_BOOST, group=4, sort=150018,
     durability=0.5, blurb="Increase range of fire of any attached projectile weapon",
     density=0.15, fillColor=0x210067, fillColor1=0x020015, lineColor=0x786eca, 
-    cannonBoost={power={0.95, 0}, damage={0.95, 0}, roundsPerSec={0.90, 0}, range={1.30, 0}, muzzleVel={0.90, 0}}},
+    cannonBoost={power={0.99, 0}, damage={1.00, -10}, roundsPerSec={0.90, 0}, range={1.00, 250}, muzzleVel={0.90, 0}}},
 
-  {17151, shape=242, name="Repeater Fuse", features=PALETTE|CANNON_BOOST, group=4,
+  {17151, shape=242, name="Repeater Fuse", features=PALETTE|CANNON_BOOST, group=4, sort=150019,
     durability=0.5, blurb="Increase firing rate of any attached projectile weapon",
     density=0.15, fillColor=0x00378e, fillColor1=0x0b113c, lineColor=0x5483b8, 
-    cannonBoost={power={0.95, 0}, damage={0.95, 0}, roundsPerSec={1.30, 0}, range={0.90, 0}, muzzleVel={0.90, 0}}},
+    cannonBoost={power={0.98, 0}, damage={1.00, -15}, roundsPerSec={1.30, 0}, range={0.95, 0}, muzzleVel={0.90, 0}}},
 
-  {17152, shape=246, name="Kinetic Manipulator Accelerator", features=PALETTE|SHIELD|CANNON_BOOST|GENERATOR, group=4,
+  {17152, shape=246, name="Kinetic Manipulator Accelerator", features=PALETTE|SHIELD|CANNON_BOOST|GENERATOR, group=4, sort=150020,
     durability=0.5, blurb="A manipulator that had an ability to accelerate any plasma particle passing through it, require a small amount of energy over time to function",
     density=0.15, fillColor=0x3d2296, fillColor1=0x5040d9, lineColor=0x8d87e8, shield={color=0x19222249, lineColor=0xc12c263c, damagedColor=0x4c3d5363,
       strength=325, regen=125, radius=22, armor=5}, generatorCapacityPerSec=-20.000, powerCapacity=5.000,
-    cannonBoost={power={0.90, 0}, damage={0.90, 0}, muzzleVel={1.50, 0}}},
+    cannonBoost={power={0.90, 0}, damage={0.90, 0}, muzzleVel={1.01, 100}}},
 
-  {17153, shape=211, name="Propulsion Rocket Launcher", features=PALETTE|LAUNCHER, group=4,
+  {17153, shape=211, name="Propulsion Rocket Launcher", features=PALETTE|LAUNCHER, group=4, sort=110206,
     durability=0.5, density=0.15, fillColor=0x20201b, fillColor1=8267,
     lineColor=0x69e81d, replicateBlock=
     {shape=MISSILE_SHORT, features=THRUSTER|EXPLODE, group=4, lifetime=7.5,
@@ -2309,20 +2311,20 @@
         capacity=0.1, thrusterForce=4000, thrusterColor=0x90800000, thrusterColor1=0x90804040,
         explodeDamage=150, explodeRadius=30}, replicateTime=1.5, launcherPower=30},
 
-  {17154, shape=240, scale=2, name="Plasator MAES", features=PALETTE|CANNON|TRACTOR, group=4,
+  {17154, shape=240, scale=2, name="Plasator MAES", features=PALETTE|CANNON|TRACTOR, group=4, sort=60005,
     durability=0.5, blurb="A modular plasm emitter weapon that emit projectiles on every direction, have a small explosive power", density=0.15, fillColor=0x40206b,
     fillColor1=8267, lineColor=0x71965, cannon={roundsPerSec=20, roundsPerBurst=50, muzzleVel=1500,
       damage=25, color=0x769f5, range=700, spread=3.142, burstyness=1, explosive=PROXIMITY, explodeRadius=5}, capacity=100, tractorRange=10},
 
-  {17155, shape=COMMAND, name="Fonfourier MADS", features=PALETTE|CANNON|AUTOFIRE, group=4,
+  {17155, shape=COMMAND, name="Fonfourier MADS", features=PALETTE|CANNON|AUTOFIRE, group=4, sort=60006,
     durability=0.5, blurb="A modular defensive emitter weapon that emit projectiles on 180 degree direction", density=0.15, fillColor=0x40206b,
     fillColor1=8267, lineColor=0x71965, cannon={roundsPerSec=60, roundsPerBurst=30, muzzleVel=1000,
       damage=20, color=0x769f5, range=400, spread=1.571, burstyness=1}},
   
-  {17156, shape=247, name="Weaponry Powerforce Control", features=PALETTE|CANNON_BOOST|TRACTOR, group=4,
+  {17156, shape=247, name="Weaponry Powerforce Control", features=PALETTE|CANNON_BOOST|TRACTOR, group=4, points=105, sort=150021,
     durability=0.5, blurb="A mechanism center that make weapon took more time to fire but significantly increase all other stats and overall performance",
     density=0.15, fillColor=0x74480, fillColor1=8267, lineColor=0x71965, cannonBoost={damage={1.25, 0}, roundsPerSec={0.50, 0}, power={1.25, 0}, range={1.25, 0}, muzzleVel={1.25, 0},
-    explodeRadius={1.25, 0}}, capacity=1000, tractorRange=1000},
+    explodeRadius={1.0, 0}}, capacity=100, tractorRange=1000},
 
   {17157, name="T-1D Protector", features=PALETTE|LAUNCHER|AUTOFIRE, group=2, shape=RECT_LAUNCHER1,
     durability=0.500, blurb="A defensive flaregun drone that has a wide shield, which can blocks enemy missiles and projectiles, it can easily be overwhelmed and lead to the drone detonating itself in the process, but it can reactivates it shield on a whim",
@@ -2352,49 +2354,49 @@
   {17158, shape=RECT_CANNON, name="FusionBase", features=PALETTE|CANNON, group=4,
     durability=0.5, blurb="Modular explosive cannon", density=0.15, fillColor=0x6B2069,
     fillColor1=8247, lineColor=0x91865, cannon={roundsPerSec=2, muzzleVel=500,
-      damage=10, color=0x769f5, range=500, explosive=ENABLED, explodeRadius=10}},
+      damage=10, color=0x769f5, range=500, explosive=ENABLED, explodeRadius=10}, sort=60002},
 
   {17159, shape=249, name="RepeaterBase", features=PALETTE|CANNON, group=4,
     durability=0.5, blurb="Modular repeater cannon", density=0.15, fillColor=0x40206b,
     fillColor1=8267, lineColor=0x71965, cannon={roundsPerSec=10, muzzleVel=750,
-      damage=5, color=0x769f5, range=250}},
+      damage=5, color=0x769f5, range=250}, sort=60003},
 
   {17160, shape=CANNON, name="LongrifleBase", features=PALETTE|CANNON, group=4,
     durability=0.5, blurb="Modular long range cannon", density=0.15, fillColor=0x40206b,
     fillColor1=8267, lineColor=0x71965, cannon={roundsPerSec=1, muzzleVel=1200,
-      damage=15, color=0x769f5, range=1000}},
+      damage=15, color=0x769f5, range=1000}, sort=60004},
   
   {17161, shape=DISH_WEAPON, scale=3, name="[P]VelocityAmplifier", features=PALETTE|CANNON_BOOST|SHIELD|GENERATOR,
-    group=4, durability=1, blurb="Significantly increases projectile speed of attached weapon",
+    group=4, durability=1, blurb="Significantly increases projectile speed of attached weapon", sort=150005,
     density=0.15, fillColor=0x4a2265, fillColor1=0x6d3070, lineColor=0x200d3c, cannonBoost={roundsPerSec={1.05, 0},
       muzzleVel={0.98, 100}, power={1.05, 0}}, generatorCapacityPerSec=20.000, powerCapacity=20.000,
       shield={color=0xb3343488, lineColor=0xd9612dfd, damagedColor=0xf284c9fa, strength=20, regen=20, radius=10, armor=1}},
 
   {17162, shape=DISH_WEAPON, name="[P]DamageAmplifier", features=PALETTE|CANNON_BOOST|SHIELD|GENERATOR, group=4,
-    durability=1, blurb="Increases damage of attached weapon", density=0.15,
+    durability=1, blurb="Increases damage of attached weapon", density=0.15, sort=150005,
     fillColor=0x4a2265, fillColor1=0x6d3070, lineColor=0x200d3c, cannonBoost={power={1.01, 0},
       damage={0.98, 15}, range={0.95, 0}}, generatorCapacityPerSec=20.000, powerCapacity=20.000,
       shield={color=0xb3343488, lineColor=0xd9612dfd, damagedColor=0xf284c9fa, strength=20, regen=20, radius=10, armor=1}},
 
   {17163, shape=DISH_WEAPON, scale=2, name="[P]DamageAmplifier", features=PALETTE|CANNON_BOOST|SHIELD|GENERATOR,
-    group=4, durability=1, blurb="Significantly increases damage of attached weapon",
+    group=4, durability=1, blurb="Significantly increases damage of attached weapon", sort=150008,
     density=0.15, fillColor=0x4a2265, fillColor1=0x6d3070, lineColor=0x200d3c, cannonBoost={power={1.02, 0},
       damage={0.96, 30}, range={0.90, 0}}, generatorCapacityPerSec=20.000, powerCapacity=20.000,
       shield={color=0xb3343488, lineColor=0xd9612dfd, damagedColor=0xf284c9fa, strength=20, regen=20, radius=10, armor=1}},
 
   {17164, shape=RECT_CANNON_BOOST, name="[P]RangeAmplifier", features=PALETTE|CANNON_BOOST|SHIELD|GENERATOR, group=4,
-    durability=1, blurb="Increases range and projectile speed of attached weapon",
+    durability=1, blurb="Increases range and projectile speed of attached weapon", sort=150004,
     density=0.15, fillColor=0x4a2265, fillColor1=0x6d3070, lineColor=0x200d3c, cannonBoost={muzzleVel={0.98, 50},
       power={0.98, 10}, range={1.01, 200}, damage={0.95, 0}}, generatorCapacityPerSec=20.000, powerCapacity=20.000,
       shield={color=0xb3343488, lineColor=0xd9612dfd, damagedColor=0xf284c9fa, strength=20, regen=20, radius=10, armor=1}},
 
   {17165, shape=ISOTRI_25_WEAPON, name="[P]RateAmplifier", features=PALETTE|CANNON_BOOST|SHIELD|GENERATOR, group=4,
-    durability=1, blurb="Increases rate of fire of attached weapon", density=0.15,
+    durability=1, blurb="Increases rate of fire of attached weapon", density=0.15, sort=150006,
     fillColor=0x4a2265, fillColor1=0x6d3070, lineColor=0x200d3c, cannonBoost={roundsPerSec={1.5, 0},
       power={1.05, 0}, range={0.85, 0}, damage={0.85, 0}}, generatorCapacityPerSec=20.000, powerCapacity=20.000,
       shield={color=0xb3343488, lineColor=0xd9612dfd, damagedColor=0xf284c9fa, strength=20, regen=20, radius=10, armor=1}},
   
-  {17166, shape=211, name="Bombardor Launcher", features=PALETTE|LAUNCHER, group=4,
+  {17166, shape=211, name="Bombardor Launcher", features=PALETTE|LAUNCHER, group=4, sort=110042,
     durability=0.5, density=0.15, fillColor=0x20201b, fillColor1=8267, lineColor=0x69e81d,
     blurb="Launches Plasm bomber drones equipped with fusion plasm weapon", replicateBlock=
     {command={}, shape=250, scale=2, features=COMMAND|THRUSTER|GENERATOR|CANNON|TORQUER|FREERES|NOCLIP_ALLY,
@@ -2404,40 +2406,40 @@
         roundsPerBurst=2, burstyness=0.5, muzzleVel=500, spread=0.02, power=18, damage=25,
         color=0x769f5, range=1200, explosive=ENABLED, explodeRadius=15}, generatorCapacityPerSec=80}, replicateTime=3.215, launcherPower=350},
 
-  {17167, shape=206, name="Fightargun Launcher", features=PALETTE|LAUNCHER|AUTOFIRE, group=4,
+  {17167, shape=206, name="Fightargun Launcher", features=PALETTE|LAUNCHER|AUTOFIRE, group=4, sort=110043,
     durability=0.5, density=0.15, fillColor=0x20201b, fillColor1=8267, lineColor=0x69e81d,
-    blurb="Launches fighter drones with an objective to displaces hostile drones, not effective against enemy ships", replicateBlock=
+    blurb="Launches light attacking fighter drones, they can also shoot at other nearby enemy drones and missiles in their way to their main enemy target", replicateBlock=
     {command={flags=POINT_DEFENSE|FIRE_AT_WILL}, shape=250, features=COMMAND|THRUSTER|GENERATOR|CANNON|TORQUER|FREERES|TURRET|AUTOFIRE|NOCLIP_ALLY,
       group=4, lifetime=13, durability=1, density=0.15, fillColor=0x69e81d,
       fillColor1=0x42b573, lineColor=0x769f5, powerCapacity=80, capacity=100, thrusterForce=4000,
       thrusterColor=0x90800000, thrusterColor1=0x90804040, torquerTorque=7000, turretSpeed=11.5, cannon={roundsPerSec=3.51,
-        muzzleVel=1400, power=9, damage=5, color=0x769f5, range=500}, generatorCapacityPerSec=40}, 
+        muzzleVel=1400, power=9, damage=10, color=0x769f5, range=700}, generatorCapacityPerSec=40}, 
       replicateTime=1.815, launcherPower=100},
 
-  {17168, shape=206, name="Termiceptor Launcher", features=PALETTE|LAUNCHER|AUTOFIRE, group=4,
+  {17168, shape=206, name="Termiceptor Launcher", features=PALETTE|LAUNCHER|AUTOFIRE, group=4, sort=110044,
     durability=0.5, density=0.15, fillColor=0x20201b, fillColor1=8267, lineColor=0x69e81d,
-    blurb="Launches interceptor drones equipped with a laser weaponry for eliminating other drones", replicateBlock=
+    blurb="Launches interceptor drones equipped with a laser weaponry for removing other enemy drones while in their way to attack enemy ships", replicateBlock=
     {command={flags=POINT_DEFENSE|FIRE_AT_WILL}, shape=251, features=COMMAND|THRUSTER|GENERATOR|LASER|TORQUER|FREERES|TURRET|AUTOFIRE|NOCLIP_ALLY,
       group=4, lifetime=15, durability=0.35, density=0.15, fillColor=0x69e81d,
       fillColor1=0x42b573, lineColor=0x769f5, powerCapacity=40, capacity=100, thrusterForce=9000,
       thrusterColor=0x90800000, thrusterColor1=0x90804040, torquerTorque=7500, turretSpeed=15.5,
-      laser={power=2, width=2, damage=40, color=0x800769f5, range=400}, generatorCapacityPerSec=20}, 
+      laser={power=2, width=2, damage=40, color=0x800769f5, range=600}, generatorCapacityPerSec=20}, 
       replicateTime=2.315, launcherPower=150},
 
-  {17169, shape=205, name="Defconser Launcher", features=PALETTE|LAUNCHER|AUTOFIRE, group=4,
+  {17169, shape=205, name="Defconser Launcher", features=PALETTE|LAUNCHER|AUTOFIRE, group=4, sort=110045,
     durability=0.5, density=0.15, fillColor=0x20201b, fillColor1=8267, lineColor=0x69e81d,
-    blurb="Launches slow defender drones with high defensive capability against drones", replicateBlock=
+    blurb="Launches slow weaponized defensive drones that serve as mobile off-ship PD chokepoints, has a widened shield to block missiles", replicateBlock=
     {command={flags=POINT_DEFENSE|FIRE_AT_WILL}, shape=252, features=COMMAND|THRUSTER|GENERATOR|LASER|CANNON|TORQUER|FREERES|TURRET|AUTOFIRE|SHIELD|NOCLIP_ALLY,
-      group=4, lifetime=24, durability=0.2, armor=1, density=0.30, fillColor=0x69e81d,
-      fillColor1=0x42b573, lineColor=0x769f5, powerCapacity=120, capacity=100, thrusterForce=4500,
+      group=4, lifetime=24, durability=2.2, armor=1, density=0.30, fillColor=0x69e81d, aihint_range=500,
+      fillColor1=0x42b573, lineColor=0x769f5, powerCapacity=120, capacity=100, thrusterForce=1500,
       thrusterColor=0x90800000, thrusterColor1=0x90804040, torquerTorque=2500, turretSpeed=20.5,
-      laser={power=2, width=3, damage=25, color=0x800769f5, range=800}, cannon={roundsPerSec=9.51,
-        muzzleVel=1600, power=5, damage=8, spread=0.020, color=0x769f5, range=600}, generatorCapacityPerSec=70,
-      shield={strength=150, regen=50, radius=10, armor=1, color=0x19171b29, lineColor=0xc171b29, damagedColor=0x4c3c476b}}, 
+      laser={power=2, width=2, damage=25, color=0x800769f5, range=800}, cannon={roundsPerSec=9.51,
+        muzzleVel=800, power=5, damage=8, spread=0.320, color=0x769f5, range=600, recoil=0.01}, generatorCapacityPerSec=70,
+      shield={strength=150, regen=50, radius=60, armor=1, color=0x19171b29, lineColor=0xc171b29, damagedColor=0x4c3c476b}}, 
       replicateTime=12.215, launcherPower=180},
 
   {17170, shape=216, name="Random Access Relay", group=4, fillColor=0x30203b, fillColor1=8267, lineColor=0x71965, features=PALETTE|CANNON_BOOST,
-    growRate=16.25, blurb="Relay port that stores turret booster modules", sort=-9000},
+    growRate=16.25, blurb="Relay port that stores turret booster modules", sort=-9000, points=10},
 
   {17171, shape=211, name="Multi-beam Launcher", features=PALETTE|LAUNCHER,
     group=12, durability=2.25, density=0.15, fillColor=0xca8608, fillColor1=0x9b7000, lineColor=0xfca904, replicateBlock=
@@ -2929,7 +2931,7 @@
 		
   {17261, features=PALETTE|LASER|CHARGING|THRUSTER, capacity=0.1, fillColor=0xc4e61, fillColor1=0x2c3e41, lineColor=0x70a000, thrusterForce=10000, aihint_range=1600, sort=10024,
     group=2, shape=271, laser={width=6.000, color=0x9075ceac, linearForce=800000, range=160.000, damage=20, power=500}, chargeMin=1, chargeMaxTime=24,
-    scale=2, name="PBT Jump Burst Engine", durability=0.5, density=0.15, blurb="A booster that is weaponized for combat use to pushing ships, it can also be used as a mean to escape or grant significant jump burst distance of speed"},
+    scale=2, name="PBT Jump Burst Engine", durability=0.5, density=0.15, blurb="A booster that is weaponized for combat use to pushing ships, it can also be used as a mean to escape or grant significant jump burst distance of speed. If plugged into any existing thruster stack, it might reverse the direction of their thrust backward into the opposite direction."},
 	
   {17262, features=PALETTE|THRUSTER|ACTIVATE, shape=255, name="DVL-Boostthruster", group=2, blurb="A manually activated power booster", fillColor=0x95aeac, sort=10025,
     fillColor1=0x75ceac, lineColor=0xaef300, scale=2, cannon={roundsPerSec=100, muzzleVel=-600.000, power=0.500, damage=1.000, color=0x95aeac, rangeStdDev=-10.000, recoil=0,
@@ -3512,14 +3514,16 @@
 	
   {17374, features=PALETTE|LAUNCHER, fillColor=0x37006e, fillColor1=0x860285, lineColor=0xb00049,
     scale=2, replicateBlock=
-    {17375, command={}, name="Prystallic Seed", features=COMMAND|THRUSTER|SEED|REGROWER|FREERES|NOPALETTE|GENERATOR|NOCLIP_ALLY|LASER|ALWAYSFIRE, capacity=100, launchLifetime=30,
+    {command={}, name="Prystallic Bomb", features=FREERES|EXPLODE, capacity=100, lifetime=4,
+      fillColor=0xe780ff, fillColor1=0x8c60ff, lineColor=0x8725fb, thrusterColor=0x9090cef0,
+      thrusterColor1=0x9090d7f0, group=11, shape=5012, scale=2, durability=2.5, explodeDamage=300, explodeRadius=30, density=0.15}, group=11, shape=5010, name="PRYSTAL TORPEDO", 
+	  blurb="Launches non-propelling torpedo bombs, most effective against large and slow ships",
+    durability=1, density=0.15, replicateTime=2.5, launcherSpeed=1500},
+	
+  {17375, command={}, name="Prystallic Seed", features=COMMAND|THRUSTER|SEED|REGROWER|FREERES|NOPALETTE|GENERATOR|NOCLIP_ALLY|LASER|ALWAYSFIRE, capacity=100, launchLifetime=30,
       fillColor=0xe780ff, fillColor1=0x8c60ff, lineColor=0x8725fb, thrusterColor=0x9090cef0, powerCapacity=1000, generatorCapacityPerSec=500, sound="none",
       thrusterColor1=0x9090d7f0, group=11, shape=5012, scale=2, durability=2.5, seedLifetime=300, laser={width=8, damage=-400,
-      range=-222, color=0x1f30047c}, density=0.15, thrusterForce=3000}, group=11, shape=5010, name="PRYSTAL GROWER", 
-	  blurb="Plants healing crystals on asteroids to help repair crystal structures, but do not plant it near or under a friendly crystal tower, otherwise they will explode and kill them off once the crystal expires",
-    durability=1, density=0.15, replicateTime=5.1, launcherSpeed=100},
-	
-  
+      range=-222, color=0x1f30047c}, density=0.15, thrusterForce=3000},
 	
   {17421, features=ROOT|NOPALETTE, growRate=16.25, fillColor=0xaaaaaa, fillColor1=0x777777, lineColor=0xaab0c0,
     group=8, shape=RECT_ROOT, scale=2, name="Root"},
@@ -3527,7 +3531,7 @@
   {17422, features=ROOT|NOPALETTE, growRate=16.25, fillColor=0xaaaaaa, fillColor1=0x777777, lineColor=0xaab0c0,
     group=8, shape=RECT_ROOT, scale=3, name="Root"},
 	
-  
+--UNUSED?  
 	
   {17426, shape=202, name="Flarer Beam Long", features=PALETTE|LASER|ALWAYSFIRE, group=3, sound="none",
     durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
@@ -3565,7 +3569,7 @@
     durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
     laser={damage=600, range=800, width=3, color=0x2fff2100}},
 	
-  
+-- UNUSED?  
 	
   {17444, name="Harphoon Missiles", features=PALETTE|LAUNCHER_BARRAGE, fillColor=0x113077, fillColor1=0x205079, lineColor=0x3390eb,
     shape=290, replicateBlock=
@@ -5684,13 +5688,15 @@
   {17882, name="Nichyon Cannon", features=PALETTE|CANNON|TURRET, group=11, shape=329, barrelTaper=0.7, barrelCount=1, barrelSize={25, 5},
     health=200.000, durability=2.000, blurb="Close range modular Tachyon/Nihilite assault weapon", density=0.150,
     fillColor=0x37006e, fillColor1=0x860285, lineColor=0xb00049, cannon={roundsPerSec=20.000, recoil=0,
-    muzzleVel=6000.000, damage=50.000, color=0xcf1090, range=800.000, explosive=FRAG_FINAL,
+    muzzleVel=2000.000, damage=50.000, color=0xcf1090, range=800.000, explosive=FRAG_FINAL,
 	fragment={damage=50, muzzleVel=600, rangeStdDev=200, color=0x70cf1090, pattern=RANDOM|ABSOLUTE,
 	explosive=FRAG_FINAL, fragment={damage=10, roundsPerBurst=5, muzzleVel=-600, rangeStdDev=-200, color=0x50cf1090, pattern=WAVE|ABSOLUTE, spread=0.01,
-	explosive=FRAG_FINAL, fragment={damage=2, roundsPerBurst=5, muzzleVel=600, rangeStdDev=200, color=0x40cf1090, pattern=CONSTANT|ABSOLUTE,
+    explosive=FRAG_FINAL, fragment={damage=2, roundsPerBurst=5, muzzleVel=600, rangeStdDev=200, color=0x40cf1090, pattern=CONSTANT|ABSOLUTE,
 	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-600, rangeStdDev=-200, color=0x30cf1090, pattern=CONSTANT|ABSOLUTE,
 	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=600, rangeStdDev=200, color=0x20cf1090, pattern=CONSTANT|ABSOLUTE,
-	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-600, rangeStdDev=-200, color=0x10cf1090, pattern=CONSTANT|ABSOLUTE,}}}}}}}},
+	explosive=FRAG_FINAL, fragment={damage=1, roundsPerBurst=1, muzzleVel=-600, rangeStdDev=-200, color=0x10cf1090, pattern=CONSTANT|ABSOLUTE,}}}}}}
+	}
+	},
 	
   
 	
@@ -6242,19 +6248,20 @@
      group=12, shape=292, scale=3, name="Mites Hive Launcher",
     durability=0.5, density=0.15, replicateTime=1, sort=110114},
 	
-  {17999, features=PALETTE|TURRET|LASER|CHARGING|GENERATOR|LAUNCHER|CANNON, fillColor=0x40206b, fillColor1=0x384098, lineColor=0x71965, bindingId=0,
-    laser={width=15, damage=3000, color=0x800769f5, range=5250}, group=4, scale=5, powerCapacity=500, aihint_range=5000,
-    name="Hyper Optic Megalaser", durability=0.5, density=0.15, turretSpeed=0.2, generatorCapacityPerSec=-1000, barrelSize={0.001, 0.001},
-	blurb="An ermonously large heavy artillery laser system, it's going to siphon all sources of energy to operate, can use cannon boosts network to improve its sub attack (also velocity & fire rate boost is meaningless for this weapon), can launches a large targeting decoys to distract enemy ships", 
-	chargeMin=1, chargeMaxTime=40, cannon={roundsPerSec=1, roundsPerBurst=1, recoil=0, explodeRadius=100,
-        muzzleVel=50000, damage=100, range=500, color=0x769f5, explosive=PROXIMITY},
-    sort=80074, barrelTaper=0.5, replicateBlock={shape=344, group=4, scale=3, features=NOCLIP|THRUSTER|ROTATOR|COMMAND|FREERES|NOICON, lifetime=40, command={},
-	fillColor=0x5040206b, fillColor1=0x30384098, lineColor=0x71965, durability=0.5, density=0.01, barrelSize={0.001, 0.001}, thrusterForce=100000}, replicateTime=40,
-	shroud={{size={25, 25}, offset={0, 0, 0.22}, shape=OCTAGON, count=1}, {size={35, 35}, offset={0, 0, 0.20}, shape=OCTAGON, count=1},
-	{size={50, 10}, offset={0, 0, 0.21}, count=1, shape=RECT}, {size={10, 30}, offset={0, 0, 0.21}, count=1, shape=RECT},
-	{size={50, 27.5}, offset={5, 0, 0.19}, count=1, shape=RECT}, {size={-22.5, -30}, offset={-30, 0, 0.20}, count=1, shape=COMMAND},
-	{size={30, 22.5}, offset={35, 0, 0.18}, count=1, shape=RECT}, {size={20, 10}, offset={47.5, 0, 0.17}, taper=0.5}, 
-	{size={-10, -80}, offset={0, 0, 0.18}, count=1, shape=DISH_THRUSTER}, {size={-7.5, -60}, offset={7.5, 0, 0.18}, count=1, shape=DISH_THRUSTER},}},
+  {17999, features=PALETTE|TURRET|CHARGING|LAUNCHER|CANNON, fillColor=0x40206b, fillColor1=0x384098, lineColor=0x71965, bindingId=0,
+    --laser={width=15, damage=3000, color=0x800769f5, range=5250}, 
+	group=4, scale=5, powerCapacity=500, barrelSize={50, 50},
+    name="Mass Amplifier Railcannon", durability=0.5, density=0.15, turretSpeed=1.2, 
+	blurb="An ermonously large heavy artillery cannon that might still be underpowered, can use cannon boosts network to improve its attack (also fire rate boost is meaningless for this weapon), can launches a large hacking decoys to distract enemy ships", 
+	chargeMin=1, chargeMaxTime=10, cannon={roundsPerSec=1, roundsPerBurst=1, recoil=0, explodeRadius=110,
+        muzzleVel=1000, damage=565, range=5250, color=0x769f5, explosive=PROXIMITY|FINAL},
+    sort=80115, barrelTaper=0.5, replicateBlock={shape=344, group=4, scale=3, features=NOCLIP|THRUSTER|ROTATOR|COMMAND|FREERES|NOICON, lifetime=20, command={},
+	fillColor=0x5040206b, fillColor1=0x30384098, lineColor=0x71965, durability=0.5, density=0.01, barrelSize={0.001, 0.001}, thrusterForce=100000}, replicateTime=20,
+	shroud={
+	{size={-10, -50}, offset={30, 0, 0.25}, count=1, shape=THRUSTER}, {size={20, 20}, offset={45, 0, 0.23}, count=1, shape=THRUSTER_PENT},
+	{size={-12.5, -100}, offset={-15, 0, 0.21}, count=1, shape=THRUSTER}, {size={-22.5, -15}, offset={-27.5, 0, 0.19}, count=1, shape=ISOTRI_25},
+	{size={30, 22.5}, offset={15, 0, 0.15}, count=1, shape=RECT}, {size={14, 30}, offset={-12.5, 0, 0.17}, taper=0.5}, 
+	}},
 	
 //---Vanilla Adjusts---
   {854, extends=854, points=400, capacity=200, name="Warp Beacon", blurb="Specialized Teleporter Factory, summons reinforcement ships in an instant"}
