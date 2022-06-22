@@ -341,7 +341,7 @@
   -- NON-POINTY MISSILE
   {210, {{verts={{5, -1.0}, {3, -2.0}, {-5, -2.0}, {-5, 2.0}, {3, 2.0}, {5, 1.0}}, ports={{2, 0.5, LAUNCHER}, {0, 0.5, NONE}, {1, 0.5, LAUNCHER},
            {2, 0.5, MISSILE}, {3, 0.5, LAUNCHER}, {4, 0.5, NONE}}},
-		 {verts={{-4.25, -1.5}, {-4.25, 1.5}, {2.75, 1}, {2.75, -1}}, ports={{0, 0.5, ROOT}, {1, 0.5}, {2, 0.5},
+		 {verts={{-4.25, -1.5}, {-4.25, 1.5}, {2.75, 1}, {2.75, -1}}, ports={{0, 0.5, ROOT}, {1, 0.5}, {2, 0.5, MISSILE},
            {3, 0.5}}},
 		 {verts={{-5, -2}, {-5, 2}, {5.5, 1}, {5.5, -1}}, ports={{0, 0.5, ROOT}, {0, 0.5, MISSILE}, {1, 0.5, MISSILE}, {2, 0.5, LAUNCHER},
            {3, 0.5, MISSILE}}},
@@ -560,14 +560,17 @@
           ports={{0, 0.5, NONE}, {1, 0.5, MISSILE}, {2, 0.5, NONE}, {4, 0.5, MISSILE}, {6, 0.5, NONE}, {7, 0.5, MISSILE} {8, 0.5, NONE}, {10, 0.5, MISSILE}}}}}
   -- OCTAGON_MISSILE_LAUNCHER
   {253, {{verts={{5, -2.071}, {2.071, -5}, {-2.071, -5}, {-5, -2.071}, {-5, 2.071}, {-2.071, 5}, {2.071, 5},
-          {5, 2.071}}, ports={{7, 0.5, LAUNCHER}, {7, 0.5, MISSILE}, {0, 0.5, LAUNCHER}, {0, 0.5, MISSILE}, {1, 0.5, LAUNCHER}, {1, 0.5, MISSILE}, {2, 0.5, LAUNCHER}, {2, 0.5, MISSILE},
-		  {3, 0.5, LAUNCHER}, {3, 0.5, MISSILE}, {4, 0.5, LAUNCHER}, {4, 0.5, MISSILE}, {5, 0.5, LAUNCHER}, {5, 0.5, MISSILE}, {6, 0.5, LAUNCHER}, {6, 0.5, MISSILE},}}, 
+          {5, 2.071}}, ports={{7, 0.5, LAUNCHER}, {7, 0.5}, {0, 0.5, LAUNCHER}, {0, 0.5}, {1, 0.5, LAUNCHER}, {1, 0.5}, {2, 0.5, LAUNCHER}, {2, 0.5},
+		  {3, 0.5, LAUNCHER}, {3, 0.5}, {4, 0.5, LAUNCHER}, {4, 0.5}, {5, 0.5, LAUNCHER}, {5, 0.5}, {6, 0.5, LAUNCHER}, {6, 0.5},}}, 
 		 {verts={{12.071, -5}, {5, -12.071}, {-5, -12.071}, {-12.071, -5}, {-12.071, 5}, {-5, 12.071}, {5, 12.071},
           {12.071, 5}}, ports={{7, 0.5, LAUNCHER}, {0, 0.5, MISSILE}, {0, 0.5, LAUNCHER}, {1, 0.5, LAUNCHER}, {2, 0.5, LAUNCHER}, {3, 0.5, LAUNCHER}, {4, 0.5, LAUNCHER}, {5, 0.5, LAUNCHER}, {6,
             0.5, LAUNCHER}}} 
 		 {verts={{5, -2.071}, {2.071, -5}, {-2.071, -5}, {-2.071, -2.9} {-17.5, -2.9}, {-22, -2.5}, {-22, 2.5}, {-17.5, 2.9}, {-2.071, 2.9}, {-2.071, 5}, {2.071, 5},
           {5, 2.071}}, ports={{11, 0.5, LAUNCHER}, {0, 0.5, LAUNCHER}, {1, 0.5, LAUNCHER}, {5, 0.5, THRUSTER_OUT}, {5, 0.5, MISSILE},
-		  {9, 0.5, LAUNCHER}, {10, 0.5, LAUNCHER}}}}, launcher_radial=true}
+		  {9, 0.5, LAUNCHER}, {10, 0.5, LAUNCHER}}},
+		 {verts={{7.5, -2.5}, {2.5, -7.5}, {-2.5, -7.5}, {-7.5, -2.5}, {-7.5, 2.5}, {-2.5, 7.5}, {2.5, 7.5},
+          {7.5, 2.5}}, ports={{7, 0.5, MISSILE}, {0, 0.5}, {1, 0.5, MISSILE}, {2, 0.5},
+		  {3, 0.5, MISSILE}, {4, 0.5}, {5, 0.5, MISSILE}, {6, 0.5}}}}, launcher_radial=true}
   -- SHARD_MISSILES
   {254, {{verts={{-1.5, -2.472}, {-10.011, 0}, {-1.5, 2.472}, {1.5, 2.472}, {10.011, 0}, {1.5, -2.472}}, ports={{5, 0.5, MISSILE}, {0, 0.5, NONE}, {1, 0.5, NONE},
           {2, 0.5, MISSILE}, {3, 0.5, NONE}, {4, 0.5, NONE}}},
