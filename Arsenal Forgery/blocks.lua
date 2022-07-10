@@ -237,7 +237,7 @@
 	  fragment={damage=2, range=5, muzzleVel=8, spread=3.142, roundsPerBurst=5, pattern=ABSOLUTE|SPIRAL, color=0xee5245}}, generatorCapacityPerSec=80.000, powerCapacity=160.000},
     replicateTime=8.000, launcherSpeed=70.000, sort=110251},
 
-  {21, name="Reactored Uziă", features=PALETTE|CANNON|GENERATOR|TURRET, group=12, shape=CANNON, turretLimit=0, points=17,
+  {21, name="Reactored Uziă", features=PALETTE|CANNON|GENERATOR|TURRET, group=12, shape=CANNON, turretLimit=0, points=17, sort=79027,
     durability=1.500, density=0.150, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xee5245, aihint_range=1600,
 	barrelCount=1, barrelSize={3, 2.5}, cannon={roundsPerSec=12.000, roundsPerBurst=6, burstyness=0.700, muzzleVel=1500.000,
       damage=15.000, color=0xee5245, range=275, explosive=FRAG_FINAL, spread=0.1,
@@ -268,7 +268,7 @@
       explodeDamage=60.000, explodeRadius=1.000}, replicateTime=2.250, launcherPower=50.000},
 
   {24, name="Pălsăr Subsystem", features=PALETTE|TURRET|CANNON|AUTOFIRE, group=12, barrelSize={2, 1} shape=RIGHT_TRI, barrelTaper=1.5,
-    durability=0.500, density=0.150, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xbda09a, turretSpeed=20.000,
+    durability=0.500, density=0.150, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xbda09a, turretSpeed=20.000, sort=80001,
 	cannon={roundsPerSec=10, muzzleVel=1000, damage=4, range=700, color=0xee5245, explosive=PROXIMITY|FRAG_FINAL, explodeRadius=20, spread=0.4,
 	fragment={damage=1, range=5, muzzleVel=8, spread=3.142, roundsPerBurst=5, pattern=ABSOLUTE|SPIRAL, color=0xee5245}}},
 
@@ -352,19 +352,19 @@
 	  {size={3, 6}, offset={3.5, 0}, taper=0.5, count=1, tri_color1_id=1, line_color_id=2}}},
 
   {33, name="Cloaerite Armor",  deathFeatures=GROW|CANNON, group=8, shape=RECT, scale=2, durability=8.000, density=0.10, blurb="Rectangular Chromium Armor, resists cannon damage and have an ability to detonates itself if destroyed (releases defensives projectiles upon death, but when dislodged it can hurt back your own ships a little unless you keep a distance from its debris)",
-    fillColor=0xB8D9FF, fillColor1=0x001730, lineColor=0xF2F8FF, growRate=1000.000, points=1,
+    fillColor=0xB8D9FF, fillColor1=0x001730, lineColor=0xF2F8FF, growRate=1000.000, points=1, explodeFaction=8,
 	cannon={roundsPerSec=30, roundsPerBurst=30, burstyness=1, muzzleVel=500, spread=3.142, damage=20, range=200, color=0xB8D9FF, pattern=ABSOLUTE|SPIRAL, explosive=FRAG_FINAL,
 	fragment={roundsPerBurst=12, muzzleVel=1000, spread=3.142, damage=2, rangeStdDev=200, color=0xB8D9FF, pattern=ABSOLUTE|WAVE, explosive=FRAG_IMPACT,
 	fragment={roundsPerBurst=30, muzzleVel=1500, spread=3.142, damage=1, range=100, color=0xB8D9FF, pattern=ABSOLUTE|SPIRAL}}}, sort=9999},
 
   {34, name="Cloaerite Armor",  deathFeatures=GROW|CANNON, group=8, durability=8.000, density=0.10, blurb="Square Chromium Armor, resists cannon damage and have an ability to detonates itself if destroyed (releases defensives projectiles upon death, but when dislodged it can hurt back your own ships a little unless you keep a distance from its debris)",
-    fillColor=0xB8D9FF, fillColor1=0x001730, lineColor=0xF2F8FF, growRate=1000.000, points=1,
+    fillColor=0xB8D9FF, fillColor1=0x001730, lineColor=0xF2F8FF, growRate=1000.000, points=1, explodeFaction=8,
 	cannon={roundsPerSec=60, roundsPerBurst=60, burstyness=1, muzzleVel=500, spread=3.142, damage=20, range=200, color=0xB8D9FF, pattern=ABSOLUTE|SPIRAL, explosive=FRAG_FINAL,
 	fragment={roundsPerBurst=12, muzzleVel=1000, spread=3.142, damage=2, rangeStdDev=200, color=0xB8D9FF, pattern=ABSOLUTE|WAVE, explosive=FRAG_IMPACT,
 	fragment={roundsPerBurst=30, muzzleVel=1500, spread=3.142, damage=1, range=100, color=0xB8D9FF, pattern=ABSOLUTE|SPIRAL}}}, sort=9999},
 
   {35, name="Cloaerite Armor",  deathFeatures=GROW|CANNON, group=8, shape=RIGHT_TRI, durability=8.000, density=0.10, blurb="Triangular Chromium Armor, resists cannon damage and have an ability to detonates itself if destroyed (releases defensives projectiles upon death, but when dislodged it can hurt back your own ships a little unless you keep a distance from its debris)",
-    fillColor=0xB8D9FF, fillColor1=0x001730, lineColor=0xF2F8FF, growRate=1000.000, points=1,
+    fillColor=0xB8D9FF, fillColor1=0x001730, lineColor=0xF2F8FF, growRate=1000.000, points=1, explodeFaction=8,
 	cannon={roundsPerSec=30, roundsPerBurst=30, burstyness=1, muzzleVel=500, spread=3.142, damage=20, range=200, color=0xB8D9FF, pattern=ABSOLUTE|SPIRAL, explosive=FRAG_FINAL,
 	fragment={roundsPerBurst=12, muzzleVel=1000, spread=3.142, damage=2, rangeStdDev=200, color=0xB8D9FF, pattern=ABSOLUTE|WAVE, explosive=FRAG_IMPACT,
 	fragment={roundsPerBurst=30, muzzleVel=1500, spread=3.142, damage=1, range=100, color=0xB8D9FF, pattern=ABSOLUTE|SPIRAL}}}, sort=9999},
@@ -674,7 +674,7 @@
     cannon={roundsPerSec=10.000, muzzleVel=1200.000, damage=20.000, color=0xff2100,
       roundsPerBurst=2, burstyness=0.950, range=600.000}, sort=600010, shroud={{size={7, 9}, shape=RHOMBUS_72_108, offset={1, 0, 0}}}},
 
-  {72, name="Reactored Uziă", features=PALETTE|CANNON|GENERATOR|TURRET, group=12, shape=CANNON, turretLimit=0, scale=2, points=44,
+  {72, name="Reactored Uziă", features=PALETTE|CANNON|GENERATOR|TURRET, group=12, shape=CANNON, turretLimit=0, scale=2, points=44, sort=79029,
     durability=1.500, density=0.150, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xee5245, aihint_range=1900,
 	barrelCount=1, barrelSize={6, 5}, cannon={roundsPerSec=12.000, roundsPerBurst=6, burstyness=0.700, muzzleVel=1500.000,
       damage=30.000, color=0xee5245, range=325, explosive=FRAG_FINAL, spread=0.1,
@@ -688,7 +688,7 @@
     density=0.150, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100, laser={pulsesPerSec=0.5625,
       pulseAvailability=0.435, width=1.220, damage=85.000, color=0xa0ff2100, range=1400.000}, sort=70063},
 
-  {78, name="Sabăt Cannon", features=PALETTE|CANNON|GENERATOR|TURRET, group=12, shape=CANNON2, turretLimit=0, scale=2, points=73,
+  {78, name="Reactored Sabăt", features=PALETTE|CANNON|GENERATOR|TURRET, group=12, shape=CANNON2, turretLimit=0, scale=2, points=73, sort=79030,
     durability=1.500, density=0.150, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xee5245, aihint_range=1300,
 	barrelCount=1, barrelSize={6, 5}, cannon={roundsPerSec=11.000, roundsPerBurst=3, burstyness=0.800, muzzleVel=1800.000, spread=0.1,
       damage=20.000, color=0xee5245, range=325.000, explosive=FRAG_FINAL|ENABLED, explodeRadius=22.000,
@@ -697,7 +697,7 @@
 	  fragment={muzzleVel=280.000, spread=0.1, damage=20.000, color=0xee5245, range=30.000, explosive=FRAG_FINAL|FINAL, explodeRadius=22.000, rangeStdDev=10,
 	  fragment={damage=2, range=5, muzzleVel=8, spread=3.142, roundsPerBurst=5, pattern=ABSOLUTE|SPIRAL, color=0xee5245}}}}}, generatorCapacityPerSec=20.000, powerCapacity=200.000},
 
-  {79, name="Sabăt Cannon", features=PALETTE|CANNON|GENERATOR|TURRET, group=12, shape=CANNON2, turretLimit=0, points=16,
+  {79, name="Reactored Sabăt", features=PALETTE|CANNON|GENERATOR|TURRET, group=12, shape=CANNON2, turretLimit=0, points=16, sort=79028,
     durability=1.500, density=0.150, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xee5245, aihint_range=1200,
 	barrelCount=1, barrelSize={3, 2.5}, cannon={roundsPerSec=11.000, roundsPerBurst=3, burstyness=0.800, muzzleVel=1300.000, spread=0.1,
       damage=10.000, color=0xee5245, range=275.000, explosive=FRAG_FINAL|ENABLED, explodeRadius=11.000,
@@ -900,7 +900,7 @@
     tractorRange=1400.000, blurb="This is just for messing stuff in Sandbox, does not appears in vanilla game unless you have the ship pack downloaded.",
 	laser={pulsesPerSec=20.000, pulsesPerBurst=2, width=8.000, pulseAvailability=50.000, decay=25.000, burstyness=0.500, damage=1250.000, color=0x7ffffafa, range=5050.000}, chargeMin=0.750, chargeMaxTime=15.000},
 
-  {106,  shape=RHOMBUS_72_108, name="CN-Nullifier", features=SHIELD, group=3, durability=1.200, density=0.210,
+  {106,  shape=RHOMBUS_72_108, name="CN-Nullifier", features=SHIELD, group=3, durability=1.200, density=0.210, sort=80013,
     fillColor=0xffa500, fillColor1=0xff4500, lineColor=0xdb7093, growRate=20.000, blurb="Designed to protect inner parts of hull from explosives and proximities weapon",
     shield={strength=300.000, regen=400.000, radius=25.000, color=0x1a4a3f00, lineColor=0x87402318,
       damagedColor=0x33656500, delay=0.250}},
@@ -945,7 +945,7 @@
 	shroud={{size={6, 4}, offset={1.5, 0}, taper=0.75, count=1, tri_color1_id=1, line_color_id=2, shape=SQUARE},
 	        {size={3, 4}, offset={-1.5, 0}, taper=0.75, count=1, tri_color1_id=1, line_color_id=2, shape=SQUARE},}, powerCapacity=200.000}, --p=58
 
-  {111, shape=RHOMBUS_72_108, name="TP-80 Plasmicwall", features=PALETTE|SHIELD|TRACTOR, group=3, durability=1.200, density=0.210,
+  {111, shape=RHOMBUS_72_108, name="TP-80 Plasmicwall", features=PALETTE|SHIELD|TRACTOR, group=3, durability=1.200, density=0.210, sort=80016,
     fillColor=0xffa500, fillColor1=0xff4500, lineColor=0xe0fa08, growRate=10.000, scale=2, tractorRange=1500.000,
     shield={strength=2200.000, regen=600.000, radius=210.000, color=0x826a1d00, lineColor=0x80515a00,
       damagedColor=0x33783742, delay=0}},
@@ -1062,7 +1062,7 @@
   {128,  shape=RHOMBUS_72_108, scale=2, name="Reinforced Penrose-1", group=3, durability=1.600, density=0.14,
     fillColor=0xb22222, fillColor1=0x8b4513, lineColor=0xfa8072, growRate=30.000, sort=-11000},
 
-  {129,  shape=RHOMBUS_72_108, scale=2, name="CN-Nullifier", features=SHIELD, group=3, durability=1.200, density=0.210,
+  {129,  shape=RHOMBUS_72_108, scale=2, name="CN-Nullifier", features=SHIELD, group=3, durability=1.200, density=0.210, sort=80015,
     fillColor=0xffa500, fillColor1=0xff4500, lineColor=0xdb7093, growRate=20.000, blurb="Designed to protect inner parts of hull from explosives and proximities weapon",
     shield={strength=700.000, regen=400.000, radius=50.000, color=0x1a4a3f00, lineColor=0x87402318,
       damagedColor=0x33656500, delay=0.250}},
@@ -1295,7 +1295,7 @@
 	  barrelSize={0.001, 0.001}, chargeMin=0.1, chargeMaxTime=2.5},
      replicateTime=2.1, launcherPower=65, launcherOutSpeed=20},
 
-  {173, name="Hotbox Module", features=PALETTE|GENERATOR|NOICON, group=12, shape=COMMAND, deathFeatures=CANNON|EXPLODE, points=750,
+  {173, name="Hotbox Module", features=PALETTE|GENERATOR|NOICON, group=12, shape=COMMAND, deathFeatures=CANNON|EXPLODE, points=750, sort=20297, 
     durability=0.4, density=0.15, fillColor=0xff69b4, fillColor1=0x8b1a1a, lineColor=0x8b0000, explosive=FRIENDLY_FIRE|ENABLED, explodeRadius=125, explodeDamage=2500,
     powerCapacity=1, capacity=1, generatorCapacityPerSec=2500, blurb="A volatile fusion core that offer a large energy regeneration but has no storage capacity to store them, very harmful when destroyed but will release plasma mines cluster in its wake",
 	cannon={roundsPerSec=18, pattern=ABSOLUTE, spread=3.142, roundsPerBurst=18, burstyness=1,
@@ -1303,7 +1303,7 @@
       fragment={damage=1, roundsPerBurst=6, range=1, muzzleVel=10, pattern=SPIRAL|ABSOLUTE, spread=3.124,
 	  explosive=FRAG_PROXIMITY|FRIENDLY_FIRE, fragment={damage=15, roundsPerBurst=1, range=10, muzzleVel=1, explosive=FINAL|FRIENDLY_FIRE, pattern=ABSOLUTE, explodeRadius=125}}}},
   
-  {174, scale=2, name="Capacitor", features=PALETTE|GENERATOR, group=12, shape=RECT,
+  {174, scale=2, name="Capacitor", features=PALETTE|GENERATOR, group=12, shape=RECT, sort=20298, 
     durability=1.0, density=0.30, fillColor=0xfff68f, fillColor1=0x8b8b7a, lineColor=0xffffff,
     powerCapacity=1000, capacity=1, blurb="Energy storage Capacitors"},
 
@@ -1312,7 +1312,7 @@
     laser={width=4, damage=-75, color=0x4080e040, range=665}},
 
   {176, shape=RECT_LAUNCHER1, name="Furiy Dispatcher", features=PALETTE|LAUNCHER, group=12, sort=110252,
-    durability=0.500, blurb="Launches high speed drifting plasma suicide bomber drones that fires plasma balls, be careful with their placement when the drone explodes, they can harm your own ships", density=0.150,
+    durability=0.500, blurb="Launches high speed drifting plasma suicide bomber drones that fires plasma balls, only effective at hitting larger targets", density=0.150,
     fillColor=0x6f5250, fillColor1=0x794937, lineColor=0xbda09a, replicateBlock=
     {scale=7, shape=301, name="Furiy Drone", features=COMMAND|LAUNCHER|GENERATOR|NOICON|THRUSTER|TORQUER|FREERES|NOCLIP_ALLY|FIN, deathFeatures=EXPLODE|CANNON,
     group=12, durability=0.4, density=0.15, fillColor=0xf9dcbe, fillColor1=0xd2aa30, lineColor=0xbaadb6, thrusterForce=5000, torquerTorque=12000, thrusterBoost=3, thrusterBoostTime=10,
@@ -1980,13 +1980,13 @@
       muzzleVel=2250, damage=75, color=47081, range=2055}, sort=70043},
 
   {17085, name="Cloaerite Armor",  deathFeatures=GROW|CANNON, group=8, shape=231, durability=8, density=0.10, blurb="Triangular Chromium Armor, resists cannon damage and have an ability to detonates itself if destroyed (releases defensives projectiles upon death)",
-    fillColor=0xB8D9FF, fillColor1=0x001730, lineColor=0xF2F8FF, growRate=1000.000, points=1, 
+    fillColor=0xB8D9FF, fillColor1=0x001730, lineColor=0xF2F8FF, growRate=1000.000, points=1, explodeFaction=8,
 	cannon={roundsPerSec=15, roundsPerBurst=15, burstyness=1, muzzleVel=500, spread=3.142, damage=20, range=200, color=0xB8D9FF, pattern=ABSOLUTE|SPIRAL, explosive=FRAG_FINAL,
 	fragment={roundsPerBurst=12, muzzleVel=1000, spread=3.142, damage=2, rangeStdDev=200, color=0xB8D9FF, pattern=ABSOLUTE|WAVE, explosive=FRAG_IMPACT,
 	fragment={roundsPerBurst=30, muzzleVel=1500, spread=3.142, damage=1, range=100, color=0xB8D9FF, pattern=ABSOLUTE|SPIRAL}}}, sort=9999},
 
   {17086, name="Cloaerite Armor",  deathFeatures=GROW|CANNON, group=8, shape=232, durability=8, density=0.10, blurb="Triangular Chromium Armor, resists cannon damage and have an ability to detonates itself if destroyed (releases defensives projectiles upon death)",
-    fillColor=0xB8D9FF, fillColor1=0x001730, lineColor=0xF2F8FF, growRate=1000.000, points=1,
+    fillColor=0xB8D9FF, fillColor1=0x001730, lineColor=0xF2F8FF, growRate=1000.000, points=1, explodeFaction=8,
 	cannon={roundsPerSec=15, roundsPerBurst=15, burstyness=1, muzzleVel=500, spread=3.142, damage=20, range=200, color=0xB8D9FF, pattern=ABSOLUTE|SPIRAL, explosive=FRAG_FINAL,
 	fragment={roundsPerBurst=12, muzzleVel=1000, spread=3.142, damage=2, rangeStdDev=200, color=0xB8D9FF, pattern=ABSOLUTE|WAVE, explosive=FRAG_IMPACT,
 	fragment={roundsPerBurst=30, muzzleVel=1500, spread=3.142, damage=1, range=100, color=0xB8D9FF, pattern=ABSOLUTE|SPIRAL}}}, sort=9999},
@@ -2015,7 +2015,7 @@
 	{size={5, 3}, taper=1.05, count=3, tri_color1_id=1, line_color_id=2, offset={-12.5, 0, 0.275}},
 	{size={25, 5}, count=3, tri_color1_id=1, line_color_id=2, offset={2.5, 0, 0.245}},}},
 
-  {17090, shape=PENTAGON, name="CN-Nullifier", features=PALETTE|SHIELD, group=3, durability=1.200, density=0.210,
+  {17090, shape=PENTAGON, name="CN-Nullifier", features=PALETTE|SHIELD, group=3, durability=1.200, density=0.210, sort=80014,
     fillColor=0xffa500, fillColor1=0xff4500, lineColor=0xdb7093, growRate=20.000, blurb="Designed to protect inner parts of hull from explosives and proximities weapon",
     shield={strength=500.000, regen=500.000, radius=35.000, color=0x1a4a3f00, lineColor=0x87402318,
       damagedColor=0x33656500, delay=0.250}},
@@ -2136,11 +2136,11 @@
     durability=0.500, density=0.150, fillColor=0xED3232, fillColor1=0xF2A0A0, lineColor=0xee5245, armor=5,
     cannon={roundsPerSec=1.880, muzzleVel=900.000, spread=0.015, damage=150.000, color=0xee5245, range=1150.000, explosive=ENABLED|FRAG_NOFLASH, explodeRadius=15}},
   
-  {17113, shape=234, name="D-Gemlighter-H", features=PALETTE|LASER|ALWAYSFIRE|TURRET, group=12, turretLimit=0, sound="none",
+  {17113, shape=234, name="D-Gemlighter-H", features=PALETTE|LASER|ALWAYSFIRE|TURRET, group=12, turretLimit=0, sound="none", sort=70026,
     durability=0.5, blurb="VERTICAL facing crystal holder of the Plasmacaster weaponry, it may affects other kind of projectiles weaponry if placed adjacent together",
     density=0.15, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xbda09a, laser={damage=500, range=20, power=0, width=2, color=0x55FFFFFF}},
 
-  {17114, shape=238, name="D-Gemlighter-V", features=PALETTE|LASER|ALWAYSFIRE|TURRET, group=12, turretLimit=0, sound="none",
+  {17114, shape=238, name="D-Gemlighter-V", features=PALETTE|LASER|ALWAYSFIRE|TURRET, group=12, turretLimit=0, sound="none", sort=70025,
     durability=0.5, blurb="HORIZONTAL facing crystal holder of the Plasmacaster weaponry, it may affects other kind of projectiles weaponry if placed adjacent together",
     density=0.15, fillColor=0x6f5250, fillColor1=0x4a3b38, lineColor=0xbda09a, laser={damage=500, range=20, power=0, width=2, color=0x55FFFFFF}},
 
@@ -2543,7 +2543,7 @@
 	  {size={-25, -4.5}, offset={-2.5, 0, 0.14}, shape=ISOTRI_13, count=1}}}, 
 	  replicateTime=10, launcherSpeed=200},
 
-  {17172, shape=RECT_CANNON, name="Strike Laser", features=PALETTE|LASER, group=12,
+  {17172, shape=RECT_CANNON, name="Strike Laser", features=PALETTE|LASER, group=12, sort=70026,
     durability=1.5, density=0.15, fillColor=0x514644, fillColor1=0x3a2b26, lineColor=0xbaadb6, growRate=16.5,
     laser={width=3, damage=200, color=0x7fee5245, range=700}},
 
@@ -2857,7 +2857,7 @@
   {17236, name="Immobilize Compass", features=PALETTE|TURRET|LASER|AUTOFIRE, group=3, shape=RHOMBUS_36_144,
     durability=1.500, density=0.150, fillColor=0x901e30, fillColor1=0xbc121d, lineColor=0xe3e364,
     blurb="A beam weapon belong to the Automated Compass category, that immobilizes any ships and missiles ordinances it detects.",
-    turretSpeed=4.000,
+    turretSpeed=4.000, sort=80011,
     laser={width=1, color=0x47e3e364, range=600.000, immobilizeForce=3000, damage=20}},
 
   {17237, name="Shining Compass", features=PALETTE|TURRET|CANNON|AUTOFIRE, group=3, shape=PENTAGON, 
@@ -2866,13 +2866,13 @@
     cannon={roundsPerSec=30, color=0xe3e364, range=800.000, rangeStdDev=200, muzzleVel=600, damage=20,
 	spread=3.142, pattern=RANDOM, recoil=0, explosive=FRAG_FINAL,
 	fragment={roundsPerBurst=4, spread=3.142, range=300, rangeStdDev=100, muzzleVel=600, color=0xe3e364,
-	pattern=RANDOM|ABSOLUTE, damage=5}},
+	pattern=RANDOM|ABSOLUTE, damage=5}}, sort=80012,
 	shroud={{size={5, 5}, offset={0, 0, 0.01}, shape=OCTAGON}}},
 
   {17238, name="Repellant Compass", features=PALETTE|TURRET|LASER|AUTOFIRE, group=3, shape=RHOMBUS_72_108,
     durability=1.500, density=0.150, fillColor=0x901e30, fillColor1=0xbc121d, lineColor=0xe3e364,
     blurb="A beam weapon belong to the Automated Compass category, it push every ships away as well as missiles.",
-    turretSpeed=4.000,
+    turretSpeed=4.000, sort=80010,
     laser={width=1, color=0x47e3e364, range=500.000, linearForce=1500, damage=20}},
 	
   {17239, shape=RHOMBUS_72_108, name="Flarespreader", features=PALETTE|TURRET|LAUNCHER, group=3,
@@ -3681,41 +3681,49 @@
 	
 --UNUSED?  
 	
-  {17426, shape=202, name="Flarer Beam Long", features=PALETTE|LASER|ALWAYSFIRE, group=3, sound="none",
-    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
-    laser={damage=600, range=300, width=3, color=0x2fff2100}},
+  {17426, shape=202, name="Flarer Beam Long", features=PALETTE|CANNON|LASER|AUTOFIRE, group=3, sound="none", sort=80007,
+    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100, aihint_range=3000,
+    laser={damage=600, range=300, width=3, color=0x2fff2100}, cannon={roundsPerSec=12.000, muzzleVel=3.000, damage=1.000, color=0xff2100,
+      range=3, spread=3.6, recoil=0, pattern=ABSOLUTE}},
 	
-  {17427, shape=202, name="Flarer Beam Short", features=PALETTE|LASER|ALWAYSFIRE, group=3, sound="none",
-    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
-    laser={damage=600, range=100, width=3, color=0x2fff2100}},
+  {17427, shape=202, name="Flarer Beam Short", features=PALETTE|CANNON|LASER|AUTOFIRE, group=3, sound="none", sort=80006,
+    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100, aihint_range=1000,
+    laser={damage=600, range=100, width=3, color=0x2fff2100}, cannon={roundsPerSec=12.000, muzzleVel=1.000, damage=1.000, color=0xff2100,
+      range=1, spread=3.6, recoil=0, pattern=ABSOLUTE}},
 	
-  {17428, shape=202, name="Flust Booster", features=PALETTE|LASER|ALWAYSFIRE, group=3, sound="none",
+  {17428, shape=202, name="Flust Booster", features=PALETTE|LASER|ALWAYSFIRE, group=3, sound="none", sort=80008,
     durability=0.5, density=0.15, fillColor=0xffa500, fillColor1=0xc6120a, lineColor=0xff0100,
     laser={linearForce=360000, range=100, power=9, width=3, color=0x1fffff80}},
 	
-  {17429, shape=202, name="Flarer Beam Middle", features=LASER|ALWAYSFIRE, group=3, sound="none",
-    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
-    laser={damage=600, range=200, width=3, color=0x2fff2100}},
+  {17429, shape=202, name="Flarer Beam Middle", features=PALETTE|CANNON|LASER|AUTOFIRE, group=3, sound="none", sort=80006,
+    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100, aihint_range=2000,
+    laser={damage=600, range=200, width=3, color=0x2fff2100}, cannon={roundsPerSec=12.000, muzzleVel=2.000, damage=1.000, color=0xff2100,
+      range=2, spread=3.6, recoil=0, pattern=ABSOLUTE}},
 	
-  {17430, shape=202, name="Flarer Beam Longer", features=LASER|ALWAYSFIRE, group=3, sound="none",
-    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
-    laser={damage=600, range=400, width=3, color=0x2fff2100}},
+  {17430, shape=202, name="Flarer Beam Longer", features=PALETTE|CANNON|LASER|AUTOFIRE, group=3, sound="none", sort=80007,
+    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100, aihint_range=4000,
+    laser={damage=600, range=400, width=3, color=0x2fff2100}, cannon={roundsPerSec=12.000, muzzleVel=4.000, damage=1.000, color=0xff2100,
+      range=4, spread=3.6, recoil=0, pattern=ABSOLUTE}},
 	
-  {17431, shape=202, name="Flarer Beam Further", features=LASER|ALWAYSFIRE, group=3, sound="none",
-    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
-    laser={damage=600, range=500, width=3, color=0x2fff2100}},
+  {17431, shape=202, name="Flarer Beam Further", features=PALETTE|CANNON|LASER|AUTOFIRE, group=3, sound="none", sort=80007,
+    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100, aihint_range=5000,
+    laser={damage=600, range=500, width=3, color=0x2fff2100}, cannon={roundsPerSec=12.000, muzzleVel=5.000, damage=1.000, color=0xff2100,
+      range=5, spread=3.6, recoil=0, pattern=ABSOLUTE}},
 	
-  {17432, shape=202, name="Flarer Beam Far", features=LASER|ALWAYSFIRE, group=3, sound="none",
-    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
-    laser={damage=600, range=600, width=3, color=0x2fff2100}},
+  {17432, shape=202, name="Flarer Beam Far", features=PALETTE|CANNON|LASER|AUTOFIRE, group=3, sound="none", sort=80007,
+    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100, aihint_range=6000,
+    laser={damage=600, range=600, width=3, color=0x2fff2100}, cannon={roundsPerSec=12.000, muzzleVel=6.000, damage=1.000, color=0xff2100,
+      range=6, spread=3.6, recoil=0, pattern=ABSOLUTE}},
 	
-  {17433, shape=202, name="Flarer Beam Farther", features=LASER|ALWAYSFIRE, group=3, sound="none",
-    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
-    laser={damage=600, range=700, width=3, color=0x2fff2100}},
+  {17433, shape=202, name="Flarer Beam Farther", features=PALETTE|CANNON|LASER|AUTOFIRE, group=3, sound="none", sort=80007,
+    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100, aihint_range=7000,
+    laser={damage=600, range=700, width=3, color=0x2fff2100}, cannon={roundsPerSec=12.000, muzzleVel=7.000, damage=1.000, color=0xff2100,
+      range=7, spread=3.6, recoil=0, pattern=ABSOLUTE}},
 	
-  {17434, shape=202, name="Flarer Beam Distant", features=LASER|ALWAYSFIRE, group=3, sound="none",
-    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100,
-    laser={damage=600, range=800, width=3, color=0x2fff2100}},
+  {17434, shape=202, name="Flarer Beam Distant", features=PALETTE|CANNON|LASER|AUTOFIRE, group=3, sound="none", sort=80007,
+    durability=0.5, density=0.15, fillColor=0x800000, fillColor1=0xb32d00, lineColor=0xff7100, aihint_range=8000,
+    laser={damage=600, range=800, width=3, color=0x2fff2100}, cannon={roundsPerSec=12.000, muzzleVel=8.000, damage=1.000, color=0xff2100,
+      range=8, spread=3.6, recoil=0, pattern=ABSOLUTE}},
 	
 -- UNUSED?  
 	
@@ -5475,7 +5483,7 @@
 	  --cannon={damage=40, roundsPerSec=100, roundsPerBurst=100, burstyness=0.1, range=5, muzzleVel=1, spread=0.1, color=0x4020fafa, pattern=ABSOLUTE|CONSTANT},
 	  blurb="The Torpedo of this weapon is still not fully developed. EMP and energy sapping over-time development is in progress", armor=30,
 	  replicateBlock={command={}, group=8, fillColor=0x2abcbc, fillColor1=0x2f8b8b, lineColor=0xc4f4f4, durability=2.5, density=0.01, thrusterColor=0x8020fafa, thrusterColor1=0x8020fafa,
-	  shape=DISH_MISSILE, scale=1, lifetime=60, features=COMMAND|CANNON|NOCLIP_ALLY|EXPLODE|THRUSTER|TORQUER|GENERATOR|ALWAYSFIRE, torquerTorque=800, thrusterForce=30, explodeRadius=10, explodeDamage=100, sound="none", deathFeatures=CANNON,
+	  shape=DISH_MISSILE, scale=1, lifetime=10, features=COMMAND|CANNON|NOCLIP_ALLY|EXPLODE|THRUSTER|TORQUER|GENERATOR|ALWAYSFIRE, torquerTorque=800, thrusterForce=30, explodeRadius=10, explodeDamage=100, sound="none", deathFeatures=CANNON,
 	  cannon={damage=5, roundsPerSec=100, roundsPerBurst=100, burstyness=0.1, range=25, muzzleVel=1, spread=0.1, color=0x4020fafa, pattern=ABSOLUTE|CONSTANT, recoil=0}, generatorCapacityPerSec=500, powerCapacity=500}, 
 	  replicateTime=2.25, thrusterColor=0x8020fafa, thrusterColor1=0x8020fafa}, replicateTime=15, launcherPower=300, launcherOutSpeed=10000},
 	  
