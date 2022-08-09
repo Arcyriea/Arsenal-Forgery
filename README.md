@@ -12,7 +12,7 @@ Final Forgery (old) is the old version of AF (in 2018) where at that time frag w
 
 -----
 
-Ignore these two files called ".gitattributes" and "_config.yml". They have nothing to do with the mod.
+Ignore these two files called ".gitattributes", "_config.yml" and "ReadMe.md". They have nothing to do with the mod if you work with the repository files.
 
 You can use this mod outside steam folder but the blocks ID won't be relocated if use with other non-steam mods which could make it more open to mod conflicts, be noted however that you are creating a separate copy of the mod itself which won't be in sync with the ones on the Steam workshop folders, if this is your choice you can choose to place the folder locally at: 
 
